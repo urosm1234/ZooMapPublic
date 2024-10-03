@@ -1,0 +1,54 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+ <div id="map" style="height: 600px;"></div>
+
+    <script>
+        // Initialize the map, defaulting to the zoo's location (Houston Zoo example)
+        var map = L.map('map').setView([29.7164, -95.3909], 15);  // Coordinates for Houston Zoo
+
+        // Add tile layer to the map
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 30,
+            attribution: '© OpenStreetMap'
+        }).addTo(map);
+
+        // Define a variable to store the user's current location marker
+        let currentLocationMarker = null;
+
+        // Function to handle the success of getting the user's position
+        function displayLocation(position) {
+            const latitude = position.coords.latitude;
+            const longitude = position.coords.longitude;
+
+            // If marker already exists, update its position; else, create a new marker
+            if (currentLocationMarker) {
+                currentLocationMarker.setLatLng([latitude, longitude]);
+            } else {
+                currentLocationMarker = L.marker([latitude, longitude], { draggable: false }).addTo(map)
+                    .bindPopup("You are here").openPopup();
+            }
+
+            // Center the map on the user's current location
+            map.setView([latitude, longitude], 15);
+        }
+
+        // Function to handle any errors in getting the user's position
+        function handleError(error) {
+            alert("Error getting location: " + error.message);
+        }
+
+        // Request the user's location (this will trigger the permission popup)
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(displayLocation, handleError, {
+                enableHighAccuracy: true,
+                timeout: 5000,
+                maximumAge: 0
+            });
+        } else {
+            alert("Geolocation is not supported by this browser.");
+        }
+    </script>
+
