@@ -28,3 +28,4 @@ C:\Users\Uros\Documents\FinishedGitProjects\ZooMap\ZooMapProject\obj\Debug\net8.
 C:\Users\Uros\Documents\FinishedGitProjects\ZooMap\ZooMapProject\obj\Debug\net8.0\ZooMapProject.pdb
 C:\Users\Uros\Documents\FinishedGitProjects\ZooMap\ZooMapProject\obj\Debug\net8.0\ZooMapProject.genruntimeconfig.cache
 C:\Users\Uros\Documents\FinishedGitProjects\ZooMap\ZooMapProject\obj\Debug\net8.0\ref\ZooMapProject.dll
+C:\Users\Uros\Documents\FinishedGitProjects\ZooMap\ZooMapProject\obj\Debug\net8.0\ZooMapProject.sourcelink.json

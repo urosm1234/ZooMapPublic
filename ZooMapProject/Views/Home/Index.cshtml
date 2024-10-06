@@ -2,53 +2,224 @@
     ViewData["Title"] = "Home Page";
 }
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Include Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    
+    <!-- Include Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    
+    <style>
+        body{padding:0}
+        html{padding:0}
+        #map {
+            height: 600px;  /* Adjust the height as needed */
+            width:100vw;
+            background-color: white;
+            position:absolute;
+            left:0;
+            z-index: -1;
+            
+        }
 
- <div id="map" style="height: 600px;"></div>
+        #animal-window {
+            width: 400px;
+            background-color: #f4f4f9;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+            user-select: none;
+        }
 
+        /* Title styling (animal name) */
+        .animal-title {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            font-size: 24px;
+            text-align: center;
+            font-weight: bold;
+            position: relative;
+        }
+
+        /* Close button styling */
+        .close-btn {
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            font-size: 18px;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Image styling */
+        .animal-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Scrollable description area */
+        .animal-description {
+            padding: 15px;
+            max-height: 150px;
+            overflow-y: auto;
+            font-size: 16px;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Custom scroll bar for the description */
+        .animal-description::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .animal-description::-webkit-scrollbar-thumb {
+            background-color: #4CAF50;
+            border-radius: 4px;
+        }
+
+        /* Input box styling */
+        .animal-input {
+            width: calc(100% - 30px);
+            padding: 10px;
+            margin: 15px;
+            border: 2px solid #4CAF50;
+            border-radius: 4px;
+            font-size: 16px;
+            color: #333;
+            background-color: #f0f0f5;
+        }
+
+        .animal-input:focus {
+            outline: none;
+            background-color: #e6e6f0;
+            border-color: #3e8e41;
+        }
+    </style>
     <script>
-        // Initialize the map, defaulting to the zoo's location (Houston Zoo example)
-        var map = L.map('map').setView([29.7164, -95.3909], 15);  // Coordinates for Houston Zoo
+        //functions:
+    function togglePoppup()
+    {
+        console.log(2);
+        var popup = document.getElementById("animal-window");
+        if (popup.style.display == 'block')
+        popup.style.display = 'none';
+        else
+        popup.style.display = 'block';
+    }
 
-        // Add tile layer to the map
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 30,
-            attribution: '© OpenStreetMap'
-        }).addTo(map);
+    function getCoord(e)
+    {
+        var coord = e.latlng;
+        var lat = coord.lat;
+        var lng = coord.lng;
+        console.log(lat + "," + lng);
+    }
 
-        // Define a variable to store the user's current location marker
-        let currentLocationMarker = null;
-
-        // Function to handle the success of getting the user's position
-        function displayLocation(position) {
-            const latitude = position.coords.latitude;
-            const longitude = position.coords.longitude;
-
-            // If marker already exists, update its position; else, create a new marker
-            if (currentLocationMarker) {
-                currentLocationMarker.setLatLng([latitude, longitude]);
-            } else {
-                currentLocationMarker = L.marker([latitude, longitude], { draggable: false }).addTo(map)
-                    .bindPopup("You are here").openPopup();
-            }
-
-            // Center the map on the user's current location
-            map.setView([latitude, longitude], 15);
-        }
-
-        // Function to handle any errors in getting the user's position
-        function handleError(error) {
-            alert("Error getting location: " + error.message);
-        }
-
-        // Request the user's location (this will trigger the permission popup)
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(displayLocation, handleError, {
-                enableHighAccuracy: true,
-                timeout: 5000,
-                maximumAge: 0
-            });
-        } else {
-            alert("Geolocation is not supported by this browser.");
-        }
     </script>
+</head>
+<body>
 
+<div id="map"></div>
+    <div id="animal-window">
+
+        <div class="animal-title">
+        Lion
+        <!-- Close button -->
+        <span class="close-btn" onclick="togglePoppup()">X</span>
+        </div>
+
+    <!-- Animal image -->
+    <img src='/images/lion-pane.jpg' alt="Lion" class="animal-image">
+
+    <!-- Scrollable description text -->
+    <div class="animal-description">
+        <p>
+            The lion (Panthera leo) is a large cat of the genus Panthera native to Africa and India. It is one of the most
+            recognizable animals due to its muscular, deep-chested body, short, rounded head, round ears, and a hairy tuft
+            at the end of its tail. Lions are social animals that live in groups called prides. They are apex predators, and
+            their primary prey are ungulates such as antelopes and zebras.
+        </p>
+        <p>
+            The lion's roar can be heard from as far as 5 miles (8 km) away. They are also known for their majestic mane, 
+            which is more prominent in males.
+        </p>
+    </div>
+
+    <!-- Input element -->
+    <input type="text" class="animal-input" placeholder="Type your favorite animal here...">
+    </div>
+
+<script>
+    // Dimensions of your background image
+    // Initialize the Leaflet map, setting the initial view to cover the image area
+    var map = L.map('map', {
+        minZoom: -1,  //44.824739, 20.452049 zoo corner
+        maxZoom: 2,   // Allows zooming in
+        center: [0, 0],  // Center of the image
+        zoom: 0,   // Initial zoom level
+        crs: L.CRS.Simple  // Use a simple coordinate reference system for flat images
+    });
+
+    const imageWidth =   screen.width;  // Adjust this to match your image width (in pixels)
+    const imageHeight = screen.height;  // Adjust this to match your image height (in pixels)
+    var imageBounds = [[0, 0], [imageHeight, imageWidth]];
+
+    var imageUrl = '/images/map.png';  // Replace with your actual image URL
+    L.imageOverlay(imageUrl, imageBounds).addTo(map);
+    map.fitBounds(imageBounds);
+
+     // Define the bounds (SouthWest and NorthEast corners)
+    var southWest = L.latLng(-100, -100); // Example SW corner
+    var northEast = L.latLng(screen.height*1.2, screen.width*1.3); // Example NE corner
+    var bounds = L.latLngBounds(southWest, northEast);
+
+    // Apply the bounds to the map to limit panning
+    map.setMaxBounds(bounds);
+
+    // Make sure the map view stays within the bounds even after zooming out
+    map.on('drag', function() {
+        map.panInsideBounds(bounds, { animate: false });
+    });
+
+
+    var AnimalIcon = L.Icon.extend({
+        options:{
+                iconSize: [50, 50],           
+                iconAnchor: [25, 50],         
+                popupAnchor: [0, -50],
+            }
+        });
+
+
+    var iconArray = [];
+    coordinates = [[400, 300], [200, 400], [426,758], [671,1231]];
+    iconArray[0] = new AnimalIcon({iconUrl:'/images/lion.png'});
+    iconArray[1] = new AnimalIcon({iconUrl:'/images/fox.png'});
+    iconArray[2] = new AnimalIcon({iconUrl:'/images/zebra.png'});
+    iconArray[3] = new AnimalIcon({iconUrl:'/images/llama.png'});
+    console.log(iconArray.length);
+    for(let i=0;i<iconArray.length;i++)
+    {
+        console.log(1);
+        var icon = L.marker(coordinates[i], { icon: iconArray[i] }).addTo(map)
+        .on('click',togglePoppup);
+    }
+    map.on('click', getCoord);  
+
+</script>
+
+</body>
+</html>

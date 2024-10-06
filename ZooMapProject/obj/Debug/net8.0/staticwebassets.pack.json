@@ -13,6 +13,38 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\image.png",
+      "PackagePath": "staticwebassets\\image.png"
+    },
+    {
+      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images.jpeg",
+      "PackagePath": "staticwebassets\\images.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\fox.png",
+      "PackagePath": "staticwebassets\\images\\fox.png"
+    },
+    {
+      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\lion-pane.jpg",
+      "PackagePath": "staticwebassets\\images\\lion-pane.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\lion.png",
+      "PackagePath": "staticwebassets\\images\\lion.png"
+    },
+    {
+      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\llama.png",
+      "PackagePath": "staticwebassets\\images\\llama.png"
+    },
+    {
+      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\map.png",
+      "PackagePath": "staticwebassets\\images\\map.png"
+    },
+    {
+      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\zebra.png",
+      "PackagePath": "staticwebassets\\images\\zebra.png"
+    },
+    {
       "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
@@ -243,6 +275,14 @@
     {
       "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\lion.png",
+      "PackagePath": "staticwebassets\\lion.png"
+    },
+    {
+      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\map.png",
+      "PackagePath": "staticwebassets\\map.png"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.ZooMapProject.Microsoft.AspNetCore.StaticWebAssets.props",
