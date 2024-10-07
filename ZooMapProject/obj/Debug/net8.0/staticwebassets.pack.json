@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\ZooMapProject.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\animals.txt",
+      "PackagePath": "staticwebassets\\animals.txt"
+    },
+    {
       "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
@@ -13,16 +17,16 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\image.png",
-      "PackagePath": "staticwebassets\\image.png"
-    },
-    {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images.jpeg",
-      "PackagePath": "staticwebassets\\images.jpeg"
+      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\camel.png",
+      "PackagePath": "staticwebassets\\images\\camel.png"
     },
     {
       "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\fox.png",
       "PackagePath": "staticwebassets\\images\\fox.png"
+    },
+    {
+      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\giraffe.png",
+      "PackagePath": "staticwebassets\\images\\giraffe.png"
     },
     {
       "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\lion-pane.jpg",
@@ -39,6 +43,10 @@
     {
       "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\map.png",
       "PackagePath": "staticwebassets\\images\\map.png"
+    },
+    {
+      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\map2.jpg",
+      "PackagePath": "staticwebassets\\images\\map2.jpg"
     },
     {
       "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\zebra.png",
@@ -277,12 +285,12 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\lion.png",
-      "PackagePath": "staticwebassets\\lion.png"
+      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\lion.txt",
+      "PackagePath": "staticwebassets\\lion.txt"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\map.png",
-      "PackagePath": "staticwebassets\\map.png"
+      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\zebra.txt",
+      "PackagePath": "staticwebassets\\zebra.txt"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.ZooMapProject.Microsoft.AspNetCore.StaticWebAssets.props",

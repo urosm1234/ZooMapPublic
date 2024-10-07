@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using ZooMapProject.Models;
+using System.Web;
 
 namespace ZooMapProject.Controllers;
 
@@ -13,7 +14,7 @@ public class HomeController : Controller
         _logger = logger;
     }
 
-    public IActionResult Index()
+    public IActionResult Index(string animal)
     {
         return View();
     }

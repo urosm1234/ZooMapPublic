@@ -1,6 +1,4 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿
 
 <!DOCTYPE html>
 <html lang="en">
@@ -16,14 +14,29 @@
     <style>
         body{padding:0}
         html{padding:0}
+
         #map {
-            height: 600px;  /* Adjust the height as needed */
+            height: 80vh;  /* Adjust the height as needed */
             width:100vw;
-            background-color: white;
             position:absolute;
             left:0;
             z-index: -1;
             
+        }
+        .leaflet-control {
+            border-radius: 5px;
+            background-color: #f0f8ff;
+            color: #333;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+        }
+        .leaflet-popup-content-wrapper {
+            background-color: #f0f8ff; /* Match the window color */
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .leaflet-popup-tip {
+            background-color: #f0f8ff;
         }
 
         #animal-window {
@@ -109,15 +122,52 @@
         }
     </style>
     <script>
-        //functions:
-    function togglePoppup()
+    async function fetchAnimalsFromApi() {
+            const response = await fetch('/api/animal/2');
+            console.log(response);
+            var b = await response.json()
+            return b;
+        }
+
+
+    function changeView(animal) {
+    var filePath = animal + ".txt"; // Replace with custom filepath
+    console.log(filePath);
+
+    try{
+    fetch(filePath)
+        .then(response => response.text())
+        .then(text => {
+            if(text)
+            {
+                const contentParts = text.split("$$"); // Split based on your logic
+                document.getElementById("animal-title").children[0].innerHTML = contentParts[0];
+                document.getElementById("description").children[0].innerHTML = contentParts[1];
+                document.getElementById("description").children[1].innerHTML = contentParts[2];
+                document.getElementById("animal-window").style.display = 'block';
+            }
+
+        }).catch((error) => {console.log("asd");});
+    }
+    catch(error){
+            console.log("error");
+    }
+    }
+
+
+    function togglePoppup(animal = "none")
     {
-        console.log(2);
+        console.log(animal);
         var popup = document.getElementById("animal-window");
         if (popup.style.display == 'block')
         popup.style.display = 'none';
         else
-        popup.style.display = 'block';
+        {
+            if(animal!="none")
+            {
+                changeView(animal);
+            }
+        }
     }
 
     function getCoord(e)
@@ -127,7 +177,7 @@
         var lng = coord.lng;
         console.log(lat + "," + lng);
     }
-
+    fetchAnimalsFromApi();
     </script>
 </head>
 <body>
@@ -135,8 +185,8 @@
 <div id="map"></div>
     <div id="animal-window">
 
-        <div class="animal-title">
-        Lion
+        <div class="animal-title" id = "animal-title">
+        <h>Lion</h>
         <!-- Close button -->
         <span class="close-btn" onclick="togglePoppup()">X</span>
         </div>
@@ -145,7 +195,7 @@
     <img src='/images/lion-pane.jpg' alt="Lion" class="animal-image">
 
     <!-- Scrollable description text -->
-    <div class="animal-description">
+    <div class="animal-description" id = "description">
         <p>
             The lion (Panthera leo) is a large cat of the genus Panthera native to Africa and India. It is one of the most
             recognizable animals due to its muscular, deep-chested body, short, rounded head, round ears, and a hairy tuft
@@ -182,7 +232,7 @@
     map.fitBounds(imageBounds);
 
      // Define the bounds (SouthWest and NorthEast corners)
-    var southWest = L.latLng(-100, -100); // Example SW corner
+    var southWest = L.latLng(-screen.height/4, -400); // Example SW corner
     var northEast = L.latLng(screen.height*1.2, screen.width*1.3); // Example NE corner
     var bounds = L.latLngBounds(southWest, northEast);
 
@@ -205,17 +255,21 @@
 
 
     var iconArray = [];
-    coordinates = [[400, 300], [200, 400], [426,758], [671,1231]];
+    coordinates = [[400, 300], [200, 400], [426,758], [671,1231], [134.82413223849244,1596], [428.9060737945672,562]];
+    AnimalNames = ["lion","fox","zebra","llama","camel", "giraffe"];
     iconArray[0] = new AnimalIcon({iconUrl:'/images/lion.png'});
     iconArray[1] = new AnimalIcon({iconUrl:'/images/fox.png'});
     iconArray[2] = new AnimalIcon({iconUrl:'/images/zebra.png'});
     iconArray[3] = new AnimalIcon({iconUrl:'/images/llama.png'});
+    iconArray[4] = new AnimalIcon({iconUrl:'/images/camel.png'});
+    iconArray[5] = new AnimalIcon({iconUrl:'/images/giraffe.png'});
+
     console.log(iconArray.length);
     for(let i=0;i<iconArray.length;i++)
     {
         console.log(1);
         var icon = L.marker(coordinates[i], { icon: iconArray[i] }).addTo(map)
-        .on('click',togglePoppup);
+        .on('click',()=> togglePoppup(AnimalNames[i]));
     }
     map.on('click', getCoord);  
 

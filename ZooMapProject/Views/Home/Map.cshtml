@@ -15,7 +15,7 @@
 
     <script>
         // Initialize the map, defaulting to the zoo's location (Houston Zoo example)
-        var map = L.map('map').setView([44.824739, 20.452049], 15);  // Coordinates for Houston Zoo
+        var map = L.map('map').setView([44.824739, 20.452049], 15); 
 
         // Add tile layer to the map
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -67,12 +67,20 @@
             alert("Geolocation is not supported by this browser.");
         }
         var icon1 = L.icon({
-        iconUrl: "map.png",  
+        iconUrl: "/images/lion.png",  
         iconSize: [50, 50],           
         iconAnchor: [25, 50],         
         popupAnchor: [0, -50] 
         });
         L.marker([44.824739, 20.452049+0.002], { icon: icon1 }).addTo(map); 
+
+            // Define the geographical boundaries (southwest and northeast corners)
+        var southWest = L.latLng(44.824784378322576, 20.451747179031376);  // Bottom-left corner
+        var northEast = L.latLng(44.827010142537084, 20.455759763717655);   // Top-right corner
+
+            // Create the bounds object
+        var bounds = L.latLngBounds(southWest, northEast);
+        map.setMaxBounds(bounds);
     </script>
 </body>
 </html>
