@@ -4,17 +4,26 @@ using System.Collections.Generic;
 namespace ZooMapProject.Controllers
 {
 
-    [Route("api/animal")]
+    [Route("api/[controller]")]
     [ApiController]
     public class AnimalControler : Controller
     {
         // GET: AnimalControler
         [HttpGet("{id?}")]
-        public ActionResult Index(int id)
+        public IActionResult Get(int id)
         {
             var animals = new List<string> { "Lion", "Tiger", "Elephant", "Giraffe" };
-            return Ok(animals[id]);
+            if(id<=3)
+            {
+                return Ok(animals[id]);
+            }
+            else
+            {
+                return NotFound();
+            }
+
         }
+
 
     }
 }
