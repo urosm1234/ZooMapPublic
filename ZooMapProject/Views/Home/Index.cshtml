@@ -1,5 +1,4 @@
 ﻿
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,126 +11,31 @@
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     
     <style>
-        body{padding:0}
-        html{padding:0}
 
-        #map {
-            height: 80vh;  /* Adjust the height as needed */
-            width:100vw;
-            position:absolute;
-            left:0;
-            z-index: -1;
-            
-        }
-        .leaflet-control {
-            border-radius: 5px;
-            background-color: #f0f8ff;
-            color: #333;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-        }
-        .leaflet-popup-content-wrapper {
-            background-color: #f0f8ff; /* Match the window color */
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-        }
-
-        .leaflet-popup-tip {
-            background-color: #f0f8ff;
-        }
-
-        #animal-window {
-            width: 400px;
-            background-color: #f4f4f9;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-            font-family: Arial, sans-serif;
-            overflow: hidden;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            display: none;
-            user-select: none;
-        }
-
-        /* Title styling (animal name) */
-        .animal-title {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px;
-            font-size: 24px;
-            text-align: center;
-            font-weight: bold;
-            position: relative;
-        }
-
-        /* Close button styling */
-        .close-btn {
-            position: absolute;
-            top: 5px;
-            right: 10px;
-            font-size: 18px;
-            color: white;
-            cursor: pointer;
-        }
-
-        /* Image styling */
-        .animal-image {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        /* Scrollable description area */
-        .animal-description {
-            padding: 15px;
-            max-height: 150px;
-            overflow-y: auto;
-            font-size: 16px;
-            color: #333;
-            line-height: 1.6;
-        }
-
-        /* Custom scroll bar for the description */
-        .animal-description::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        .animal-description::-webkit-scrollbar-thumb {
-            background-color: #4CAF50;
-            border-radius: 4px;
-        }
-
-        /* Input box styling */
-        .animal-input {
-            width: calc(100% - 30px);
-            padding: 10px;
-            margin: 15px;
-            border: 2px solid #4CAF50;
-            border-radius: 4px;
-            font-size: 16px;
-            color: #333;
-            background-color: #f0f0f5;
-        }
-
-        .animal-input:focus {
-            outline: none;
-            background-color: #e6e6f0;
-            border-color: #3e8e41;
-        }
     </style>
     <script>
+        var b;
+        var iconArray = [];
     async function fetchAnimalsFromApi() {
-            const response = await fetch('/api/animal/2');
-            console.log(response);
-            var b = await response.json()
-            return b;
+            const response = await fetch('/api/superbase');
+            b = await response.json();
+            console.log(b);
+            iconArray = b;
+            iconArray.forEach( (icon)=>
+            {
+                var icont = new AnimalIcon({iconUrl: '/images/'+icon.name+'.png'});
+                console.log(icon.name);
+                //animalNames[i] = new String(icon.name);
+                //console.log(animalNames[i]);
+                var marker = L.marker([icon.coordinatesH, icon.coordinatesW], { icon: icont }).addTo(map)
+                .on('click',()=> togglePoppup(icon.name) );
+            });
+            
         }
 
 
     function changeView(animal) {
-    var filePath = animal + ".txt"; // Replace with custom filepath
+    var filePath = animal + '.txt'; // Replace with custom filepath
     console.log(filePath);
 
     try{
@@ -144,10 +48,11 @@
                 document.getElementById("animal-title").children[0].innerHTML = contentParts[0];
                 document.getElementById("description").children[0].innerHTML = contentParts[1];
                 document.getElementById("description").children[1].innerHTML = contentParts[2];
+                document.getElementById("animal-pane").src = '/images/' + animal+"-pane.jpg";
                 document.getElementById("animal-window").style.display = 'block';
             }
 
-        }).catch((error) => {console.log("asd");});
+        }).catch((error) => {console.log(error);});
     }
     catch(error){
             console.log("error");
@@ -155,7 +60,7 @@
     }
 
 
-    function togglePoppup(animal = "none")
+    function togglePoppup(animal)
     {
         console.log(animal);
         var popup = document.getElementById("animal-window");
@@ -177,7 +82,6 @@
         var lng = coord.lng;
         console.log(lat + "," + lng);
     }
-    fetchAnimalsFromApi();
     </script>
 </head>
 <body>
@@ -192,7 +96,7 @@
         </div>
 
     <!-- Animal image -->
-    <img src='/images/lion-pane.jpg' alt="Lion" class="animal-image">
+    <img src='/images/lion-pane.jpg' alt="Lion" class="animal-image" id="animal-pane">
 
     <!-- Scrollable description text -->
     <div class="animal-description" id = "description">
@@ -222,7 +126,23 @@
         zoom: 0,   // Initial zoom level
         crs: L.CRS.Simple  // Use a simple coordinate reference system for flat images
     });
+        var AnimalIcon = L.Icon.extend({
+        options:{
+                iconSize: [50, 50],           
+                iconAnchor: [25, 50],         
+                popupAnchor: [0, -50],
+            }
+        });
 
+    var animalNames = [];
+    var markers = [];
+
+    fetchAnimalsFromApi().then((iconArray)=>{
+        console.log(iconArray);
+
+    });
+    
+    
     const imageWidth =   screen.width;  // Adjust this to match your image width (in pixels)
     const imageHeight = screen.height;  // Adjust this to match your image height (in pixels)
     var imageBounds = [[0, 0], [imageHeight, imageWidth]];
@@ -244,33 +164,18 @@
         map.panInsideBounds(bounds, { animate: false });
     });
 
-
-    var AnimalIcon = L.Icon.extend({
-        options:{
-                iconSize: [50, 50],           
-                iconAnchor: [25, 50],         
-                popupAnchor: [0, -50],
-            }
-        });
-
-
-    var iconArray = [];
+    //var iconArray = [];
     coordinates = [[400, 300], [200, 400], [426,758], [671,1231], [134.82413223849244,1596], [428.9060737945672,562]];
-    AnimalNames = ["lion","fox","zebra","llama","camel", "giraffe"];
-    iconArray[0] = new AnimalIcon({iconUrl:'/images/lion.png'});
+    //AnimalNames = ["lion","fox","zebra","llama","camel", "giraffe"];
+    /*iconArray[0] = new AnimalIcon({iconUrl:'/images/lion.png'});
     iconArray[1] = new AnimalIcon({iconUrl:'/images/fox.png'});
     iconArray[2] = new AnimalIcon({iconUrl:'/images/zebra.png'});
     iconArray[3] = new AnimalIcon({iconUrl:'/images/llama.png'});
     iconArray[4] = new AnimalIcon({iconUrl:'/images/camel.png'});
-    iconArray[5] = new AnimalIcon({iconUrl:'/images/giraffe.png'});
+    iconArray[5] = new AnimalIcon({iconUrl:'/images/giraffe.png'});*/
+    
 
-    console.log(iconArray.length);
-    for(let i=0;i<iconArray.length;i++)
-    {
-        console.log(1);
-        var icon = L.marker(coordinates[i], { icon: iconArray[i] }).addTo(map)
-        .on('click',()=> togglePoppup(AnimalNames[i]));
-    }
+
     map.on('click', getCoord);  
 
 </script>

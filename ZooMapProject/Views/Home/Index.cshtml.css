@@ -1,8 +1,7 @@
-/* _content/ZooMapProject/Views/Home/Index.cshtml.rz.scp.css */
-body[b-pd0yy449re]{padding:0}
-html[b-pd0yy449re]{padding:0}
+body{padding:0}
+html{padding:0}
 
-#map[b-pd0yy449re] {
+#map {
     height: 85vh;  /* Adjust the height as needed */
     width:100vw;
     position:absolute;
@@ -11,23 +10,23 @@ html[b-pd0yy449re]{padding:0}
     background-color: #f0f8ff;
     
 }
-.leaflet-control[b-pd0yy449re] {
+.leaflet-control {
     border-radius: 5px;
     background-color: #f0f8ff;
     color: #333;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
-.leaflet-popup-content-wrapper[b-pd0yy449re] {
+.leaflet-popup-content-wrapper {
     background-color: #f0f8ff; /* Match the window color */
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
-.leaflet-popup-tip[b-pd0yy449re] {
+.leaflet-popup-tip {
     background-color: #f0f8ff;
 }
 
-#animal-window[b-pd0yy449re] {
+#animal-window {
     width: 400px;
     background-color: #f4f4f9;
     border: 2px solid #ddd;
@@ -44,7 +43,7 @@ html[b-pd0yy449re]{padding:0}
 }
 
 /* Title styling (animal name) */
-.animal-title[b-pd0yy449re] {
+.animal-title {
     background-color: #4CAF50;
     color: white;
     padding: 10px;
@@ -55,7 +54,7 @@ html[b-pd0yy449re]{padding:0}
 }
 
 /* Close button styling */
-.close-btn[b-pd0yy449re] {
+.close-btn {
     position: absolute;
     top: 5px;
     right: 10px;
@@ -65,14 +64,14 @@ html[b-pd0yy449re]{padding:0}
 }
 
 /* Image styling */
-.animal-image[b-pd0yy449re] {
+.animal-image {
     width: 100%;
     height: auto;
     display: block;
 }
 
 /* Scrollable description area */
-.animal-description[b-pd0yy449re] {
+.animal-description {
     padding: 15px;
     max-height: 150px;
     overflow-y: auto;
@@ -82,17 +81,17 @@ html[b-pd0yy449re]{padding:0}
 }
 
 /* Custom scroll bar for the description */
-.animal-description[b-pd0yy449re]::-webkit-scrollbar {
+.animal-description::-webkit-scrollbar {
     width: 8px;
 }
 
-.animal-description[b-pd0yy449re]::-webkit-scrollbar-thumb {
+.animal-description::-webkit-scrollbar-thumb {
     background-color: #4CAF50;
     border-radius: 4px;
 }
 
 /* Input box styling */
-.animal-input[b-pd0yy449re] {
+.animal-input {
     width: calc(100% - 30px);
     padding: 10px;
     margin: 15px;
@@ -103,57 +102,8 @@ html[b-pd0yy449re]{padding:0}
     background-color: #f0f0f5;
 }
 
-.animal-input:focus[b-pd0yy449re] {
+.animal-input:focus {
     outline: none;
     background-color: #e6e6f0;
     border-color: #3e8e41;
-}
-/* _content/ZooMapProject/Views/Shared/_Layout.cshtml.rz.scp.css */
-/* Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
-for details on configuring this project to bundle and minify static web assets. */
-
-a.navbar-brand[b-awfwj8l47c] {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
-}
-
-a[b-awfwj8l47c] {
-  color: #0077cc;
-}
-
-.btn-primary[b-awfwj8l47c] {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
-}
-
-.nav-pills .nav-link.active[b-awfwj8l47c], .nav-pills .show > .nav-link[b-awfwj8l47c] {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
-}
-
-.border-top[b-awfwj8l47c] {
-  border-top: 1px solid #e5e5e5;
-}
-.border-bottom[b-awfwj8l47c] {
-  border-bottom: 1px solid #e5e5e5;
-}
-
-.box-shadow[b-awfwj8l47c] {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
-}
-
-button.accept-policy[b-awfwj8l47c] {
-  font-size: 1rem;
-  line-height: inherit;
-}
-
-.footer[b-awfwj8l47c] {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  line-height: 60px;
 }

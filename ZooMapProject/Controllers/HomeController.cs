@@ -24,7 +24,7 @@ public class HomeController : Controller
         return View();
     }
 
-    public IActionResult map(){
+    public IActionResult Map(){
         return View();
     }
 

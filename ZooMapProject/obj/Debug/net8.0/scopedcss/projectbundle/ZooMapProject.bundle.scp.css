@@ -1,3 +1,113 @@
+/* _content/ZooMapProject/Views/Home/Index.cshtml.rz.scp.css */
+body[b-pd0yy449re]{padding:0}
+html[b-pd0yy449re]{padding:0}
+
+#map[b-pd0yy449re] {
+    height: 85vh;  /* Adjust the height as needed */
+    width:100vw;
+    position:absolute;
+    left:0;
+    z-index: -1;
+    background-color: #f0f8ff;
+    
+}
+.leaflet-control[b-pd0yy449re] {
+    border-radius: 5px;
+    background-color: #f0f8ff;
+    color: #333;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+.leaflet-popup-content-wrapper[b-pd0yy449re] {
+    background-color: #f0f8ff; /* Match the window color */
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.leaflet-popup-tip[b-pd0yy449re] {
+    background-color: #f0f8ff;
+}
+
+#animal-window[b-pd0yy449re] {
+    width: 400px;
+    background-color: #f4f4f9;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    user-select: none;
+}
+
+/* Title styling (animal name) */
+.animal-title[b-pd0yy449re] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    font-size: 24px;
+    text-align: center;
+    font-weight: bold;
+    position: relative;
+}
+
+/* Close button styling */
+.close-btn[b-pd0yy449re] {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Image styling */
+.animal-image[b-pd0yy449re] {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Scrollable description area */
+.animal-description[b-pd0yy449re] {
+    padding: 15px;
+    max-height: 150px;
+    overflow-y: auto;
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Custom scroll bar for the description */
+.animal-description[b-pd0yy449re]::-webkit-scrollbar {
+    width: 8px;
+}
+
+.animal-description[b-pd0yy449re]::-webkit-scrollbar-thumb {
+    background-color: #4CAF50;
+    border-radius: 4px;
+}
+
+/* Input box styling */
+.animal-input[b-pd0yy449re] {
+    width: calc(100% - 30px);
+    padding: 10px;
+    margin: 15px;
+    border: 2px solid #4CAF50;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #333;
+    background-color: #f0f0f5;
+}
+
+.animal-input:focus[b-pd0yy449re] {
+    outline: none;
+    background-color: #e6e6f0;
+    border-color: #3e8e41;
+}
 /* _content/ZooMapProject/Views/Shared/_Layout.cshtml.rz.scp.css */
 /* Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */

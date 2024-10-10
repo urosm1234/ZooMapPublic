@@ -6,7 +6,7 @@ namespace ZooMapProject.Models
     [Table("icons")]
     public class AnimalModel : BaseModel
     {
-        [Column("id")]
+        [PrimaryKey("id",false)]
         public int id { get; set; }  // Animal ID
         [Column("name")]
         public string name { get; set; }  // Name of the animal
