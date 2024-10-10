@@ -1,4 +1,9 @@
-﻿
+﻿@model ZooMapProject.Contracts.AnimalsGetResponse
+
+@{
+    // Access the JSON-encoded string from ViewBag
+    var animalDataJson = ViewBag.AnimalDataJson;
+}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,30 +19,29 @@
 
     </style>
     <script>
-        var b;
+
         var iconArray = [];
-    async function fetchAnimalsFromApi() {
-            const response = await fetch('/api/superbase');
-            b = await response.json();
-            console.log(b);
-            iconArray = b;
+    async function fetchAnimalsFromApi() { //Fetches data from the database and 
+            //const response = await fetch('/api/superbase');
+            //console.log(response);
+            const response = @Html.Raw(animalDataJson);
+            console.log(response)
+            iconArray = response;
+            //iconArray = await response.json();
             iconArray.forEach( (icon)=>
             {
+                
                 var icont = new AnimalIcon({iconUrl: '/images/'+icon.name+'.png'});
-                console.log(icon.name);
-                //animalNames[i] = new String(icon.name);
-                //console.log(animalNames[i]);
                 var marker = L.marker([icon.coordinatesH, icon.coordinatesW], { icon: icont }).addTo(map)
                 .on('click',()=> togglePoppup(icon.name) );
             });
             
         }
 
-
     function changeView(animal) {
     var filePath = animal + '.txt'; // Replace with custom filepath
     console.log(filePath);
-
+    
     try{
     fetch(filePath)
         .then(response => response.text())
@@ -54,9 +58,9 @@
 
         }).catch((error) => {console.log(error);});
     }
-    catch(error){
-            console.log("error");
-    }
+        catch(error){
+                console.log("error");
+        }
     }
 
 
