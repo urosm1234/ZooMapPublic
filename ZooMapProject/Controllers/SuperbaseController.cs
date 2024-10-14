@@ -42,7 +42,6 @@ namespace ZooMapProject.Controllers
             {
                 responses[i] = new AnimalsGetResponse{
                     name = animals[i].name,
-                    imgUrl= animals[i].ImageUrl,
                     coordinatesH = animals[i].coordinatesH,
                     coordinatesW = animals[i].coordinatesW
                 };

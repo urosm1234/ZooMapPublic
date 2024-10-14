@@ -19,7 +19,6 @@
 
     </style>
     <script>
-
         var iconArray = [];
     async function fetchAnimalsFromApi() { //Fetches data from the database and 
             //const response = await fetch('/api/superbase');
@@ -28,40 +27,32 @@
             console.log(response)
             iconArray = response;
             //iconArray = await response.json();
-            iconArray.forEach( (icon)=>
-            {
+            iconArray.forEach( (icon) => {
                 
-                var icont = new AnimalIcon({iconUrl: '/images/'+icon.name+'.png'});
+                var icont = new AnimalIcon({iconUrl: '/images/icons/'+icon.name+'.png'});
                 var marker = L.marker([icon.coordinatesH, icon.coordinatesW], { icon: icont }).addTo(map)
-                .on('click',()=> togglePoppup(icon.name) );
+                .on('click',()=> togglePoppup(icon.id) );
             });
             
         }
 
-    function changeView(animal) {
-    var filePath = animal + '.txt'; // Replace with custom filepath
-    console.log(filePath);
-    
-    try{
-    fetch(filePath)
-        .then(response => response.text())
-        .then(text => {
-            if(text)
+    function changeView(animal_id) {
+         // Replace with custom filepath
+            
+            if(animal_id>=0 && animal_id<iconArray.length)
             {
-                const contentParts = text.split("$$"); // Split based on your logic
-                document.getElementById("animal-title").children[0].innerHTML = contentParts[0];
-                document.getElementById("description").children[0].innerHTML = contentParts[1];
-                document.getElementById("description").children[1].innerHTML = contentParts[2];
-                document.getElementById("animal-pane").src = '/images/' + animal+"-pane.jpg";
+                
+                document.getElementById("animal-title").children[0].innerHTML = iconArray[animal_id].title;
+                document.getElementById("description").children[0].innerHTML = iconArray[animal_id].desc1;
+                document.getElementById("description").children[1].innerHTML = iconArray[animal_id].desc2;
+                document.getElementById("description").children[2].innerHTML = iconArray[animal_id].desc3;
+                document.getElementById("description").children[3].innerHTML = iconArray[animal_id].paragraph;
+                document.getElementById("animal-pane").src = '/images/panes/' + iconArray[animal_id].name+"-pane.jpg";
                 document.getElementById("animal-window").style.display = 'block';
             }
 
-        }).catch((error) => {console.log(error);});
-    }
-        catch(error){
-                console.log("error");
+       
         }
-    }
 
 
     function togglePoppup(animal)
@@ -101,18 +92,19 @@
 
     <!-- Animal image -->
     <img src='/images/lion-pane.jpg' alt="Lion" class="animal-image" id="animal-pane">
-
+    <div>
+        <br>
+    </div>
     <!-- Scrollable description text -->
     <div class="animal-description" id = "description">
+        <p></p>
+        <p></p>
+        <p></p>
         <p>
             The lion (Panthera leo) is a large cat of the genus Panthera native to Africa and India. It is one of the most
             recognizable animals due to its muscular, deep-chested body, short, rounded head, round ears, and a hairy tuft
             at the end of its tail. Lions are social animals that live in groups called prides. They are apex predators, and
-            their primary prey are ungulates such as antelopes and zebras.
-        </p>
-        <p>
-            The lion's roar can be heard from as far as 5 miles (8 km) away. They are also known for their majestic mane, 
-            which is more prominent in males.
+            their primary prey are ungulates such as antelopes and zebras.            
         </p>
     </div>
 

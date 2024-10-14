@@ -30,11 +30,11 @@ public class HomeController : Controller
             };
 
         var supabase = new Supabase.Client(url, key, options);
-        await supabase.InitializeAsync();
+        //await supabase.InitializeAsync();
 
-        var result = await supabase.From<AnimalModel>()
+        var result1 = await supabase.From<AnimalInfoModel>()
         .Get();
-        var animals = result.Models;
+        var animals = result1.Models;
         if(animals == null)
         {
             return NotFound();
@@ -43,13 +43,17 @@ public class HomeController : Controller
         for(int i=0;i<animals.Count;i++)
         {
             responses[i] = new AnimalsGetResponse{
-                name = animals[i].name,
-                imgUrl= animals[i].ImageUrl,
-                coordinatesH = animals[i].coordinatesH,
-                coordinatesW = animals[i].coordinatesW
-                };
+                id = i,
+                name = animals[i].AnimalModel[0].name,
+                title = animals[i].title,
+                coordinatesH = animals[i].AnimalModel[0].coordinatesH,
+                coordinatesW = animals[i].AnimalModel[0].coordinatesW,
+                desc1 = animals[i].desc1,
+                desc2 = animals[i].desc2,
+                desc3 = animals[i].desc3,
+                paragraph = animals[i].paragraph
+            };
         }
-
         ViewBag.AnimalDataJson = JsonConvert.SerializeObject(responses);
         return View();
     }
