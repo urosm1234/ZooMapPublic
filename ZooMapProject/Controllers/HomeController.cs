@@ -18,6 +18,7 @@ public class HomeController : Controller
         _logger = logger;
     }
 
+
     public async Task<IActionResult> Index()
     {
         var url = "https://dikmgcsvbdhiixabjhrg.supabase.co";
@@ -43,7 +44,8 @@ public class HomeController : Controller
         for(int i=0;i<animals.Count;i++)
         {
             responses[i] = new AnimalsGetResponse{
-                id = i,
+                array_id = i,
+                database_id = animals[i].AnimalModel[0].id,
                 name = animals[i].AnimalModel[0].name,
                 title = animals[i].title,
                 coordinatesH = animals[i].AnimalModel[0].coordinatesH,

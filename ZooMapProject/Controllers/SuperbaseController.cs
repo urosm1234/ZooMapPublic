@@ -38,14 +38,7 @@ namespace ZooMapProject.Controllers
                 return NotFound();
             }
             AnimalsGetResponse [] responses = new AnimalsGetResponse[animals.Count];
-            for(int i=0;i<animals.Count;i++)
-            {
-                responses[i] = new AnimalsGetResponse{
-                    name = animals[i].name,
-                    coordinatesH = animals[i].coordinatesH,
-                    coordinatesW = animals[i].coordinatesW
-                };
-            }
+            
             return Ok(responses);
         }
     }

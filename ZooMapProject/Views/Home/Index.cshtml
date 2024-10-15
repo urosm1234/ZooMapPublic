@@ -4,6 +4,9 @@
     // Access the JSON-encoded string from ViewBag
     var animalDataJson = ViewBag.AnimalDataJson;
 }
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,6 +22,7 @@
 
     </style>
     <script>
+        
         var iconArray = [];
     async function fetchAnimalsFromApi() { //Fetches data from the database and 
             //const response = await fetch('/api/superbase');
@@ -30,11 +34,44 @@
             iconArray.forEach( (icon) => {
                 
                 var icont = new AnimalIcon({iconUrl: '/images/icons/'+icon.name+'.png'});
-                var marker = L.marker([icon.coordinatesH, icon.coordinatesW], { icon: icont }).addTo(map)
-                .on('click',()=> togglePoppup(icon.id) );
+                var marker = L.marker([icon.coordinatesH, icon.coordinatesW], { icon: icont, draggable:true }).addTo(map)
+                .on('click',()=> togglePoppup(icon.array_id) )
+                .on('mouseup', (event)=> updateCoords(event, icon.database_id));
             });
             
         }
+
+    function updateCoords(e, database_id)
+    {
+        const apiUrl = "/api/Coordinates/"
+        const data = {
+            id: database_id,
+            coordinatesH: Math.round(e.latlng.lat * 10)/10,
+            coordinatesW: Math.round(e.latlng.lng * 10)/10
+        };
+        const requestOptions = {
+            method: 'PUT',
+            headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+            },
+        body: JSON.stringify(data),
+        };
+
+        fetch(apiUrl, requestOptions)
+            .then(response => {
+                if (!response.ok) {
+                throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                outputElement.textContent = JSON.stringify(data, null, 2);
+            })
+            .catch(error => {
+                console.log(error);});
+        console.log(e.latlng);
+    }
 
     function changeView(animal_id) {
          // Replace with custom filepath
@@ -53,7 +90,6 @@
 
        
         }
-
 
     function togglePoppup(animal)
     {
@@ -80,6 +116,7 @@
     </script>
 </head>
 <body>
+
 
 <div id="map"></div>
     <div id="animal-window">
