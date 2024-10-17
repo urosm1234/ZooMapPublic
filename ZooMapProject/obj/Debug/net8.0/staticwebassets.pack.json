@@ -17,8 +17,8 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\fox.png",
-      "PackagePath": "staticwebassets\\images\\icons\\fox.png"
+      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\bengalski-beli-tigar.png",
+      "PackagePath": "staticwebassets\\images\\icons\\bengalski-beli-tigar.png"
     },
     {
       "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\kamila.png",
@@ -35,6 +35,10 @@
     {
       "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\mrezasta-zirafa.png",
       "PackagePath": "staticwebassets\\images\\icons\\mrezasta-zirafa.png"
+    },
+    {
+      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\rida-lisica.png",
+      "PackagePath": "staticwebassets\\images\\icons\\rida-lisica.png"
     },
     {
       "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\zebra.png",

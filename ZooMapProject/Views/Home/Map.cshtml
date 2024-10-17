@@ -19,7 +19,8 @@
 
         // Add tile layer to the map
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 25,
+            maxZoom: 20,
+            minZoom:18,
             attribution: '© OpenStreetMap'
         }).addTo(map);
 
@@ -41,7 +42,7 @@
 
             // Center the map on the user's current location
             //map.setView([latitude, longitude], 15);
-            map.setView([44.82472159911139, 20.45222863554955],19);
+            map.setView([44.82472159911139, 20.45222863554955+1],19);
         }
 
         map.on('click', function(e){
@@ -75,8 +76,8 @@
         L.marker([44.824739, 20.452049+0.002], { icon: icon1 }).addTo(map); 
 
             // Define the geographical boundaries (southwest and northeast corners)
-        var southWest = L.latLng(44.824784378322576, 20.451747179031376);  // Bottom-left corner
-        var northEast = L.latLng(44.827010142537084, 20.455759763717655);   // Top-right corner
+        var southWest = L.latLng(44.824784378322576, 20.451747179031376-0.001);  // Bottom-left corner
+        var northEast = L.latLng(44.827010142537084+0.001, 20.455759763717655);   // Top-right corner
 
             // Create the bounds object
         var bounds = L.latLngBounds(southWest, northEast);
