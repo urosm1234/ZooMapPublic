@@ -1,5 +1,6 @@
-body[b-pd0yy449re]{padding:0}
-html[b-pd0yy449re]{padding:0}
+.body[b-pd0yy449re]{
+    background-color:#f0f8ff;
+}
 
 #map[b-pd0yy449re] {
     height: 85vh;  /* Adjust the height as needed */
@@ -42,9 +43,63 @@ html[b-pd0yy449re]{padding:0}
     user-select: none;
 }
 
+/* Bounce-in animation */
+@keyframes bounceIn-b-pd0yy449re {
+    0% {
+        transform: translate(-50%, -50%) translateZ(0) perspective(1px);
+        scale:0.5;
+        backface-visibility: hidden;
+        opacity: 0;
+    }
+    60% {
+        transform: translate(-50%, -50%) translateZ(0) perspective(1px);
+        scale:1.2;
+        backface-visibility: hidden;
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) translateZ(0) perspective(1px);
+        scale: initial;
+        backface-visibility: hidden;
+    }
+}
+/* Fade-out animation */
+@keyframes bounceOut-b-pd0yy449re {
+    0% {
+        transform: translate(-50%, -50%) scale(1) translateZ(0);
+        opacity: 1;
+    }
+    30% {
+        transform: translate(-50%, -50%) scale(1.2) translateZ(0); /* Slight overscale for bounce effect */
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(0.5) translateZ(0);
+        opacity: 0;
+    }
+}
+/* Class to trigger bounce-in */
+.show[b-pd0yy449re] {
+    display: block;
+    animation: bounceIn-b-pd0yy449re 0.25s ease-in-out forwards;
+    transform:translate(-50%, -50%);
+    backface-visibility: hidden;
+}
+/* Class to trigger fade-out */
+.hide[b-pd0yy449re] {
+    backface-visibility: hidden;
+    animation: bounceOut-b-pd0yy449re 0.25s ease-in-out forwards;
+}
+/* Hide the map after fade-out is completed */
+.hide-complete[b-pd0yy449re] {
+    display: none;
+}
+
+
+
 /* Title styling (animal name) */
 .animal-title[b-pd0yy449re] {
     background-color: #4CAF50;
+    /*background-color:#ffc43b;*/
     color: white;
     padding: 10px;
     font-size: 24px;

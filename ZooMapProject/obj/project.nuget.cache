@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "J3CHuutp9Og=",
+  "dgSpecHash": "UQfVs6DMZmM=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\ZooMapProject.csproj",
+  "projectFilePath": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\ZooMapProject.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Uros\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
     "C:\\Users\\Uros\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.0\\microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512",

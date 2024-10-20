@@ -19,7 +19,18 @@
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     
     <style>
+        
+        .mainMapImage
+        {
+        /* !!! HAS TO BE ON THIS PAGE OR IT DOESN'T LOAD CORRECTLY */
 
+        box-shadow: 0 20px 20px rgba(0, 0, 0, 0.4); /* 3D shadow effect */
+        border-radius: 10px; /* Rounded corners */
+        border-style: dashed;
+        border-width:4px;
+        border-radius: 10px;
+        border-color:black;
+        }
     </style>
     <script>
         
@@ -73,21 +84,47 @@
         console.log(e.latlng);
     }
 
+    function formatTitleAndParagraph(description)
+    {
+        let index = description.indexOf("\n");
+        let descTittle = description.substring(0, index);
+        let descMain = description.substring(index,description.length);
+        return "<strong><b>" +descTittle+ "</b></strong><br>" + descMain;
+    }
     function changeView(animal_id) {
          // Replace with custom filepath
             
             if(animal_id>=0 && animal_id<iconArray.length)
             {
-                
+                //Sets information of the selected animal
                 document.getElementById("animal-title").children[0].innerHTML = iconArray[animal_id].title;
-                document.getElementById("description").children[0].innerHTML = iconArray[animal_id].desc1;
-                document.getElementById("description").children[1].innerHTML = iconArray[animal_id].desc2;
-                document.getElementById("description").children[2].innerHTML = iconArray[animal_id].desc3;
-                document.getElementById("description").children[3].innerHTML = iconArray[animal_id].paragraph;
+                if(iconArray[animal_id].desc1 != null)
+                document.getElementById("description").children[0].innerHTML = formatTitleAndParagraph(iconArray[animal_id].desc1);
+                else
+                document.getElementById("description").children[0].innerHTML = "";
+
+
+                if(iconArray[animal_id].desc2 != null)
+                document.getElementById("description").children[1].innerHTML = formatTitleAndParagraph(iconArray[animal_id].desc2);
+                else
+                document.getElementById("description").children[1].innerHTML = "";
+
+                if(iconArray[animal_id].desc3 != null)
+                document.getElementById("description").children[2].innerHTML = formatTitleAndParagraph(iconArray[animal_id].desc3);
+                else
+                document.getElementById("description").children[2].innerHTML = "";
+
+                if(iconArray[animal_id].paragraph != null)
+                document.getElementById("description").children[3].innerHTML = formatTitleAndParagraph(iconArray[animal_id].paragraph);
+                else
+                document.getElementById("description").children[3].innerHTML = "";
+
                 document.getElementById("animal-pane").src = '/images/panes/' + iconArray[animal_id].name+"-pane.jpg";
                 document.getElementById("animal-window").style.display = 'block';
+                return 1;
             }
-
+            else
+            return 0;
        
         }
 
@@ -99,11 +136,33 @@
         popup.style.display = 'none';
         else
         {
+            
             if(animal!="none")
             {
                 changeView(animal);
             }
         }
+        
+
+         /*if (popup.classList.contains('show')) {
+                // If the map is shown, apply the hide animation
+                popup.classList.remove('show');
+                popup.classList.add('hide');
+
+                // After the fade animation completes, set display to none
+                setTimeout(function() {
+                    popup.classList.add('hide-complete');
+                    popup.classList.remove('hide');
+                }, 250); // Match with the fadeOut animation duration
+            } else {
+                // If the map is hidden, remove hide-complete and apply the show animation
+                console.log("great");
+                result = await changeView(animal);
+                console.log(result);
+
+                popup.classList.remove('hide-complete');
+                popup.classList.add('show');
+            }*/
     }
 
     function getCoord(e)
@@ -122,7 +181,7 @@
     <div id="animal-window">
 
         <div class="animal-title" id = "animal-title">
-        <h>Lion</h>
+        <h style="font-weight: bolder; text-shadow: 1px 1px 1px black;">Lion</h>
         <!-- Close button -->
         <span class="close-btn" onclick="togglePoppup()">X</span>
         </div>
@@ -161,9 +220,11 @@
     });
         var AnimalIcon = L.Icon.extend({
         options:{
-                iconSize: [50, 50],           
-                iconAnchor: [25, 50],         
+                iconSize: [50, 50], 
+                shadowSize: [50, 50],         
+                iconAnchor: [25, 50],       
                 popupAnchor: [0, -50],
+
             }
         });
 
@@ -172,7 +233,6 @@
 
     fetchAnimalsFromApi().then((iconArray)=>{
         console.log(iconArray);
-
     });
     
     
@@ -181,7 +241,9 @@
     var imageBounds = [[0, 0], [imageHeight, imageWidth]];
 
     var imageUrl = '/images/map.png';  // Replace with your actual image URL
-    L.imageOverlay(imageUrl, imageBounds).addTo(map);
+    L.imageOverlay(imageUrl, imageBounds,{
+    opacity: 0.7,
+    className: 'mainMapImage'}).addTo(map);
     map.fitBounds(imageBounds);
 
      // Define the bounds (SouthWest and NorthEast corners)
@@ -194,7 +256,7 @@
 
     // Make sure the map view stays within the bounds even after zooming out
     map.on('drag', function() {
-        map.panInsideBounds(bounds, { animate: false });
+        map.panInsideBounds(bounds, { animate: true });
     });
 
     //var iconArray = [];
