@@ -18,6 +18,7 @@
     <!-- Include Leaflet JS -->
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     
+    
     <style>
         
         .mainMapImage
@@ -30,148 +31,28 @@
         border-width:4px;
         border-radius: 10px;
         border-color:black;
+        transform: translate('-50%','-50%');
         }
     </style>
     <script>
         
-        var iconArray = [];
-    async function fetchAnimalsFromApi() { //Fetches data from the database and 
-            //const response = await fetch('/api/superbase');
-            //console.log(response);
+    function fetchAnimalsFromApi() { //Fetches data from the database and 
             const response = @Html.Raw(animalDataJson);
             console.log(response)
-            iconArray = response;
-            //iconArray = await response.json();
-            iconArray.forEach( (icon) => {
+            let iconArray = response;
+            return iconArray;  
+        }
+    function addIconsToMap(iconArray = [], map)
+    {
+        iconArray.forEach( (icon) => {
                 
                 var icont = new AnimalIcon({iconUrl: '/images/icons/'+icon.name+'.png'});
                 var marker = L.marker([icon.coordinatesH, icon.coordinatesW], { icon: icont, draggable:true }).addTo(map)
-                .on('click',()=> togglePoppup(icon.array_id) )
-                .on('mouseup', (event)=> updateCoords(event, icon.database_id));
+                .on('click',()=> togglePoppup(icon.array_id, iconArray) )
             });
-            
-        }
-
-    function updateCoords(e, database_id)
-    {
-        const apiUrl = "/api/Coordinates/"
-        const data = {
-            id: database_id,
-            coordinatesH: Math.round(e.latlng.lat * 10)/10,
-            coordinatesW: Math.round(e.latlng.lng * 10)/10
-        };
-        const requestOptions = {
-            method: 'PUT',
-            headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-            },
-        body: JSON.stringify(data),
-        };
-
-        fetch(apiUrl, requestOptions)
-            .then(response => {
-                if (!response.ok) {
-                throw new Error('Network response was not ok');
-                }
-                return response.json();
-            })
-            .then(data => {
-                outputElement.textContent = JSON.stringify(data, null, 2);
-            })
-            .catch(error => {
-                console.log(error);});
-        console.log(e.latlng);
     }
-
-    function formatTitleAndParagraph(description)
-    {
-        let index = description.indexOf("\n");
-        let descTittle = description.substring(0, index);
-        let descMain = description.substring(index,description.length);
-        return "<strong><b>" +descTittle+ "</b></strong><br>" + descMain;
-    }
-    function changeView(animal_id) {
-         // Replace with custom filepath
-            
-            if(animal_id>=0 && animal_id<iconArray.length)
-            {
-                //Sets information of the selected animal
-                document.getElementById("animal-title").children[0].innerHTML = iconArray[animal_id].title;
-                if(iconArray[animal_id].desc1 != null)
-                document.getElementById("description").children[0].innerHTML = formatTitleAndParagraph(iconArray[animal_id].desc1);
-                else
-                document.getElementById("description").children[0].innerHTML = "";
-
-
-                if(iconArray[animal_id].desc2 != null)
-                document.getElementById("description").children[1].innerHTML = formatTitleAndParagraph(iconArray[animal_id].desc2);
-                else
-                document.getElementById("description").children[1].innerHTML = "";
-
-                if(iconArray[animal_id].desc3 != null)
-                document.getElementById("description").children[2].innerHTML = formatTitleAndParagraph(iconArray[animal_id].desc3);
-                else
-                document.getElementById("description").children[2].innerHTML = "";
-
-                if(iconArray[animal_id].paragraph != null)
-                document.getElementById("description").children[3].innerHTML = formatTitleAndParagraph(iconArray[animal_id].paragraph);
-                else
-                document.getElementById("description").children[3].innerHTML = "";
-
-                document.getElementById("animal-pane").src = '/images/panes/' + iconArray[animal_id].name+"-pane.jpg";
-                document.getElementById("animal-window").style.display = 'block';
-                return 1;
-            }
-            else
-            return 0;
-       
-        }
-
-    function togglePoppup(animal)
-    {
-        console.log(animal);
-        var popup = document.getElementById("animal-window");
-        if (popup.style.display == 'block')
-        popup.style.display = 'none';
-        else
-        {
-            
-            if(animal!="none")
-            {
-                changeView(animal);
-            }
-        }
-        
-
-         /*if (popup.classList.contains('show')) {
-                // If the map is shown, apply the hide animation
-                popup.classList.remove('show');
-                popup.classList.add('hide');
-
-                // After the fade animation completes, set display to none
-                setTimeout(function() {
-                    popup.classList.add('hide-complete');
-                    popup.classList.remove('hide');
-                }, 250); // Match with the fadeOut animation duration
-            } else {
-                // If the map is hidden, remove hide-complete and apply the show animation
-                console.log("great");
-                result = await changeView(animal);
-                console.log(result);
-
-                popup.classList.remove('hide-complete');
-                popup.classList.add('show');
-            }*/
-    }
-
-    function getCoord(e)
-    {
-        var coord = e.latlng;
-        var lat = coord.lat;
-        var lng = coord.lng;
-        console.log(lat + "," + lng);
-    }
+    
+    var iconArray = fetchAnimalsFromApi();
     </script>
 </head>
 <body>
@@ -187,7 +68,7 @@
         </div>
 
     <!-- Animal image -->
-    <img src='/images/lion-pane.jpg' alt="Animal" class="animal-image" id="animal-pane">
+    <img src='' alt="Animal" class="animal-image" id="animal-pane" alt="animal-image">
     <div>
         <br>
     </div>
@@ -209,7 +90,9 @@
     </div>
 
 <script>
-    // Dimensions of your background image
+    
+
+           // Dimensions of your background image
     // Initialize the Leaflet map, setting the initial view to cover the image area
     var map = L.map('map', {
         minZoom: -1,  //44.824739, 20.452049 zoo corner
@@ -228,13 +111,7 @@
             }
         });
 
-    var animalNames = [];
-    var markers = [];
-
-    fetchAnimalsFromApi().then((iconArray)=>{
-        console.log(iconArray);
-    });
-    
+    addIconsToMap(iconArray, map);
     
     const imageWidth =   1600;  // Adjust this to match your image width (in pixels)
     const imageHeight = 1200;  // Adjust this to match your image height (in pixels)
@@ -247,8 +124,8 @@
     map.fitBounds(imageBounds);
 
      // Define the bounds (SouthWest and NorthEast corners)
-    var southWest = L.latLng(-screen.height/4, -400); // Example SW corner
-    var northEast = L.latLng(screen.height*1.2, screen.width*1.3); // Example NE corner
+    var southWest = L.latLng(-imageHeight/4, -400); // Example SW corner
+    var northEast = L.latLng(imageHeight*1.2, imageWidth*1.3); // Example NE corner
     var bounds = L.latLngBounds(southWest, northEast);
 
     // Apply the bounds to the map to limit panning
@@ -259,19 +136,7 @@
         map.panInsideBounds(bounds, { animate: true });
     });
 
-    //var iconArray = [];
-    coordinates = [[400, 300], [200, 400], [426,758], [671,1231], [134.82413223849244,1596], [428.9060737945672,562]];
-    //AnimalNames = ["lion","fox","zebra","llama","camel", "giraffe"];
-    /*iconArray[0] = new AnimalIcon({iconUrl:'/images/lion.png'});
-    iconArray[1] = new AnimalIcon({iconUrl:'/images/fox.png'});
-    iconArray[2] = new AnimalIcon({iconUrl:'/images/zebra.png'});
-    iconArray[3] = new AnimalIcon({iconUrl:'/images/llama.png'});
-    iconArray[4] = new AnimalIcon({iconUrl:'/images/camel.png'});
-    iconArray[5] = new AnimalIcon({iconUrl:'/images/giraffe.png'});*/
-    
-
-
-    map.on('click', getCoord);  
+    map.on('click', getCoord); 
 
 </script>
 
