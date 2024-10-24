@@ -97,6 +97,10 @@
       "PackagePath": "staticwebassets\\images\\image-20-copyright.jpg"
     },
     {
+      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\magnifying_glass.png",
+      "PackagePath": "staticwebassets\\images\\magnifying_glass.png"
+    },
+    {
       "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\map.png",
       "PackagePath": "staticwebassets\\images\\map.png"
     },

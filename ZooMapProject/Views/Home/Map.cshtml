@@ -20,7 +20,6 @@
         // Add tile layer to the map
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 20,
-            minZoom:18,
             attribution: '© OpenStreetMap'
         }).addTo(map);
 
@@ -41,8 +40,9 @@
             }
 
             // Center the map on the user's current location
-            //map.setView([latitude, longitude], 15);
             map.setView([44.82472159911139, 20.45222863554955+1],19);
+            map.panTo([latitude, longitude]);
+            //map.setView([44.82472159911139, 20.45222863554955+1],19);
         }
 
         map.on('click', function(e){
@@ -81,7 +81,7 @@
 
             // Create the bounds object
         var bounds = L.latLngBounds(southWest, northEast);
-        map.setMaxBounds(bounds);
+        //map.setMaxBounds(bounds);
     </script>
 </body>
 </html>

@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using ZooMapProject.Models;
 using ZooMapProject.Contracts;
 using System.Data;
+using Microsoft.VisualBasic;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using Supabase.Gotrue.Exceptions;
 
 namespace ZooMapProject.Controllers
 {
@@ -11,20 +14,27 @@ namespace ZooMapProject.Controllers
     [ApiController]
     public class AnimalControler : Controller
     {
+
+        private readonly VariantType session;
+        private readonly string url, key;
+        private readonly Supabase.SupabaseOptions options;
+        private readonly Supabase.Client superbase;
+
+        public AnimalControler(ILogger<HomeController> logger)
+        {
+        url = "https://dikmgcsvbdhiixabjhrg.supabase.co";
+        key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRpa21nY3N2YmRoaWl4YWJqaHJnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjgzOTA1NDYsImV4cCI6MjA0Mzk2NjU0Nn0.XUhTozS2LrVs1AnJ-lWPLiDuYF4YES0l8P4mXr9n9wA";
+        options = new Supabase.SupabaseOptions
+            {
+                AutoConnectRealtime = true
+            };
+        superbase = new Supabase.Client(url, key, options);
+        }
+
         // GET: AnimalControler
         [HttpPut("{id?}")]
         public async Task<IActionResult> UpdateAnimal(int id, AnimalsPostModel model)
         {
-            
-            var url = "https://dikmgcsvbdhiixabjhrg.supabase.co";
-            var key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRpa21nY3N2YmRoaWl4YWJqaHJnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjgzOTA1NDYsImV4cCI6MjA0Mzk2NjU0Nn0.XUhTozS2LrVs1AnJ-lWPLiDuYF4YES0l8P4mXr9n9wA";
-
-            var options = new Supabase.SupabaseOptions
-            {
-                AutoConnectRealtime = true
-            };
-
-            var superbase = new Supabase.Client(url, key, options);
             if(id == 1)
             {
                 var update = await superbase.From<AnimalModel>()
@@ -82,5 +92,5 @@ namespace ZooMapProject.Controllers
         }
 
 
-    }
+    } 
 }

@@ -135,16 +135,6 @@
     line-height: 1.6;
 }
 
-/* Custom scroll bar for the description */
-.animal-description[b-pd0yy449re]::-webkit-scrollbar {
-    width: 8px;
-}
-
-.animal-description[b-pd0yy449re]::-webkit-scrollbar-thumb {
-    background-color: #4CAF50;
-    border-radius: 4px;
-}
-
 /* Input box styling */
 .animal-input[b-pd0yy449re] {
     width: calc(100% - 30px);

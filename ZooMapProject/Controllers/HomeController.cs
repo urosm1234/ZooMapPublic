@@ -72,10 +72,47 @@ public class HomeController : Controller
         return View();
     }
 
-    public async Task<IActionResult> Admin()
+    [Route("Home/admin/")]
+    [HttpPost]
+    public async Task<IActionResult> postAdmin()
     {
+         await client.Auth.SignOut();
+            
+           
+        if(Request.Form["gmail"] == "uki.mar@gmail.com" && Request.Form["password"] == "1234567890")
+        {
+                    await client.Auth.SignIn(Request.Form["gmail"], Request.Form["password"]);
+                   
+                    Console.WriteLine(client.Auth.CurrentUser.Email);
+        }
+        else
+        {
+             Response.Redirect("Login");
+             
+        }
         List<AnimalsGetResponse> responses = await GetCommand();
         ViewBag.AnimalDataJson = JsonConvert.SerializeObject(responses);
+        return View("Admin");
+    }
+    [HttpGet]
+    public async Task<IActionResult> Admin()
+    {
+        
+        if(client.Auth.CurrentUser != null)
+        {
+            
+        List<AnimalsGetResponse> responses = await GetCommand();
+        ViewBag.AnimalDataJson = JsonConvert.SerializeObject(responses);
+            return View();
+        }
+        else
+        Response.Redirect("Login");
+
+        return NotFound();
+    }
+
+    public IActionResult Login()
+    {
         return View();
     }
 
@@ -84,6 +121,9 @@ public class HomeController : Controller
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
+
+
+
 }
 
 
