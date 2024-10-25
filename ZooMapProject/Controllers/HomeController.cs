@@ -5,6 +5,7 @@ using System.Web;
 using ZooMapProject.Contracts;
 using Newtonsoft.Json;
 using Microsoft.VisualBasic;
+using Supabase.Gotrue;
 
 
 
@@ -16,7 +17,9 @@ public class HomeController : Controller
     private readonly string url, key;
     private readonly Supabase.SupabaseOptions options;
     private readonly Supabase.Client client;
-
+    
+    private readonly string SessionKeyName = "gmail";
+    private readonly string SessionKeyPassword = "password";
     public HomeController(ILogger<HomeController> logger)
     {
         _logger = logger;
@@ -27,6 +30,7 @@ public class HomeController : Controller
                 AutoConnectRealtime = true
             };
         client = new Supabase.Client(url, key, options);
+        Console.WriteLine(1);
     }
 
     private async Task<List<AnimalsGetResponse>> GetCommand ()
@@ -72,43 +76,40 @@ public class HomeController : Controller
         return View();
     }
 
-    [Route("Home/admin/")]
-    [HttpPost]
-    public async Task<IActionResult> postAdmin()
-    {
-         await client.Auth.SignOut();
-            
-           
-        if(Request.Form["gmail"] == "uki.mar@gmail.com" && Request.Form["password"] == "1234567890")
-        {
-                    await client.Auth.SignIn(Request.Form["gmail"], Request.Form["password"]);
-                   
-                    Console.WriteLine(client.Auth.CurrentUser.Email);
-        }
-        else
-        {
-             Response.Redirect("Login");
-             
-        }
-        List<AnimalsGetResponse> responses = await GetCommand();
-        ViewBag.AnimalDataJson = JsonConvert.SerializeObject(responses);
-        return View("Admin");
-    }
-    [HttpGet]
     public async Task<IActionResult> Admin()
     {
-        
-        if(client.Auth.CurrentUser != null)
+        if(!string.IsNullOrEmpty(HttpContext.Session.GetString(SessionKeyName)))
         {
-            
-        List<AnimalsGetResponse> responses = await GetCommand();
+        
+        var responses = await GetCommand();
         ViewBag.AnimalDataJson = JsonConvert.SerializeObject(responses);
-            return View();
+        await client.Auth.SignIn(HttpContext.Session.GetString(SessionKeyName), HttpContext.Session.GetString(SessionKeyPassword));
+        return View();
         }
         else
-        Response.Redirect("Login");
+        return RedirectToAction("Login");
+    }
 
-        return NotFound();
+    [Route("Home/try/")]
+    [HttpPost]
+    public async Task<IActionResult> Try()
+    {
+        await client.Auth.SignOut(); 
+        if(Request.Form["gmail"] == "uki.mar@gmail.com" && Request.Form["password"] == "1234567890")
+        {
+            
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString(SessionKeyName)))
+            {
+                HttpContext.Session.SetString(SessionKeyName, Request.Form["gmail"]);
+                HttpContext.Session.SetString(SessionKeyPassword,Request.Form["password"] );
+            }
+            return RedirectToAction("Admin");
+        }
+        else
+        {
+            return RedirectToAction("Login");
+             
+        }
     }
 
     public IActionResult Login()
