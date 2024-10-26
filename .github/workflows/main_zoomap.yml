@@ -11,7 +11,7 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v4
@@ -22,36 +22,44 @@ jobs:
           dotnet-version: '8.x'
 
       - name: Build with dotnet
-        run: dotnet build ZooMapProject/ZooMapProject.csproj --configuration Release
+        run: dotnet build --configuration Release
 
       - name: dotnet publish
-        run: dotnet publish ZooMapProject/ZooMapProject.csproj -c Release
+        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
-          name: dotnet-app
-          path: ./ZooMapProject
+          name: .net-app
+          path: ${{env.DOTNET_ROOT}}/myapp
 
   deploy:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     needs: build
     environment:
       name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
-    
+    permissions:
+      id-token: write #This is required for requesting the JWT
+
     steps:
       - name: Download artifact from build job
         uses: actions/download-artifact@v4
         with:
-          name: dotnet-app
-          path: ./ZooMapProject
+          name: .net-app
+      
+      - name: Login to Azure
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_24176D1C898645208A3C9CF792355049 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_B1E1566B02A44B65B8649ADDCB781D80 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_A3C9728C8E674CD6A22FB9D3864B959E }}
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
-          app-name: 'ZooMap' # Replace with your Azure Web App name
+          app-name: 'ZooMap'
           slot-name: 'Production'
-          package: ./ZooMapProject
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_FFDA6E211726482883EBBC4EB7EBF870 }}
+          package: .
+          
