@@ -26,8 +26,6 @@ app.UseStaticFiles();
 
 app.UseHttpsRedirection();
 
-app.UseAuthorization();
-
 app.UseSession();
 
 app.UseRouting();
