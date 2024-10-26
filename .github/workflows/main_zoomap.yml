@@ -30,6 +30,12 @@ jobs:
       - name: Publish project
         run: dotnet publish ZooMapProject/ZooMapProject.csproj -c Release -o ./publish
 
+      - name: Login to Azure
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_24176D1C898645208A3C9CF792355049 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_B1E1566B02A44B65B8649ADDCB781D80 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_A3C9728C8E674CD6A22FB9D3864B959E }}
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
         with:
