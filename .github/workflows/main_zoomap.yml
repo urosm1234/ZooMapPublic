@@ -22,16 +22,16 @@ jobs:
           dotnet-version: '8.x'
 
       - name: Build with dotnet
-        run: dotnet build --configuration Release
+        run: dotnet build /ZooMapProject/ZooMapProject.csproj
 
       - name: dotnet publish
-        run: dotnet publish -c Release -o ./ZooMapProject/ZooMapProject.csproj
+        run: dotnet publish -c Release -o ZooMap
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
           name: .net-app
-          path: ./ZooMapProject/ZooMapProject.csproj
+          path: /ZooMapProject/ZooMapProject.csproj
 
   deploy:
     runs-on: ubuntu-latest
