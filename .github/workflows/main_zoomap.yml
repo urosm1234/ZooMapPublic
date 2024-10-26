@@ -21,20 +21,17 @@ jobs:
         with:
           dotnet-version: '8.x'
 
-      - name: Restore dependencies
-        run: dotnet restore .\ZooMapProject\ZooMapProject.csproj
-        
       - name: Build with dotnet
-        run: dotnet build --no-restore -c Release .\ZooMapProject\ZooMapProject.csproj
+        run: dotnet build --configuration Release
 
       - name: dotnet publish
-        run: dotnet publish -c Release -o ./ZooMapProject/ZooMapProject.csproj
+        run: dotnet publish -c Release -o ./ZooMapProject
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
-          name: .net-app
-          path: ./ZooMapProject/ZooMapProject.csproj
+          name: dotnet-app
+          path: ./ZooMapProject
 
   deploy:
     runs-on: windows-latest
@@ -47,13 +44,14 @@ jobs:
       - name: Download artifact from build job
         uses: actions/download-artifact@v4
         with:
-          name: .net-app
-      
+          name: dotnet-app
+          path: ./ZooMapProject
+
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
-          app-name: 'ZooMap'
+          app-name: 'ZooMap' # Replace with your Azure Web App name
           slot-name: 'Production'
-          package: .
+          package: ./ZooMapProject
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_FFDA6E211726482883EBBC4EB7EBF870 }}
