@@ -18,3 +18,6 @@
 <a href="https://www.flaticon.com/free-icons/dog" title="dog icons">Dog icons created by Freepik - Flaticon</a>
 <a href="https://www.flaticon.com/free-icons/horse" title="horse icons">Horse icons created by Freepik - Flaticon</a>
 <a href="https://www.flaticon.com/free-icons/badger" title="badger icons">Badger icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/cassowary" title="cassowary icons">Cassowary icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/gazelle" title="gazelle icons">Gazelle icons created by Icongeek26 - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/hornbill" title="hornbill icons">Hornbill icons created by Freepik - Flaticon</a>

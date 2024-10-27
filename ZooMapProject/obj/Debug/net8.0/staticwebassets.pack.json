@@ -149,6 +149,10 @@
       "PackagePath": "staticwebassets\\images\\icons\\tarovi.png"
     },
     {
+      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\tibetanski-ogrlicar.png",
+      "PackagePath": "staticwebassets\\images\\icons\\tibetanski-ogrlicar.png"
+    },
+    {
       "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\zebra.png",
       "PackagePath": "staticwebassets\\images\\icons\\zebra.png"
     },
