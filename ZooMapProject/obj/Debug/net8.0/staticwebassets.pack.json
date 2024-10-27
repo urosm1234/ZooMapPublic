@@ -17,8 +17,20 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\Jezerce.png",
+      "PackagePath": "staticwebassets\\images\\icons\\Jezerce.png"
+    },
+    {
+      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\africki-gavran.png",
+      "PackagePath": "staticwebassets\\images\\icons\\africki-gavran.png"
+    },
+    {
       "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\agapornis.png",
       "PackagePath": "staticwebassets\\images\\icons\\agapornis.png"
+    },
+    {
+      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\alpska-koza.png",
+      "PackagePath": "staticwebassets\\images\\icons\\alpska-koza.png"
     },
     {
       "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\americki-flamingo.png",
@@ -41,12 +53,28 @@
       "PackagePath": "staticwebassets\\images\\icons\\bengalski-beli-tigar.png"
     },
     {
+      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\centralni-bazen.png",
+      "PackagePath": "staticwebassets\\images\\icons\\centralni-bazen.png"
+    },
+    {
+      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\crnoglavi-papagaj.png",
+      "PackagePath": "staticwebassets\\images\\icons\\crnoglavi-papagaj.png"
+    },
+    {
+      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\eklektus.png",
+      "PackagePath": "staticwebassets\\images\\icons\\eklektus.png"
+    },
+    {
       "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\gavran.png",
       "PackagePath": "staticwebassets\\images\\icons\\gavran.png"
     },
     {
       "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\gepard.png",
       "PackagePath": "staticwebassets\\images\\icons\\gepard.png"
+    },
+    {
+      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\gornji-bazen.png",
+      "PackagePath": "staticwebassets\\images\\icons\\gornji-bazen.png"
     },
     {
       "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\jaguar.png",
@@ -57,12 +85,28 @@
       "PackagePath": "staticwebassets\\images\\icons\\kamila.png"
     },
     {
+      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\kina-aleksandar.png",
+      "PackagePath": "staticwebassets\\images\\icons\\kina-aleksandar.png"
+    },
+    {
+      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\konji.png",
+      "PackagePath": "staticwebassets\\images\\icons\\konji.png"
+    },
+    {
+      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\kubanski-krokodil.png",
+      "PackagePath": "staticwebassets\\images\\icons\\kubanski-krokodil.png"
+    },
+    {
       "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\lama.png",
       "PackagePath": "staticwebassets\\images\\icons\\lama.png"
     },
     {
       "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\lav.png",
       "PackagePath": "staticwebassets\\images\\icons\\lav.png"
+    },
+    {
+      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\medojed.png",
+      "PackagePath": "staticwebassets\\images\\icons\\medojed.png"
     },
     {
       "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\mrezasta-zirafa.png",
@@ -77,12 +121,32 @@
       "PackagePath": "staticwebassets\\images\\icons\\noj.png"
     },
     {
+      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\papagaj-patagonac.png",
+      "PackagePath": "staticwebassets\\images\\icons\\papagaj-patagonac.png"
+    },
+    {
+      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\racka-ovca.png",
+      "PackagePath": "staticwebassets\\images\\icons\\racka-ovca.png"
+    },
+    {
       "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\rida-lisica.png",
       "PackagePath": "staticwebassets\\images\\icons\\rida-lisica.png"
     },
     {
+      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\sarplaninac.png",
+      "PackagePath": "staticwebassets\\images\\icons\\sarplaninac.png"
+    },
+    {
+      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\serval.png",
+      "PackagePath": "staticwebassets\\images\\icons\\serval.png"
+    },
+    {
       "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\sibirski-tigar.png",
       "PackagePath": "staticwebassets\\images\\icons\\sibirski-tigar.png"
+    },
+    {
+      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\tarovi.png",
+      "PackagePath": "staticwebassets\\images\\icons\\tarovi.png"
     },
     {
       "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\zebra.png",
@@ -107,6 +171,22 @@
     {
       "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\map2.jpg",
       "PackagePath": "staticwebassets\\images\\map2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\map3.jpg",
+      "PackagePath": "staticwebassets\\images\\map3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\map4.jpg",
+      "PackagePath": "staticwebassets\\images\\map4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\map5.jpg",
+      "PackagePath": "staticwebassets\\images\\map5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\mapa1.png",
+      "PackagePath": "staticwebassets\\images\\mapa1.png"
     },
     {
       "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\africki-gavran-pane.jpg",

@@ -11,3 +11,10 @@
 <a href="https://www.flaticon.com/free-icons/bear" title="bear icons">Bear icons created by ultimatearm - Flaticon</a>
 <a href="https://www.flaticon.com/free-icons/polar-bear" title="polar bear icons">Polar bear icons created by Triberion - Flaticon</a>
 <a href="https://www.flaticon.com/free-icons/elephant" title="elephant icons">Elephant icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/duck" title="duck icons">Duck icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/parrot" title="parrot icons">Parrot icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/parrot" title="parrot icons">Parrot icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/goat" title="goat icons">Goat icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/dog" title="dog icons">Dog icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/horse" title="horse icons">Horse icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/badger" title="badger icons">Badger icons created by Freepik - Flaticon</a>
