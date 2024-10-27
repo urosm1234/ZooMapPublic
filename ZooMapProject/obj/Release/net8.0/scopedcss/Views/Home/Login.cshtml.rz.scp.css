@@ -1,0 +1,88 @@
+.login-wrapper[b-3ukyfjo10m]{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Login container */
+.login-container[b-3ukyfjo10m] {
+    background-color: #ffffff;
+    padding: 40px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+/* Custom scroll bar for the description */
+.animal-description[b-3ukyfjo10m]::-webkit-scrollbar {
+    width: 8px;
+}
+
+.animal-description[b-3ukyfjo10m]::-webkit-scrollbar-thumb {
+    background-color: #4CAF50;
+    border-radius: 4px;
+}
+/* Heading */
+.login-container h1[b-3ukyfjo10m] {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #4caf50; /* Green Theme */
+}
+
+/* Form styling */
+.login-container form[b-3ukyfjo10m] {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Input fields */
+.login-input[b-3ukyfjo10m] {
+    margin-bottom: 15px;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #4caf50; /* Green border */
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+/* Focus effect on inputs */
+.login-input:focus[b-3ukyfjo10m] {
+    border-color: #388e3c; /* Darker green on focus */
+}
+
+/* Button styling */
+.login-button[b-3ukyfjo10m] {
+    padding: 12px;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #4caf50; /* Green background */
+    border: none;
+    border-radius: 5px;
+    width:300px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+.login-button:hover[b-3ukyfjo10m] {
+    background-color: #388e3c; /* Darker green on hover */
+}
+
+/* Link below the button */
+.login-container a[b-3ukyfjo10m] {
+    margin-top: 15px;
+    display: block;
+    color: #4caf50;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.login-container a:hover[b-3ukyfjo10m] {
+    text-decoration: underline;
+}

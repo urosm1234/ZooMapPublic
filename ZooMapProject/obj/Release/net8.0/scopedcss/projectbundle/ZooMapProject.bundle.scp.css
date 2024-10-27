@@ -1,0 +1,461 @@
+/* _content/ZooMapProject/Views/Home/Admin.cshtml.rz.scp.css */
+
+
+
+.body[b-e4yl9yfwuk]{
+    background-color:#f0f8ff;
+}
+
+#map[b-e4yl9yfwuk] {
+    height: 85vh;  /* Adjust the height as needed */
+    width:80vw;
+    position:relative;
+    left:0;
+    z-index: 0;
+    background-color: #f0f8ff;
+    
+}
+.leaflet-control[b-e4yl9yfwuk] {
+    border-radius: 5px;
+    background-color: #f0f8ff;
+    color: #333;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+.leaflet-popup-content-wrapper[b-e4yl9yfwuk] {
+    background-color: #f0f8ff; /* Match the window color */
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.leaflet-popup-tip[b-e4yl9yfwuk] {
+    background-color: #f0f8ff;
+}
+
+#animal-window[b-e4yl9yfwuk] {
+    width: 400px;
+    background-color: #f4f4f9;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    user-select: none;
+}
+
+/* Bounce-in animation */
+@keyframes bounceIn-b-e4yl9yfwuk {
+    0% {
+        transform: translate(-50%, -50%) translateZ(0) perspective(1px);
+        scale:0.5;
+        backface-visibility: hidden;
+        opacity: 0;
+    }
+    60% {
+        transform: translate(-50%, -50%) translateZ(0) perspective(1px);
+        scale:1.2;
+        backface-visibility: hidden;
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) translateZ(0) perspective(1px);
+        scale: initial;
+        backface-visibility: hidden;
+    }
+}
+/* Fade-out animation */
+@keyframes bounceOut-b-e4yl9yfwuk {
+    0% {
+        transform: translate(-50%, -50%) scale(1) translateZ(0);
+        opacity: 1;
+    }
+    30% {
+        transform: translate(-50%, -50%) scale(1.2) translateZ(0); /* Slight overscale for bounce effect */
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(0.5) translateZ(0);
+        opacity: 0;
+    }
+}
+/* Class to trigger bounce-in */
+.show[b-e4yl9yfwuk] {
+    display: block;
+    animation: bounceIn-b-e4yl9yfwuk 0.25s ease-in-out forwards;
+    transform:translate(-50%, -50%);
+    backface-visibility: hidden;
+}
+/* Class to trigger fade-out */
+.hide[b-e4yl9yfwuk] {
+    backface-visibility: hidden;
+    animation: bounceOut-b-e4yl9yfwuk 0.25s ease-in-out forwards;
+}
+/* Hide the map after fade-out is completed */
+.hide-complete[b-e4yl9yfwuk] {
+    display: none;
+}
+
+
+
+/* Title styling (animal name) */
+.animal-title[b-e4yl9yfwuk] {
+    background-color: #4CAF50;
+    /*background-color:#ffc43b;*/
+    color: white;
+    padding: 10px;
+    font-size: 24px;
+    text-align: center;
+    font-weight: bold;
+    position: relative;
+}
+
+/* Close button styling */
+.close-btn[b-e4yl9yfwuk] {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Image styling */
+.animal-image[b-e4yl9yfwuk] {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Scrollable description area */
+.animal-description[b-e4yl9yfwuk] {
+    padding: 15px;
+    max-height: 150px;
+    overflow-y: auto;
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Custom scroll bar for the description */
+.animal-description[b-e4yl9yfwuk]::-webkit-scrollbar {
+    width: 8px;
+}
+
+.animal-description[b-e4yl9yfwuk]::-webkit-scrollbar-thumb {
+    background-color: #4CAF50;
+    border-radius: 4px;
+}
+
+/* Input box styling */
+.animal-input[b-e4yl9yfwuk] {
+    width: calc(100% - 30px);
+    padding: 10px;
+    margin: 15px;
+    border: 2px solid #4CAF50;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #333;
+    background-color: #f0f0f5;
+}
+
+.animal-input:focus[b-e4yl9yfwuk] {
+    outline: none;
+    background-color: #e6e6f0;
+    border-color: #3e8e41;
+}
+/* _content/ZooMapProject/Views/Home/Index.cshtml.rz.scp.css */
+.body[b-pd0yy449re]{
+    background-color:#f0f8ff;
+}
+
+#map[b-pd0yy449re] {
+    height: 85vh;  /* Adjust the height as needed */
+    width:100vw;
+    position:absolute;
+    left:0;
+    z-index: -1;
+    background-color: #f0f8ff;
+    
+}
+.leaflet-control[b-pd0yy449re] {
+    border-radius: 5px;
+    background-color: #f0f8ff;
+    color: #333;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+.leaflet-popup-content-wrapper[b-pd0yy449re] {
+    background-color: #f0f8ff; /* Match the window color */
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.leaflet-popup-tip[b-pd0yy449re] {
+    background-color: #f0f8ff;
+}
+
+#animal-window[b-pd0yy449re] {
+    width: 400px;
+    background-color: #f4f4f9;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    user-select: none;
+}
+
+/* Bounce-in animation */
+@keyframes bounceIn-b-pd0yy449re {
+    0% {
+        transform: translate(-50%, -50%) translateZ(0) perspective(1px);
+        scale:0.5;
+        backface-visibility: hidden;
+        opacity: 0;
+    }
+    60% {
+        transform: translate(-50%, -50%) translateZ(0) perspective(1px);
+        scale:1.2;
+        backface-visibility: hidden;
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) translateZ(0) perspective(1px);
+        scale: initial;
+        backface-visibility: hidden;
+    }
+}
+/* Fade-out animation */
+@keyframes bounceOut-b-pd0yy449re {
+    0% {
+        transform: translate(-50%, -50%) scale(1) translateZ(0);
+        opacity: 1;
+    }
+    30% {
+        transform: translate(-50%, -50%) scale(1.2) translateZ(0); /* Slight overscale for bounce effect */
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(0.5) translateZ(0);
+        opacity: 0;
+    }
+}
+/* Class to trigger bounce-in */
+.show[b-pd0yy449re] {
+    display: block;
+    animation: bounceIn-b-pd0yy449re 0.25s ease-in-out forwards;
+    transform:translate(-50%, -50%);
+    backface-visibility: hidden;
+}
+/* Class to trigger fade-out */
+.hide[b-pd0yy449re] {
+    backface-visibility: hidden;
+    animation: bounceOut-b-pd0yy449re 0.25s ease-in-out forwards;
+}
+/* Hide the map after fade-out is completed */
+.hide-complete[b-pd0yy449re] {
+    display: none;
+}
+
+
+
+/* Title styling (animal name) */
+.animal-title[b-pd0yy449re] {
+    background-color: #4CAF50;
+    /*background-color:#ffc43b;*/
+    color: white;
+    padding: 10px;
+    font-size: 24px;
+    text-align: center;
+    font-weight: bold;
+    position: relative;
+}
+
+/* Close button styling */
+.close-btn[b-pd0yy449re] {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Image styling */
+.animal-image[b-pd0yy449re] {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Scrollable description area */
+.animal-description[b-pd0yy449re] {
+    padding: 15px;
+    max-height: 150px;
+    overflow-y: auto;
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Input box styling */
+.animal-input[b-pd0yy449re] {
+    width: calc(100% - 30px);
+    padding: 10px;
+    margin: 15px;
+    border: 2px solid #4CAF50;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #333;
+    background-color: #f0f0f5;
+}
+
+.animal-input:focus[b-pd0yy449re] {
+    outline: none;
+    background-color: #e6e6f0;
+    border-color: #3e8e41;
+}
+/* _content/ZooMapProject/Views/Home/Login.cshtml.rz.scp.css */
+.login-wrapper[b-3ukyfjo10m]{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Login container */
+.login-container[b-3ukyfjo10m] {
+    background-color: #ffffff;
+    padding: 40px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+/* Custom scroll bar for the description */
+.animal-description[b-3ukyfjo10m]::-webkit-scrollbar {
+    width: 8px;
+}
+
+.animal-description[b-3ukyfjo10m]::-webkit-scrollbar-thumb {
+    background-color: #4CAF50;
+    border-radius: 4px;
+}
+/* Heading */
+.login-container h1[b-3ukyfjo10m] {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #4caf50; /* Green Theme */
+}
+
+/* Form styling */
+.login-container form[b-3ukyfjo10m] {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Input fields */
+.login-input[b-3ukyfjo10m] {
+    margin-bottom: 15px;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #4caf50; /* Green border */
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+/* Focus effect on inputs */
+.login-input:focus[b-3ukyfjo10m] {
+    border-color: #388e3c; /* Darker green on focus */
+}
+
+/* Button styling */
+.login-button[b-3ukyfjo10m] {
+    padding: 12px;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #4caf50; /* Green background */
+    border: none;
+    border-radius: 5px;
+    width:300px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+.login-button:hover[b-3ukyfjo10m] {
+    background-color: #388e3c; /* Darker green on hover */
+}
+
+/* Link below the button */
+.login-container a[b-3ukyfjo10m] {
+    margin-top: 15px;
+    display: block;
+    color: #4caf50;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.login-container a:hover[b-3ukyfjo10m] {
+    text-decoration: underline;
+}
+/* _content/ZooMapProject/Views/Shared/_Layout.cshtml.rz.scp.css */
+/* Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand[b-awfwj8l47c] {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+a[b-awfwj8l47c] {
+  color: #0077cc;
+}
+
+.btn-primary[b-awfwj8l47c] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active[b-awfwj8l47c], .nav-pills .show > .nav-link[b-awfwj8l47c] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.border-top[b-awfwj8l47c] {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom[b-awfwj8l47c] {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow[b-awfwj8l47c] {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy[b-awfwj8l47c] {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+.footer[b-awfwj8l47c] {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px;
+}
