@@ -105,7 +105,7 @@
         iconArray.forEach( (icon) => {
                 
                 var icont = new AnimalIcon({iconUrl: '/images/icons/'+icon.name+'.png'});
-                var marker = L.marker([icon.coordinatesH, icon.coordinatesW], { icon: icont, draggable:true }).addTo(map)
+                var marker = L.marker([icon.coordinatesH, icon.coordinatesW], { icon: icont, draggable:false }).addTo(map)
                 .on('click',()=> togglePoppup(icon.array_id, iconArray) )
             });
     }

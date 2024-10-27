@@ -172,7 +172,7 @@
 }
 
 #map[b-pd0yy449re] {
-    height: 85vh;  /* Adjust the height as needed */
+    height: 100vh;  /* Adjust the height as needed */
     width:100vw;
     position:absolute;
     left:0;
@@ -197,7 +197,7 @@
 }
 
 #animal-window[b-pd0yy449re] {
-    width: 400px;
+    width:calc(100% - 30px);
     background-color: #f4f4f9;
     border: 2px solid #ddd;
     border-radius: 8px;
@@ -207,10 +207,23 @@
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -40%);
     display: none;
     user-select: none;
+    height: 60%;
 }
+
+@media (min-width: 470px)
+{
+    #animal-window[b-pd0yy449re]{
+        width:400px;
+        height:auto;
+        transform: translate(-50%, -50%);
+    }
+}
+
+
+
 
 /* Bounce-in animation */
 @keyframes bounceIn-b-pd0yy449re {
@@ -271,11 +284,20 @@
     /*background-color:#ffc43b;*/
     color: white;
     padding: 10px;
-    font-size: 24px;
+    font-size: 19px;
     text-align: center;
     font-weight: bold;
     position: relative;
 }
+
+
+@media (min-width: 768px)
+{
+    .animal-title[b-pd0yy449re]{
+        font-size: 24px;
+    }
+}
+
 
 /* Close button styling */
 .close-btn[b-pd0yy449re] {
