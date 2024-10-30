@@ -30,30 +30,37 @@
 #animal-window {
     width:calc(100% - 30px);
     background-color: #f4f4f9;
-    border: 2px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border: 2px solid #292424;
+    border-radius: 15px;
+    box-shadow: 4px 4px 4px rgba(20, 247, 50, 0.1);
     font-family: Arial, sans-serif;
     overflow: hidden;
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -40%);
+    transform: translate(-50%, -50%);
     display: none;
     user-select: none;
-    height: 60%;
+    background: #F1D3B2;
+    /*padding-bottom:10px;*/
 }
 
 @media (min-width: 470px)
 {
     #animal-window{
         width:400px;
-        height:auto;
-        transform: translate(-50%, -50%);
+        height:70vh;
+        transform: translate(-50%, -40%);
     }
+
 }
 
-
+@media(max-width: 400px)
+{
+    .search-container{
+        right:5px;
+    }
+}
 
 
 /* Bounce-in animation */
@@ -111,14 +118,17 @@
 
 /* Title styling (animal name) */
 .animal-title {
-    background-color: #4CAF50;
+    /*background-color: #4CAF50;*/
+    background-color:#20948B;
+    
     /*background-color:#ffc43b;*/
-    color: white;
+    color:#464545;
     padding: 10px;
-    font-size: 19px;
+    font-size: 23px;
     text-align: center;
     font-weight: bold;
     position: relative;
+    background: #F1D3B2;
 }
 
 
@@ -145,18 +155,32 @@
     width: 100%;
     height: auto;
     display: block;
+    /*border-top: 3px dashed #e3d0b6;
+    border-bottom: 3px solid antiquewhite;*/
 }
 
 /* Scrollable description area */
 .animal-description {
     padding: 15px;
-    max-height: 150px;
-    overflow-y: auto;
-    font-size: 16px;
-    color: #333;
+    max-height: 50%;
+    overflow-y: scroll;
+    font-size: 19px;
+    color: #464545;
     line-height: 1.6;
+    background: #F1D3B2;
+    margin-top: 3px;
+    border-bottom:2px dashed rgb(180, 110, 17);
+}
+.animal-description::-webkit-scrollbar{
+    width: 10px;
 }
 
+.animal-description::-webkit-scrollbar-track{
+    background-color: darkgrey;
+}
+.animal-description::-webkit-scrollbar-thumb{
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
 /* Input box styling */
 .animal-input {
     width: calc(100% - 30px);
