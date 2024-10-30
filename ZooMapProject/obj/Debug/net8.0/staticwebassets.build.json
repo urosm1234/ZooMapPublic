@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "LiTiM+p3ltmeLqnD3LCsVWxtvhnQXoKTurqWMt0jSW0=",
+  "Hash": "drsa89i1c3dV0kkUAwufDbNXb2XA/6LqrrfBKx3rJ0I=",
   "Source": "ZooMapProject",
   "BasePath": "_content/ZooMapProject",
   "Mode": "Default",
@@ -302,6 +302,25 @@
       "OriginalItemSpec": "wwwroot\\images\\icons\\crnoglavi-papagaj.png"
     },
     {
+      "Identity": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\dorkas-gazela.png",
+      "SourceId": "ZooMapProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\",
+      "BasePath": "_content/ZooMapProject",
+      "RelativePath": "images/icons/dorkas-gazela.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\icons\\dorkas-gazela.png"
+    },
+    {
       "Identity": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\eklektus.png",
       "SourceId": "ZooMapProject",
       "SourceType": "Discovered",
@@ -530,6 +549,25 @@
       "OriginalItemSpec": "wwwroot\\images\\icons\\lav.png"
     },
     {
+      "Identity": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\lidbiterov-kljunorog.png",
+      "SourceId": "ZooMapProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\",
+      "BasePath": "_content/ZooMapProject",
+      "RelativePath": "images/icons/lidbiterov-kljunorog.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\icons\\lidbiterov-kljunorog.png"
+    },
+    {
       "Identity": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\medojed.png",
       "SourceId": "ZooMapProject",
       "SourceType": "Discovered",
@@ -756,6 +794,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\icons\\tibetanski-ogrlicar.png"
+    },
+    {
+      "Identity": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\veliki-kazuar.png",
+      "SourceId": "ZooMapProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\",
+      "BasePath": "_content/ZooMapProject",
+      "RelativePath": "images/icons/veliki-kazuar.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\icons\\veliki-kazuar.png"
     },
     {
       "Identity": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\zebra.png",
