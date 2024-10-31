@@ -100,12 +100,14 @@
     padding-top:10px;
     padding-bottom: 10px;
     overflow: hidden;
+    position: absolute;
+    bottom:10px;
 }
 /* Scrollable description area */
 .animal-description {
     font-family: sans-serif;
     border-top: 2px dashed #8b7a63;
-    max-height: 20vh;;
+    max-height: 25vh;
     overflow-y: scroll;
     margin-top: 15px;
     font-size: 19px;
@@ -163,9 +165,12 @@
 {
     #animal-window{
         left:5%;
-        top:10%;
+        top:15%;
         width:calc(100% - 30px);
         height:80vh;
+    }
+    .animal-description{
+        max-height: calc(55vh - 30vw);
     }
 
 }
