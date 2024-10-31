@@ -95,7 +95,7 @@
         
     </style>
     <script>
-        
+        screen.orientation.lock('portrait');
     function fetchAnimalsFromApi() { //Fetches data from the database and 
             const response = @Html.Raw(animalDataJson);
             console.log(response)
@@ -131,7 +131,7 @@
     <div id="animal-window">
 
         <div class="animal-title" id = "animal-title">
-        <h style="font-weight: bolder; text-shadow: 1px 1px 1px black;">Lion</h>
+        <h style="font-weight: bolder">Lion</h>
         <!-- Close button -->
         <span class="close-btn" onclick="togglePoppup()">X</span>
         </div>
@@ -141,18 +141,19 @@
         <br>
     </div>-->
     <!-- Scrollable description text -->
+    <div class="animal-description-wrapper">
     <div class="animal-description" id = "description">
-        <p></p>
-        <p></p>
-        <p></p>
-        <p>
+        <p ></p>
+        <p ></p>
+        <p ></p>
+        <p >
             The lion (Panthera leo) is a large cat of the genus Panthera native to Africa and India. It is one of the most
             recognizable animals due to its muscular, deep-chested body, short, rounded head, round ears, and a hairy tuft
             at the end of its tail. Lions are social animals that live in groups called prides. They are apex predators, and
             their primary prey are ungulates such as antelopes and zebras.            
         </p>
     </div>
-
+    </div>
     <!-- Input element -->
     <!--<input type="text" class="animal-input" placeholder="Type your favorite animal here..."> -->
     </div>
