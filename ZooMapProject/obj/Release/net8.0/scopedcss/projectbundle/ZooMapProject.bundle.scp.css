@@ -221,6 +221,12 @@
     height:70vh;
     border: 2px solid #8b7a63;
 }
+.position-content-wrapper[b-pd0yy449re]
+{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
 
 /* Title styling (animal name) */
 .animal-title[b-pd0yy449re] {
@@ -334,16 +340,59 @@
 {
     #animal-window[b-pd0yy449re]{
         left:5%;
-        top:15%;
+        top:13%;
         width:calc(100% - 30px);
-        height:80vh;
+        height:85vh;
     }
     .animal-description[b-pd0yy449re]{
         max-height: calc(55vh - 30vw);
     }
 
 }
+@media(orientation: landscape)
+{
+    @media(max-height:500px)
+    {
+        #animal-window[b-pd0yy449re]{
+            left:5%;
+            max-width: 100%;
+            width:calc(100% - 30px);
+        }
+        .position-content-wrapper[b-pd0yy449re]
+        {
+            flex-direction: row;
+            height: 70%;
+        }
+        .animal-description-wrapper[b-pd0yy449re]
+        {
+            width:40%;
+            right: 5vw;
+            bottom:auto;
+        }
+        .animal-description[b-pd0yy449re]
+        {
+            font-size: 18px;
+        }
 
+        .animal-image[b-pd0yy449re]{
+            width: 40%;
+            height: auto;
+        }
+        
+            @media (max-width: 520px)
+            {
+                #animal-window[b-pd0yy449re]
+                {
+                    top:5%;
+                }
+                .animal-description[b-pd0yy449re]{
+                    max-height: 40vh;
+                }
+
+            }
+
+    }
+}
 @media(max-width: 400px)
 {
     .search-container[b-pd0yy449re]{

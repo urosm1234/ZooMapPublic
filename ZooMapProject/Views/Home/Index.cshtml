@@ -13,9 +13,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="color-scheme" content="light">
-    <meta name="supported-color-schemes" content="light">
-        <meta http-equiv="ScreenOrientation" content="autoRotate:disabled">
     <!-- Include Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     
@@ -137,8 +134,9 @@
         <!-- Close button -->
         <span class="close-btn" onclick="togglePoppup()">X</span>
         </div>
+    <div class = "position-content-wrapper">
     <!-- Animal image -->
-    <img src='' alt="Animal" class="animal-image" id="animal-pane" alt="animal-image">
+    <div ><img src='' alt="Animal" class="animal-image" id="animal-pane" alt="animal-image"></div>
     <!--<div>
         <br>
     </div>-->
@@ -158,6 +156,7 @@
     </div>
     <!-- Input element -->
     <!--<input type="text" class="animal-input" placeholder="Type your favorite animal here..."> -->
+    </div>
     </div>
 
 <script>
