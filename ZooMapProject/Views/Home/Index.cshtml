@@ -121,7 +121,7 @@
         <div class="search-container">
         <!-- Search input field -->
         <div class = "search-box">
-            <input autocomplete="off" type="text" id="searchInput" class="search-input" placeholder="Pretraga..." onkeyup="filterOptions()">
+            <input autocomplete="off" type="text" id="searchInput" class="search-input" placeholder="Pretraga..." onkeyup="filterOptions()" >
             <img class= "magnifying-img" src = "images/magnifying_glass.png" onclick = "toggleResults()"></img>
         </div>
         <!-- Scrollable results list -->
@@ -201,12 +201,19 @@
         // Filter the list based on user input
         function filterOptions() {
             const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-            const filteredOptions = iconArray.filter(animal =>
+            let filteredOptions = iconArray.filter(animal => 
+            animal.title == searchTerm || animal.name == searchTerm
+            )
+            if(filteredOptions.length == 0) {
+                filteredOptions = iconArray.filter(animal =>
                 animal.title.toLowerCase().includes(searchTerm) || animal.name.toLowerCase().includes(searchTerm)
-            );
+                );
+            }
+            
 
             displayOptions(filteredOptions);
         }
+    
     </script>    
 
 <script>
@@ -215,10 +222,10 @@
            // Dimensions of your background image
     // Initialize the Leaflet map, setting the initial view to cover the image area
     var map = L.map('map', {
-        minZoom: 0,  //44.824739, 20.452049 zoo corner
+        minZoom: -1,  //44.824739, 20.452049 zoo corner
         maxZoom: 2,   // Allows zooming in
         center: [0, 0],  // Center of the image
-        zoom: 0,   // Initial zoom level
+        zoom: 1,   // Initial zoom level
         crs: L.CRS.Simple  // Use a simple coordinate reference system for flat images
     });
         var AnimalIcon = L.Icon.extend({

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ZooMapProject")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1bcffe51c0d9d3cab79876cdd06e1894989977ad")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f2ccd1b22211d2bfbc5754a8034f25f8444eea24")]
 [assembly: System.Reflection.AssemblyProductAttribute("ZooMapProject")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ZooMapProject")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

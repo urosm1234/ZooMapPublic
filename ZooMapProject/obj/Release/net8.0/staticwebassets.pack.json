@@ -1,863 +1,863 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\obj\\Release\\net8.0\\scopedcss\\projectbundle\\ZooMapProject.bundle.scp.css",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\obj\\Release\\net8.0\\scopedcss\\projectbundle\\ZooMapProject.bundle.scp.css",
       "PackagePath": "staticwebassets\\ZooMapProject.bundle.scp.css"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\animals.txt",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\animals.txt",
       "PackagePath": "staticwebassets\\animals.txt"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\css\\site.css",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\favicon.ico",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\Jezerce.png",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\Jezerce.png",
       "PackagePath": "staticwebassets\\images\\icons\\Jezerce.png"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\africki-gavran.png",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\africki-gavran.png",
       "PackagePath": "staticwebassets\\images\\icons\\africki-gavran.png"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\africki-leopard.png",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\africki-leopard.png",
       "PackagePath": "staticwebassets\\images\\icons\\africki-leopard.png"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\agapornis.png",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\agapornis.png",
       "PackagePath": "staticwebassets\\images\\icons\\agapornis.png"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\alpska-koza.png",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\alpska-koza.png",
       "PackagePath": "staticwebassets\\images\\icons\\alpska-koza.png"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\americki-flamingo.png",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\americki-flamingo.png",
       "PackagePath": "staticwebassets\\images\\icons\\americki-flamingo.png"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\andski-kondor.png",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\andski-kondor.png",
       "PackagePath": "staticwebassets\\images\\icons\\andski-kondor.png"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\australijska-gugutka.png",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\australijska-gugutka.png",
       "PackagePath": "staticwebassets\\images\\icons\\australijska-gugutka.png"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\azijski-slon.png",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\azijski-slon.png",
       "PackagePath": "staticwebassets\\images\\icons\\azijski-slon.png"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\beli-medved.png",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\beli-medved.png",
       "PackagePath": "staticwebassets\\images\\icons\\beli-medved.png"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\beloglavi-sup.png",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\beloglavi-sup.png",
       "PackagePath": "staticwebassets\\images\\icons\\beloglavi-sup.png"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\belogrli-varan.png",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\belogrli-varan.png",
       "PackagePath": "staticwebassets\\images\\icons\\belogrli-varan.png"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\bengalski-beli-tigar.png",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\bengalski-beli-tigar.png",
       "PackagePath": "staticwebassets\\images\\icons\\bengalski-beli-tigar.png"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\caplje.png",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\caplje.png",
       "PackagePath": "staticwebassets\\images\\icons\\caplje.png"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\cat.png",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\cat.png",
       "PackagePath": "staticwebassets\\images\\icons\\cat.png"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\centralni-bazen.png",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\centralni-bazen.png",
       "PackagePath": "staticwebassets\\images\\icons\\centralni-bazen.png"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\crnoglavi-papagaj.png",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\crnoglavi-papagaj.png",
       "PackagePath": "staticwebassets\\images\\icons\\crnoglavi-papagaj.png"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\crnovrati-arakari.png",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\crnovrati-arakari.png",
       "PackagePath": "staticwebassets\\images\\icons\\crnovrati-arakari.png"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\crvenokljuni-tukan.png",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\crvenokljuni-tukan.png",
       "PackagePath": "staticwebassets\\images\\icons\\crvenokljuni-tukan.png"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\dorkas-gazela.png",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\dorkas-gazela.png",
       "PackagePath": "staticwebassets\\images\\icons\\dorkas-gazela.png"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\eklektus.png",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\eklektus.png",
       "PackagePath": "staticwebassets\\images\\icons\\eklektus.png"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\eland-antilopa.png",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\eland-antilopa.png",
       "PackagePath": "staticwebassets\\images\\icons\\eland-antilopa.png"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\gavran.png",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\gavran.png",
       "PackagePath": "staticwebassets\\images\\icons\\gavran.png"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\gepard.png",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\gepard.png",
       "PackagePath": "staticwebassets\\images\\icons\\gepard.png"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\gornji-bazen.png",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\gornji-bazen.png",
       "PackagePath": "staticwebassets\\images\\icons\\gornji-bazen.png"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\jaguar.png",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\jaguar.png",
       "PackagePath": "staticwebassets\\images\\icons\\jaguar.png"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\jazavac.png",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\jazavac.png",
       "PackagePath": "staticwebassets\\images\\icons\\jazavac.png"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\kamila.png",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\kamila.png",
       "PackagePath": "staticwebassets\\images\\icons\\kamila.png"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\kina-aleksandar.png",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\kina-aleksandar.png",
       "PackagePath": "staticwebassets\\images\\icons\\kina-aleksandar.png"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\kljunorog-trubac.png",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\kljunorog-trubac.png",
       "PackagePath": "staticwebassets\\images\\icons\\kljunorog-trubac.png"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\kojot.png",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\kojot.png",
       "PackagePath": "staticwebassets\\images\\icons\\kojot.png"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\konji.png",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\konji.png",
       "PackagePath": "staticwebassets\\images\\icons\\konji.png"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\kubanski-krokodil.png",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\kubanski-krokodil.png",
       "PackagePath": "staticwebassets\\images\\icons\\kubanski-krokodil.png"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\kuna-zlatica.png",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\kuna-zlatica.png",
       "PackagePath": "staticwebassets\\images\\icons\\kuna-zlatica.png"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\lama.png",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\lama.png",
       "PackagePath": "staticwebassets\\images\\icons\\lama.png"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\lav.png",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\lav.png",
       "PackagePath": "staticwebassets\\images\\icons\\lav.png"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\lidbiterov-kljunorog.png",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\lidbiterov-kljunorog.png",
       "PackagePath": "staticwebassets\\images\\icons\\lidbiterov-kljunorog.png"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\magelanova-guska.png",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\magelanova-guska.png",
       "PackagePath": "staticwebassets\\images\\icons\\magelanova-guska.png"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\medojed.png",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\medojed.png",
       "PackagePath": "staticwebassets\\images\\icons\\medojed.png"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\mocvarni-ris.png",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\mocvarni-ris.png",
       "PackagePath": "staticwebassets\\images\\icons\\mocvarni-ris.png"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\mrezasta-zirafa.png",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\mrezasta-zirafa.png",
       "PackagePath": "staticwebassets\\images\\icons\\mrezasta-zirafa.png"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\mrki-medved.png",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\mrki-medved.png",
       "PackagePath": "staticwebassets\\images\\icons\\mrki-medved.png"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\noj.png",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\noj.png",
       "PackagePath": "staticwebassets\\images\\icons\\noj.png"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\orao-belorepan.png",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\orao-belorepan.png",
       "PackagePath": "staticwebassets\\images\\icons\\orao-belorepan.png"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\papagaj-patagonac.png",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\papagaj-patagonac.png",
       "PackagePath": "staticwebassets\\images\\icons\\papagaj-patagonac.png"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\papagajski-golub.png",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\papagajski-golub.png",
       "PackagePath": "staticwebassets\\images\\icons\\papagajski-golub.png"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\patuljasta-vidra.png",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\patuljasta-vidra.png",
       "PackagePath": "staticwebassets\\images\\icons\\patuljasta-vidra.png"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\puma.png",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\puma.png",
       "PackagePath": "staticwebassets\\images\\icons\\puma.png"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\racka-ovca.png",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\racka-ovca.png",
       "PackagePath": "staticwebassets\\images\\icons\\racka-ovca.png"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\rida-lisica.png",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\rida-lisica.png",
       "PackagePath": "staticwebassets\\images\\icons\\rida-lisica.png"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\ridzbek.png",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\ridzbek.png",
       "PackagePath": "staticwebassets\\images\\icons\\ridzbek.png"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\sarplaninac.png",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\sarplaninac.png",
       "PackagePath": "staticwebassets\\images\\icons\\sarplaninac.png"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\serval.png",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\serval.png",
       "PackagePath": "staticwebassets\\images\\icons\\serval.png"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\sibirski-tigar.png",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\sibirski-tigar.png",
       "PackagePath": "staticwebassets\\images\\icons\\sibirski-tigar.png"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\somalijska-ovca.png",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\somalijska-ovca.png",
       "PackagePath": "staticwebassets\\images\\icons\\somalijska-ovca.png"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\srebrna-lisica.png",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\srebrna-lisica.png",
       "PackagePath": "staticwebassets\\images\\icons\\srebrna-lisica.png"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\srebrnoobrazi-kljunorog.png",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\srebrnoobrazi-kljunorog.png",
       "PackagePath": "staticwebassets\\images\\icons\\srebrnoobrazi-kljunorog.png"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\stafordski-terijer.png",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\stafordski-terijer.png",
       "PackagePath": "staticwebassets\\images\\icons\\stafordski-terijer.png"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\sumski-ris.png",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\sumski-ris.png",
       "PackagePath": "staticwebassets\\images\\icons\\sumski-ris.png"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\suri-orao.png",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\suri-orao.png",
       "PackagePath": "staticwebassets\\images\\icons\\suri-orao.png"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\tarovi.png",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\tarovi.png",
       "PackagePath": "staticwebassets\\images\\icons\\tarovi.png"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\tibetanski-ogrlicar.png",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\tibetanski-ogrlicar.png",
       "PackagePath": "staticwebassets\\images\\icons\\tibetanski-ogrlicar.png"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\tvor.png",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\tvor.png",
       "PackagePath": "staticwebassets\\images\\icons\\tvor.png"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\velika-usara.png",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\velika-usara.png",
       "PackagePath": "staticwebassets\\images\\icons\\velika-usara.png"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\veliki-kazuar.png",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\veliki-kazuar.png",
       "PackagePath": "staticwebassets\\images\\icons\\veliki-kazuar.png"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\zako.png",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\zako.png",
       "PackagePath": "staticwebassets\\images\\icons\\zako.png"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\zebra.png",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\zebra.png",
       "PackagePath": "staticwebassets\\images\\icons\\zebra.png"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\zelena-iguana.png",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\zelena-iguana.png",
       "PackagePath": "staticwebassets\\images\\icons\\zelena-iguana.png"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\zelenokrila-ara.png",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\zelenokrila-ara.png",
       "PackagePath": "staticwebassets\\images\\icons\\zelenokrila-ara.png"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\zutoceli-amazonac.png",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\zutoceli-amazonac.png",
       "PackagePath": "staticwebassets\\images\\icons\\zutoceli-amazonac.png"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\zutocubi-kakadu.png",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\icons\\zutocubi-kakadu.png",
       "PackagePath": "staticwebassets\\images\\icons\\zutocubi-kakadu.png"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\image-20-copyright.jpg",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\image-20-copyright.jpg",
       "PackagePath": "staticwebassets\\images\\image-20-copyright.jpg"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\magnifying_glass.png",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\magnifying_glass.png",
       "PackagePath": "staticwebassets\\images\\magnifying_glass.png"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\map.png",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\map.png",
       "PackagePath": "staticwebassets\\images\\map.png"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\map2.jpg",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\map2.jpg",
       "PackagePath": "staticwebassets\\images\\map2.jpg"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\map3.jpg",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\map3.jpg",
       "PackagePath": "staticwebassets\\images\\map3.jpg"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\map4.jpg",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\map4.jpg",
       "PackagePath": "staticwebassets\\images\\map4.jpg"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\map5.jpg",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\map5.jpg",
       "PackagePath": "staticwebassets\\images\\map5.jpg"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\mapa1.png",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\mapa1.png",
       "PackagePath": "staticwebassets\\images\\mapa1.png"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\africki-gavran-pane.jpg",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\africki-gavran-pane.jpg",
       "PackagePath": "staticwebassets\\images\\panes\\africki-gavran-pane.jpg"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\africki-leopard-pane.jpg",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\africki-leopard-pane.jpg",
       "PackagePath": "staticwebassets\\images\\panes\\africki-leopard-pane.jpg"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\agapornis-pane.jpg",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\agapornis-pane.jpg",
       "PackagePath": "staticwebassets\\images\\panes\\agapornis-pane.jpg"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\alpska-koza-pane.jpg",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\alpska-koza-pane.jpg",
       "PackagePath": "staticwebassets\\images\\panes\\alpska-koza-pane.jpg"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\americki-flamingo-pane.jpg",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\americki-flamingo-pane.jpg",
       "PackagePath": "staticwebassets\\images\\panes\\americki-flamingo-pane.jpg"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\andski-kondor-pane.jpg",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\andski-kondor-pane.jpg",
       "PackagePath": "staticwebassets\\images\\panes\\andski-kondor-pane.jpg"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\australijska-gugutka-pane.jpg",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\australijska-gugutka-pane.jpg",
       "PackagePath": "staticwebassets\\images\\panes\\australijska-gugutka-pane.jpg"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\azijski-slon-pane.jpg",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\azijski-slon-pane.jpg",
       "PackagePath": "staticwebassets\\images\\panes\\azijski-slon-pane.jpg"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\beli-medved-pane.jpg",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\beli-medved-pane.jpg",
       "PackagePath": "staticwebassets\\images\\panes\\beli-medved-pane.jpg"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\beloglavi-sup-pane.jpg",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\beloglavi-sup-pane.jpg",
       "PackagePath": "staticwebassets\\images\\panes\\beloglavi-sup-pane.jpg"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\belogrli-varan-pane.jpg",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\belogrli-varan-pane.jpg",
       "PackagePath": "staticwebassets\\images\\panes\\belogrli-varan-pane.jpg"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\bengalski-beli-tigar-pane.jpg",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\bengalski-beli-tigar-pane.jpg",
       "PackagePath": "staticwebassets\\images\\panes\\bengalski-beli-tigar-pane.jpg"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\caplje-pane.jpg",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\caplje-pane.jpg",
       "PackagePath": "staticwebassets\\images\\panes\\caplje-pane.jpg"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\centralni-bazen-pane.jpg",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\centralni-bazen-pane.jpg",
       "PackagePath": "staticwebassets\\images\\panes\\centralni-bazen-pane.jpg"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\crnoglavi-papagaj-pane.jpg",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\crnoglavi-papagaj-pane.jpg",
       "PackagePath": "staticwebassets\\images\\panes\\crnoglavi-papagaj-pane.jpg"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\crnovrati-arakari-pane.jpg",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\crnovrati-arakari-pane.jpg",
       "PackagePath": "staticwebassets\\images\\panes\\crnovrati-arakari-pane.jpg"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\crvenokljuni-tukan-pane.jpg",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\crvenokljuni-tukan-pane.jpg",
       "PackagePath": "staticwebassets\\images\\panes\\crvenokljuni-tukan-pane.jpg"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\dorkas-gazela-pane.jpg",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\dorkas-gazela-pane.jpg",
       "PackagePath": "staticwebassets\\images\\panes\\dorkas-gazela-pane.jpg"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\eklektus-pane.jpg",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\eklektus-pane.jpg",
       "PackagePath": "staticwebassets\\images\\panes\\eklektus-pane.jpg"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\eland-antilopa-pane.jpg",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\eland-antilopa-pane.jpg",
       "PackagePath": "staticwebassets\\images\\panes\\eland-antilopa-pane.jpg"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\gavran-pane.jpg",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\gavran-pane.jpg",
       "PackagePath": "staticwebassets\\images\\panes\\gavran-pane.jpg"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\gepard-pane.jpg",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\gepard-pane.jpg",
       "PackagePath": "staticwebassets\\images\\panes\\gepard-pane.jpg"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\gornji-bazen-pane.jpg",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\gornji-bazen-pane.jpg",
       "PackagePath": "staticwebassets\\images\\panes\\gornji-bazen-pane.jpg"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\jaguar-pane.jpg",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\jaguar-pane.jpg",
       "PackagePath": "staticwebassets\\images\\panes\\jaguar-pane.jpg"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\jazavac-pane.jpg",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\jazavac-pane.jpg",
       "PackagePath": "staticwebassets\\images\\panes\\jazavac-pane.jpg"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\jezerce-pane.jpg",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\jezerce-pane.jpg",
       "PackagePath": "staticwebassets\\images\\panes\\jezerce-pane.jpg"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\kina-aleksandar-pane.jpg",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\kina-aleksandar-pane.jpg",
       "PackagePath": "staticwebassets\\images\\panes\\kina-aleksandar-pane.jpg"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\kljunorog-trubac-pane.jpg",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\kljunorog-trubac-pane.jpg",
       "PackagePath": "staticwebassets\\images\\panes\\kljunorog-trubac-pane.jpg"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\kojot-pane.jpg",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\kojot-pane.jpg",
       "PackagePath": "staticwebassets\\images\\panes\\kojot-pane.jpg"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\konji-pane.jpg",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\konji-pane.jpg",
       "PackagePath": "staticwebassets\\images\\panes\\konji-pane.jpg"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\kubanski-krokodil-pane.jpg",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\kubanski-krokodil-pane.jpg",
       "PackagePath": "staticwebassets\\images\\panes\\kubanski-krokodil-pane.jpg"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\kuna-zlatica-pane.jpg",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\kuna-zlatica-pane.jpg",
       "PackagePath": "staticwebassets\\images\\panes\\kuna-zlatica-pane.jpg"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\lav-pane.jpg",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\lav-pane.jpg",
       "PackagePath": "staticwebassets\\images\\panes\\lav-pane.jpg"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\lidbiterov-kljunorog-pane.jpg",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\lidbiterov-kljunorog-pane.jpg",
       "PackagePath": "staticwebassets\\images\\panes\\lidbiterov-kljunorog-pane.jpg"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\magelanova-guska-pane.jpg",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\magelanova-guska-pane.jpg",
       "PackagePath": "staticwebassets\\images\\panes\\magelanova-guska-pane.jpg"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\medojed-pane.jpg",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\medojed-pane.jpg",
       "PackagePath": "staticwebassets\\images\\panes\\medojed-pane.jpg"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\mocvarni-ris-pane.jpg",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\mocvarni-ris-pane.jpg",
       "PackagePath": "staticwebassets\\images\\panes\\mocvarni-ris-pane.jpg"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\mrezasta-zirafa-pane.jpg",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\mrezasta-zirafa-pane.jpg",
       "PackagePath": "staticwebassets\\images\\panes\\mrezasta-zirafa-pane.jpg"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\mrki-medved-pane.jpg",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\mrki-medved-pane.jpg",
       "PackagePath": "staticwebassets\\images\\panes\\mrki-medved-pane.jpg"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\noj-pane.jpg",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\noj-pane.jpg",
       "PackagePath": "staticwebassets\\images\\panes\\noj-pane.jpg"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\orao-belorepan-pane.jpg",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\orao-belorepan-pane.jpg",
       "PackagePath": "staticwebassets\\images\\panes\\orao-belorepan-pane.jpg"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\papagaj-patagonac-pane.jpg",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\papagaj-patagonac-pane.jpg",
       "PackagePath": "staticwebassets\\images\\panes\\papagaj-patagonac-pane.jpg"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\papagajski-golub-pane.jpg",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\papagajski-golub-pane.jpg",
       "PackagePath": "staticwebassets\\images\\panes\\papagajski-golub-pane.jpg"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\patuljasta-vidra-pane.jpg",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\patuljasta-vidra-pane.jpg",
       "PackagePath": "staticwebassets\\images\\panes\\patuljasta-vidra-pane.jpg"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\puma-pane.jpg",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\puma-pane.jpg",
       "PackagePath": "staticwebassets\\images\\panes\\puma-pane.jpg"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\racka-ovca-pane.jpg",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\racka-ovca-pane.jpg",
       "PackagePath": "staticwebassets\\images\\panes\\racka-ovca-pane.jpg"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\rida-lisica-pane.jpg",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\rida-lisica-pane.jpg",
       "PackagePath": "staticwebassets\\images\\panes\\rida-lisica-pane.jpg"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\ridzbek-pane.jpg",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\ridzbek-pane.jpg",
       "PackagePath": "staticwebassets\\images\\panes\\ridzbek-pane.jpg"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\sarplaninac-pane.jpg",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\sarplaninac-pane.jpg",
       "PackagePath": "staticwebassets\\images\\panes\\sarplaninac-pane.jpg"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\serval-pane.jpg",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\serval-pane.jpg",
       "PackagePath": "staticwebassets\\images\\panes\\serval-pane.jpg"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\sibirski-tigar-pane.jpg",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\sibirski-tigar-pane.jpg",
       "PackagePath": "staticwebassets\\images\\panes\\sibirski-tigar-pane.jpg"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\somalijska-ovca-pane.jpg",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\somalijska-ovca-pane.jpg",
       "PackagePath": "staticwebassets\\images\\panes\\somalijska-ovca-pane.jpg"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\srebrna-lisica-pane.jpg",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\srebrna-lisica-pane.jpg",
       "PackagePath": "staticwebassets\\images\\panes\\srebrna-lisica-pane.jpg"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\srebrnoobrazi-kljunorog-pane.jpg",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\srebrnoobrazi-kljunorog-pane.jpg",
       "PackagePath": "staticwebassets\\images\\panes\\srebrnoobrazi-kljunorog-pane.jpg"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\stafordski-terijer-pane.jpg",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\stafordski-terijer-pane.jpg",
       "PackagePath": "staticwebassets\\images\\panes\\stafordski-terijer-pane.jpg"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\sumski-ris-pane.jpg",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\sumski-ris-pane.jpg",
       "PackagePath": "staticwebassets\\images\\panes\\sumski-ris-pane.jpg"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\suri-orao-pane.jpg",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\suri-orao-pane.jpg",
       "PackagePath": "staticwebassets\\images\\panes\\suri-orao-pane.jpg"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\tarovi-pane.jpg",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\tarovi-pane.jpg",
       "PackagePath": "staticwebassets\\images\\panes\\tarovi-pane.jpg"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\tibetanski-ogrlicar-pane.jpg",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\tibetanski-ogrlicar-pane.jpg",
       "PackagePath": "staticwebassets\\images\\panes\\tibetanski-ogrlicar-pane.jpg"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\tvor-pane.jpg",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\tvor-pane.jpg",
       "PackagePath": "staticwebassets\\images\\panes\\tvor-pane.jpg"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\velika-usara-pane.jpg",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\velika-usara-pane.jpg",
       "PackagePath": "staticwebassets\\images\\panes\\velika-usara-pane.jpg"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\veliki-kazuar-pane.jpg",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\veliki-kazuar-pane.jpg",
       "PackagePath": "staticwebassets\\images\\panes\\veliki-kazuar-pane.jpg"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\zako-pane.jpg",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\zako-pane.jpg",
       "PackagePath": "staticwebassets\\images\\panes\\zako-pane.jpg"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\zebra-pane.jpg",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\zebra-pane.jpg",
       "PackagePath": "staticwebassets\\images\\panes\\zebra-pane.jpg"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\zelena-iguana-pane.jpg",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\zelena-iguana-pane.jpg",
       "PackagePath": "staticwebassets\\images\\panes\\zelena-iguana-pane.jpg"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\zelenokrila-ara-pane.jpg",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\zelenokrila-ara-pane.jpg",
       "PackagePath": "staticwebassets\\images\\panes\\zelenokrila-ara-pane.jpg"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\zutoceli-amazonac-pane.jpg",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\zutoceli-amazonac-pane.jpg",
       "PackagePath": "staticwebassets\\images\\panes\\zutoceli-amazonac-pane.jpg"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\zutocubi-kakadu-pane.jpg",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\images\\panes\\zutocubi-kakadu-pane.jpg",
       "PackagePath": "staticwebassets\\images\\panes\\zutocubi-kakadu-pane.jpg"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\js\\admin.js",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\js\\admin.js",
       "PackagePath": "staticwebassets\\js\\admin.js"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\js\\index.js",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\js\\index.js",
       "PackagePath": "staticwebassets\\js\\index.js"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\js\\shared.js",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\js\\shared.js",
       "PackagePath": "staticwebassets\\js\\shared.js"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\js\\site.js",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\links.txt",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\links.txt",
       "PackagePath": "staticwebassets\\links.txt"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\lion.txt",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\lion.txt",
       "PackagePath": "staticwebassets\\lion.txt"
     },
     {
-      "Id": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\wwwroot\\zebra.txt",
+      "Id": "C:\\Users\\Uros\\Documents\\ZooMapProject\\ZooMap\\ZooMapProject\\wwwroot\\zebra.txt",
       "PackagePath": "staticwebassets\\zebra.txt"
     },
     {
