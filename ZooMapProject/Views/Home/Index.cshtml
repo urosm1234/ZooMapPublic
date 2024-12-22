@@ -18,7 +18,7 @@
     
     <!-- Include Leaflet JS -->
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-    
+    <link rel="stylesheet" href="css/sidebar.css"></link>
     <style>
         
         .mainMapImage
@@ -93,6 +93,7 @@
             flex-direction: row;
         }
         
+
     </style>
     <script>
     function fetchAnimalsFromApi() { //Fetches data from the database and 
@@ -109,13 +110,58 @@
                 var marker = L.marker([icon.coordinatesH, icon.coordinatesW], { icon: icont, draggable:false }).addTo(map)
                 .on('click',()=> togglePoppup(icon.array_id, iconArray) )
             });
+            const toiletIcon = iconArray.filter(animal => animal.title == "Lav");
+            console.log(toiletIcon[0].name);
+            console.log(document.getElementById("sidebar-icons-wrapper").childNodes[0]);
+
+            document.getElementById("sidebar-icons-wrapper").children[0].src ="/images/icons/" +toiletIcon[0].name+'.png';
+            document.getElementById("sidebar-icons-wrapper").children[0].addEventListener('click', () => togglePoppup(toiletIcon[0].array_id, iconArray));
     }
     
     var iconArray = fetchAnimalsFromApi();
     </script>
 </head>
 <body>
+    <div class="sidebar" id="sidebar">
+        <button id="menu-button" class="menu-button" onclick="toggleSidebar()">
+            <img id ="menu-arrow-img"  src="images/arrow-left.png"></img>
+        </button>
 
+        <div id ="sidebar-icons-wrapper" class="sidebar-icons-wrapper">
+                <img src ="images/arrow-right.png" ></img>
+                <img src ="images/arrow-right.png" ></img>
+        </div>
+    </div>
+    <!-- #region >-->
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const menuButton = document.getElementById('menu-button');
+            const menuArrowImg = document.getElementById('menu-arrow-img');
+            //menuButton.onclick= "";
+            console.log(menuArrowImg.src);
+            menuButton.classList.add('fadeOut');
+            sidebar.classList.toggle('expanded');
+            console.log("Started");
+            setTimeout(function(){
+                if(menuArrowImg.src.includes("images/arrow-left.png"))
+                {
+                    menuArrowImg.src = "images/arrow-right.png";
+                }
+                else
+                {
+                    menuArrowImg.src = "images/arrow-left.png";
+                }
+                console.log("Finished")
+                menuButton.classList.add('fadeIn');
+                menuButton.classList.remove('fadeOut');
+                setTimeout(function(){
+                    menuButton.classList.remove('fadeIn');
+                    //menuButton.onclick = toggleSidebar();
+                },1000);
+            },1000);
+        }
+    </script>
 
 <div id="map"></div>
         <div class="search-container">
@@ -244,7 +290,7 @@
     const imageHeight = 1200;  // Adjust this to match your image height (in pixels)
     var imageBounds = [[0, 0], [imageHeight, imageWidth]];
 
-    var imageUrl = '/images/map.png';  // Replace with your actual image URL
+    var imageUrl = '/images/map_new1.jpg';  // Replace with your actual image URL
     L.imageOverlay(imageUrl, imageBounds,{
     attribution: '© OpenStreetMap',
     opacity: 0.7,
@@ -267,6 +313,6 @@
     map.on('click', getCoord); 
 
 </script>
-
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
 </html>
