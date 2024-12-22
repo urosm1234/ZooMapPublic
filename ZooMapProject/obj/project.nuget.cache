@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "JsrJvY6TKJg=",
+  "dgSpecHash": "o5fl7qRSgyY=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\ZooMapProject.csproj",
+  "projectFilePath": "C:\\xampp\\htdocs\\ZooProject\\ZooMap\\ZooMapProject\\ZooMapProject.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Uros\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\8.0.10\\microsoft.aspnetcore.authentication.jwtbearer.8.0.10.nupkg.sha512",
     "C:\\Users\\Uros\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\8.0.10\\microsoft.aspnetcore.cryptography.internal.8.0.10.nupkg.sha512",

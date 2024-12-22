@@ -1598,11 +1598,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\ZooMapProject.csproj",
+      "projectUniqueName": "C:\\xampp\\htdocs\\ZooProject\\ZooMap\\ZooMapProject\\ZooMapProject.csproj",
       "projectName": "ZooMapProject",
-      "projectPath": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\ZooMapProject.csproj",
+      "projectPath": "C:\\xampp\\htdocs\\ZooProject\\ZooMap\\ZooMapProject\\ZooMapProject.csproj",
       "packagesPath": "C:\\Users\\Uros\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Uros\\Documents\\FinishedGitProjects\\ZooMap\\ZooMapProject\\obj\\",
+      "outputPath": "C:\\xampp\\htdocs\\ZooProject\\ZooMap\\ZooMapProject\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

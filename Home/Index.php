@@ -1,0 +1,330 @@
+﻿<?php
+//header("Content-Type: application/json");
+include 'db.php';
+
+$method = $_SERVER['REQUEST_METHOD'];
+$result;
+if($method == 'GET')
+{
+    $sql = "SELECT icons.id, icons.name, icons.coordinatew, icons.coordinateh, animal_info.title, animal_info.desc1, animal_info.desc2, animal_info.desc3, animal_info.paragraph FROM `icons` LEFT JOIN (`animal_info`) ON (animal_info.id = icons.animal_id);";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute();
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    //echo json_encode($result);
+}
+
+$PATH = "/ZooProject/ZooMap/";
+?>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Include Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel = "stylesheet" href = "index.css">
+    <!-- Include Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="<?php echo $PATH?>css/sidebar.css"></link>
+    <script src = "<?php echo $PATH?>js/shared.js"></script>
+    <style>
+        
+        .mainMapImage
+        {
+        /* !!! HAS TO BE ON THIS PAGE OR IT DOESN'T LOAD CORRECTLY */
+
+        box-shadow: 0 20px 20px rgba(0, 0, 0, 0.4); /* 3D shadow effect */
+        border-radius: 10px; /* Rounded corners */
+        border-style: dashed;
+        border-width:4px;
+        border-radius: 10px;
+        border-color:black;
+        transform: translate('-50%','-50%');
+        }
+
+        .search-container{
+            width: 300px;
+            position:absolute;
+            right:50px;
+            top:30px;
+        }
+
+        /* Search input */
+        .search-input {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #4caf50;
+            border-radius: 4px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+
+        /* Scrollable options container */
+        .search-results {
+            max-height: 150px;
+            overflow-y: auto;
+            border: 2px solid #4caf50;
+            border-top: none;
+            border-radius: 0 0 4px 4px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: none; /* Hidden by default */
+            width: 90%;
+        }
+                /* Individual option style */
+        .search-item {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            cursor: pointer;
+        }
+
+        .search-item:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* No more border for the last item */
+        .search-item:last-child {
+            border-bottom: none;
+        }
+        .magnifying-img{
+            width:20px;
+            height: 20px;
+            margin-top:15px;
+            margin-left:10px;
+            }
+
+        .magnifying-img:hover{cursor: pointer;}
+
+        .search-box{
+            display: flex;
+            flex-direction: row;
+        }
+        
+
+    </style>
+    <script>
+        const PATH ="/ZooProject/ZooMap/";
+    function fetchAnimalsFromApi() { //Fetches data from the database and 
+            const response = <?php echo json_encode($result) ?>;
+            console.log(response)
+            
+            return response;  
+        }
+    var iconArray;
+    async function addIconsToMap(map)
+    {
+        iconArray = await fetchAnimalsFromApi();
+        iconArray.forEach( (icon) => {
+                var icont = new AnimalIcon({iconUrl: PATH +'images/icons/'+icon.name+'.png'});
+                var marker = L.marker([icon.coordinateh, icon.coordinatew], { icon: icont, draggable:false }).addTo(map)
+                .on('click',()=> togglePoppup(icon.id, iconArray) )
+            });
+            const toiletIcon = iconArray.filter(animal => animal.title == "Lav");
+            console.log(toiletIcon[0].name);
+            console.log(document.getElementById("sidebar-icons-wrapper").childNodes[0]);
+
+            document.getElementById("sidebar-icons-wrapper").children[0].src =PATH +"/icons/" +toiletIcon[0].name+'.png';
+            document.getElementById("sidebar-icons-wrapper").children[0].addEventListener('click', () => togglePoppup(toiletIcon[0].id, iconArray));
+    }
+
+    </script>
+</head>
+<body>
+    <div class="sidebar" id="sidebar">
+        <button id="menu-button" class="menu-button" onclick="toggleSidebar()">
+            <img id ="menu-arrow-img"  src="images/arrow-left.png"></img>
+        </button>
+
+        <div id ="sidebar-icons-wrapper" class="sidebar-icons-wrapper">
+                <img src ="<?php echo $PATH?>images/arrow-right.png" ></img>
+                <img src ="<?php echo $PATH?>images/arrow-right.png" ></img>
+        </div>
+    </div>
+    <!-- #region >-->
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const menuButton = document.getElementById('menu-button');
+            const menuArrowImg = document.getElementById('menu-arrow-img');
+            //menuButton.onclick= "";
+            console.log(menuArrowImg.src);
+            menuButton.classList.add('fadeOut');
+            sidebar.classList.toggle('expanded');
+            console.log("Started");
+            setTimeout(function(){
+                if(menuArrowImg.src.includes(PATH+"images/arrow-left.png"))
+                {
+                    menuArrowImg.src = PATH + "images/arrow-right.png";
+                }
+                else
+                {
+                    menuArrowImg.src = PATH + "images/arrow-left.png";
+                }
+                console.log("Finished")
+                menuButton.classList.add('fadeIn');
+                menuButton.classList.remove('fadeOut');
+                setTimeout(function(){
+                    menuButton.classList.remove('fadeIn');
+                    //menuButton.onclick = toggleSidebar();
+                },1000);
+            },1000);
+        }
+    </script>
+
+<div id="map"></div>
+        <div class="search-container">
+        <!-- Search input field -->
+        <div class = "search-box">
+            <input autocomplete="off" type="text" id="searchInput" class="search-input" placeholder="Pretraga..." onkeyup="filterOptions()" >
+            <img class= "magnifying-img" src = "<?php echo $PATH?>images/magnifying_glass.png" onclick = "toggleResults()"></img>
+        </div>
+        <!-- Scrollable results list -->
+            <div id="searchResults" class="search-results"></div>
+        </div>
+    <div id="animal-window">
+
+        <div class="animal-title" id = "animal-title">
+        <h style="font-weight: bolder">Lion</h>
+        <!-- Close button -->
+        <span class="close-btn" onclick="togglePoppup()">X</span>
+        </div>
+    <div class = "position-content-wrapper">
+    <!-- Animal image -->
+    <div ><img src='' alt="Animal" class="animal-image" id="animal-pane" alt="animal-image"></div>
+    <!--<div>
+        <br>
+    </div>-->
+    <!-- Scrollable description text -->
+    <div class="animal-description-wrapper">
+    <div class="animal-description" id = "description">
+        <p ></p>
+        <p ></p>
+        <p ></p>
+        <p >
+            The lion (Panthera leo) is a large cat of the genus Panthera native to Africa and India. It is one of the most
+            recognizable animals due to its muscular, deep-chested body, short, rounded head, round ears, and a hairy tuft
+            at the end of its tail. Lions are social animals that live in groups called prides. They are apex predators, and
+            their primary prey are ungulates such as antelopes and zebras.            
+        </p>
+    </div>
+    </div>
+    <!-- Input element -->
+    <!--<input type="text" class="animal-input" placeholder="Type your favorite animal here..."> -->
+    </div>
+    </div>
+
+<script>
+        function toggleResults()
+        {
+            const searchResults = document.getElementById('searchResults');
+            if(searchResults.style.display != 'block')
+            {
+                searchResults.style.display = 'block';
+            }
+            else
+            {
+                searchResults.style.display = 'none';
+            }
+        }
+        // Display all options initially
+        function displayOptions(list) {
+            const searchResults = document.getElementById('searchResults');
+            searchResults.innerHTML = ''; // Clear previous results
+
+            if (list.length > 0) {
+                list.forEach(option => {
+                    const div = document.createElement('div');
+                    div.textContent = option.title;
+                    div.classList.add('search-item');
+                    div.addEventListener('click', () => {
+                        map.setZoom(2);
+                        setTimeout(() =>{
+                            map.panTo([option.coordinateh, option.coordinatew], {animate:true});
+                        }, 300);
+                        document.getElementById('searchInput').value = "";
+                        searchResults.style.display = 'none'; // Hide after selection
+                    });
+                    searchResults.appendChild(div);
+                });
+                searchResults.style.display = 'block'; // Show the filtered list
+            } else {
+                searchResults.style.display = 'none'; // Hide if no results
+            }
+        }
+
+        // Filter the list based on user input
+        function filterOptions() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            let filteredOptions = iconArray.filter(animal => 
+            animal.title == searchTerm || animal.name == searchTerm
+            )
+            if(filteredOptions.length == 0) {
+                filteredOptions = iconArray.filter(animal =>
+                animal.title.toLowerCase().includes(searchTerm) || animal.name.toLowerCase().includes(searchTerm)
+                );
+            }
+            
+
+            displayOptions(filteredOptions);
+        }
+    
+    </script>    
+
+<script>
+    
+
+           // Dimensions of your background image
+    // Initialize the Leaflet map, setting the initial view to cover the image area
+    var map = L.map('map', {
+        minZoom: -1,  //44.824739, 20.452049 zoo corner
+        maxZoom: 2,   // Allows zooming in
+        center: [0, 0],  // Center of the image
+        zoom: 1,   // Initial zoom level
+        crs: L.CRS.Simple  // Use a simple coordinate reference system for flat images
+    });
+        var AnimalIcon = L.Icon.extend({
+        options:{
+                iconSize: [50, 50], 
+                shadowSize: [50, 50],         
+                iconAnchor: [25, 50],       
+                popupAnchor: [0, -50],
+
+            }
+        });
+
+    addIconsToMap(map);
+    
+    const imageWidth =   1600;  // Adjust this to match your image width (in pixels)
+    const imageHeight = 1200;  // Adjust this to match your image height (in pixels)
+    var imageBounds = [[0, 0], [imageHeight, imageWidth]];
+
+    var imageUrl = PATH + '/images/map_new1.jpg';  // Replace with your actual image URL
+    L.imageOverlay(imageUrl, imageBounds,{
+    attribution: '© OpenStreetMap',
+    opacity: 0.7,
+    className: 'mainMapImage'}).addTo(map);
+    map.fitBounds(imageBounds);
+
+     // Define the bounds (SouthWest and NorthEast corners)
+    var southWest = L.latLng(-imageHeight/4, -400); // Example SW corner
+    var northEast = L.latLng(imageHeight*1.2, imageWidth*1.3); // Example NE corner
+    var bounds = L.latLngBounds(southWest, northEast);
+
+    // Apply the bounds to the map to limit panning
+    map.setMaxBounds(bounds);
+
+    // Make sure the map view stays within the bounds even after zooming out
+    map.on('drag', function() {
+        map.panInsideBounds(bounds, { animate: true });
+    });
+
+    map.on('click', getCoord); 
+
+</script>
+</body>
+</html>

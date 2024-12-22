@@ -1,0 +1,167 @@
+
+
+
+.body{
+    background-color:#f0f8ff;
+}
+
+#map {
+    height: 85vh;  /* Adjust the height as needed */
+    width:80vw;
+    position:relative;
+    left:0;
+    z-index: 0;
+    background-color: #f0f8ff;
+    
+}
+.leaflet-control {
+    border-radius: 5px;
+    background-color: #f0f8ff;
+    color: #333;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+.leaflet-popup-content-wrapper {
+    background-color: #f0f8ff; /* Match the window color */
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.leaflet-popup-tip {
+    background-color: #f0f8ff;
+}
+
+#animal-window {
+    width: 400px;
+    background-color: #f4f4f9;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    user-select: none;
+}
+
+/* Bounce-in animation */
+@keyframes bounceIn {
+    0% {
+        transform: translate(-50%, -50%) translateZ(0) perspective(1px);
+        scale:0.5;
+        backface-visibility: hidden;
+        opacity: 0;
+    }
+    60% {
+        transform: translate(-50%, -50%) translateZ(0) perspective(1px);
+        scale:1.2;
+        backface-visibility: hidden;
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) translateZ(0) perspective(1px);
+        scale: initial;
+        backface-visibility: hidden;
+    }
+}
+/* Fade-out animation */
+@keyframes bounceOut {
+    0% {
+        transform: translate(-50%, -50%) scale(1) translateZ(0);
+        opacity: 1;
+    }
+    30% {
+        transform: translate(-50%, -50%) scale(1.2) translateZ(0); /* Slight overscale for bounce effect */
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(0.5) translateZ(0);
+        opacity: 0;
+    }
+}
+/* Class to trigger bounce-in */
+.show {
+    display: block;
+    animation: bounceIn 0.25s ease-in-out forwards;
+    transform:translate(-50%, -50%);
+    backface-visibility: hidden;
+}
+/* Class to trigger fade-out */
+.hide {
+    backface-visibility: hidden;
+    animation: bounceOut 0.25s ease-in-out forwards;
+}
+/* Hide the map after fade-out is completed */
+.hide-complete {
+    display: none;
+}
+
+
+
+/* Title styling (animal name) */
+.animal-title {
+    background-color: #4CAF50;
+    /*background-color:#ffc43b;*/
+    color: white;
+    padding: 10px;
+    font-size: 24px;
+    text-align: center;
+    font-weight: bold;
+    position: relative;
+}
+
+/* Close button styling */
+.close-btn {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Image styling */
+.animal-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Scrollable description area */
+.animal-description {
+    padding: 15px;
+    max-height: 150px;
+    overflow-y: auto;
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Custom scroll bar for the description */
+.animal-description::-webkit-scrollbar {
+    width: 8px;
+}
+
+.animal-description::-webkit-scrollbar-thumb {
+    background-color: #4CAF50;
+    border-radius: 4px;
+}
+
+/* Input box styling */
+.animal-input {
+    width: calc(100% - 30px);
+    padding: 10px;
+    margin: 15px;
+    border: 2px solid #4CAF50;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #333;
+    background-color: #f0f0f5;
+}
+
+.animal-input:focus {
+    outline: none;
+    background-color: #e6e6f0;
+    border-color: #3e8e41;
+}

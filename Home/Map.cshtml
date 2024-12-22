@@ -1,0 +1,88 @@
+﻿@{
+    ViewData["Title"] = "Map";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoo Map with Live User Location</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+</head>
+<body>
+    <div id="map" style="height: 600px;"></div>
+
+    <script>
+        // Initialize the map, defaulting to the zoo's location (Houston Zoo example)
+        var map = L.map('map').setView([44.824739, 20.452049], 15); 
+
+        // Add tile layer to the map
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 20,
+            attribution: '© OpenStreetMap'
+        }).addTo(map);
+
+        // Define a variable to store the user's current location marker
+        let currentLocationMarker = null;
+
+        // Function to handle the success of getting the user's position
+        function displayLocation(position) {
+            const latitude = position.coords.latitude;
+            const longitude = position.coords.longitude;
+
+            // If marker already exists, update its position; else, create a new marker
+            if (currentLocationMarker) {
+                currentLocationMarker.setLatLng([latitude, longitude]);
+            } else {
+                currentLocationMarker = L.marker([latitude, longitude], { draggable: false }).addTo(map)
+                    .bindPopup("You are here").openPopup();
+            }
+
+            // Center the map on the user's current location
+            map.setView([44.82472159911139, 20.45222863554955+1],19);
+            map.panTo([latitude, longitude]);
+            //map.setView([44.82472159911139, 20.45222863554955+1],19);
+        }
+
+        map.on('click', function(e){
+        var coord = e.latlng;
+        var lat = coord.lat;
+        var lng = coord.lng;
+        console.log("You clicked the map at latitude: " + lat + " and longitude: " + lng);
+        });
+
+        // Function to handle any errors in getting the user's position
+        function handleError(error) {
+            alert("Error getting location: " + error.message);
+        }
+
+        // Request the user's location (this will trigger the permission popup)
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(displayLocation, handleError, {
+                enableHighAccuracy: true,
+                timeout: 5000,
+                maximumAge: 0
+            });
+        } else {
+            alert("Geolocation is not supported by this browser.");
+        }
+        var icon1 = L.icon({
+        iconUrl: "/images/lion.png",  
+        iconSize: [50, 50],           
+        iconAnchor: [25, 50],         
+        popupAnchor: [0, -50] 
+        });
+        L.marker([44.824739, 20.452049+0.002], { icon: icon1 }).addTo(map); 
+
+            // Define the geographical boundaries (southwest and northeast corners)
+        var southWest = L.latLng(44.824784378322576, 20.451747179031376-0.001);  // Bottom-left corner
+        var northEast = L.latLng(44.827010142537084+0.001, 20.455759763717655);   // Top-right corner
+
+            // Create the bounds object
+        var bounds = L.latLngBounds(southWest, northEast);
+        //map.setMaxBounds(bounds);
+    </script>
+</body>
+</html>
+
