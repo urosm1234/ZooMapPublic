@@ -1,21 +1,7 @@
 ﻿<?php
 //header("Content-Type: application/json");
-include 'db.php';
-
-$method = $_SERVER['REQUEST_METHOD'];
-$result;
-if($method == 'GET')
-{
-    $sql = "SELECT icons.id, icons.name, icons.coordinatew, icons.coordinateh, animal_info.title, animal_info.desc1, animal_info.desc2, animal_info.desc3, animal_info.paragraph FROM `icons` LEFT JOIN (`animal_info`) ON (animal_info.id = icons.animal_id);";
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute();
-    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    //echo json_encode($result);
-}
-
-$PATH = "/ZooProject/ZooMap/";
+require 'getAnimals.php';
 ?>
-
 
 
 <!DOCTYPE html>
@@ -23,6 +9,7 @@ $PATH = "/ZooProject/ZooMap/";
     
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Include Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
@@ -30,9 +17,15 @@ $PATH = "/ZooProject/ZooMap/";
     <!-- Include Leaflet JS -->
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <link rel="stylesheet" href="<?php echo $PATH?>css/sidebar.css"></link>
+    <link rel="stylesheet" href="<?php echo $PATH?>css/shared.css"></link>
+    <link rel="stylesheet" href="<?php echo $PATH?>css/search.css"></link>
     <script src = "<?php echo $PATH?>js/shared.js"></script>
+    <script src = "<?php echo $PATH?>js/search.js"></script>
+    <script src = "<?php echo $PATH?>js/sidebar.js"></script>
     <style>
-        
+        body{
+            overflow:hidden;
+        }
         .mainMapImage
         {
         /* !!! HAS TO BE ON THIS PAGE OR IT DOESN'T LOAD CORRECTLY */
@@ -45,66 +38,7 @@ $PATH = "/ZooProject/ZooMap/";
         border-color:black;
         transform: translate('-50%','-50%');
         }
-
-        .search-container{
-            width: 300px;
-            position:absolute;
-            right:50px;
-            top:30px;
-        }
-
-        /* Search input */
-        .search-input {
-            width: 100%;
-            padding: 10px;
-            border: 2px solid #4caf50;
-            border-radius: 4px;
-            font-size: 16px;
-            box-sizing: border-box;
-        }
-
-
-        /* Scrollable options container */
-        .search-results {
-            max-height: 150px;
-            overflow-y: auto;
-            border: 2px solid #4caf50;
-            border-top: none;
-            border-radius: 0 0 4px 4px;
-            background-color: white;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            display: none; /* Hidden by default */
-            width: 90%;
-        }
-                /* Individual option style */
-        .search-item {
-            padding: 10px;
-            border-bottom: 1px solid #ddd;
-            cursor: pointer;
-        }
-
-        .search-item:hover {
-            background-color: #f1f1f1;
-        }
-
-        /* No more border for the last item */
-        .search-item:last-child {
-            border-bottom: none;
-        }
-        .magnifying-img{
-            width:20px;
-            height: 20px;
-            margin-top:15px;
-            margin-left:10px;
-            }
-
-        .magnifying-img:hover{cursor: pointer;}
-
-        .search-box{
-            display: flex;
-            flex-direction: row;
-        }
-        
+ 
 
     </style>
     <script>
@@ -128,53 +62,37 @@ $PATH = "/ZooProject/ZooMap/";
             console.log(toiletIcon[0].name);
             console.log(document.getElementById("sidebar-icons-wrapper").childNodes[0]);
 
-            document.getElementById("sidebar-icons-wrapper").children[0].src =PATH +"/icons/" +toiletIcon[0].name+'.png';
-            document.getElementById("sidebar-icons-wrapper").children[0].addEventListener('click', () => togglePoppup(toiletIcon[0].id, iconArray));
+            document.getElementById("sidebar-icons-wrapper").children[0].src =PATH +"images/icons/" +toiletIcon[0].name+'.png';
+            //document.getElementById("sidebar-icons-wrapper").children[0].addEventListener('click', () => togglePoppup(toiletIcon[0].id, iconArray));
+            document.getElementById("sidebar-icons-wrapper").children[0].addEventListener('click', () => {
+                        map.setZoom(2);
+                        setTimeout(() =>{
+                            map.panTo([toiletIcon[0].coordinateh, toiletIcon[0].coordinatew], {animate:true});
+                        }, 300);
+                        document.getElementById('searchInput').value = "";
+                        searchResults.style.display = 'none'; // Hide after selection
+                    });
     }
 
     </script>
 </head>
 <body>
+    <body >
+    <div class="container">
+        <main role="main" class="pb-3">
     <div class="sidebar" id="sidebar">
+        <div class="menu-button-wrapper">
         <button id="menu-button" class="menu-button" onclick="toggleSidebar()">
-            <img id ="menu-arrow-img"  src="images/arrow-left.png"></img>
+            <img id ="menu-arrow-img"  src="<?php echo $PATH?>images/arrow-left.png"></img>
         </button>
-
-        <div id ="sidebar-icons-wrapper" class="sidebar-icons-wrapper">
-                <img src ="<?php echo $PATH?>images/arrow-right.png" ></img>
-                <img src ="<?php echo $PATH?>images/arrow-right.png" ></img>
         </div>
-    </div>
+        <div id ="sidebar-icons-wrapper" class="sidebar-icons-wrapper">
+                <img style="cursor:pointer"src ="<?php echo $PATH?>images/arrow-right.png" ></img>
+                <img style="cursor:pointer"src ="<?php echo $PATH?>images/arrow-right.png" ></img>
+        </div>
+    </div> 
     <!-- #region >-->
-    <script>
-        function toggleSidebar() {
-            const sidebar = document.getElementById('sidebar');
-            const menuButton = document.getElementById('menu-button');
-            const menuArrowImg = document.getElementById('menu-arrow-img');
-            //menuButton.onclick= "";
-            console.log(menuArrowImg.src);
-            menuButton.classList.add('fadeOut');
-            sidebar.classList.toggle('expanded');
-            console.log("Started");
-            setTimeout(function(){
-                if(menuArrowImg.src.includes(PATH+"images/arrow-left.png"))
-                {
-                    menuArrowImg.src = PATH + "images/arrow-right.png";
-                }
-                else
-                {
-                    menuArrowImg.src = PATH + "images/arrow-left.png";
-                }
-                console.log("Finished")
-                menuButton.classList.add('fadeIn');
-                menuButton.classList.remove('fadeOut');
-                setTimeout(function(){
-                    menuButton.classList.remove('fadeIn');
-                    //menuButton.onclick = toggleSidebar();
-                },1000);
-            },1000);
-        }
-    </script>
+
 
 <div id="map"></div>
         <div class="search-container">
@@ -191,14 +109,14 @@ $PATH = "/ZooProject/ZooMap/";
         <div class="animal-title" id = "animal-title">
         <h style="font-weight: bolder">Lion</h>
         <!-- Close button -->
-        <span class="close-btn" onclick="togglePoppup()">X</span>
+        <span class="close-btn" onclick="togglePoppup()">&times</span>
         </div>
     <div class = "position-content-wrapper">
     <!-- Animal image -->
-    <div ><img src='' alt="Animal" class="animal-image" id="animal-pane" alt="animal-image"></div>
-    <!--<div>
-        <br>
-    </div>-->
+     <!-- <div> -->
+    <img src='' alt="Animal" class="animal-image" id="animal-pane" alt="animal-image">
+    <!-- </div> -->
+
     <!-- Scrollable description text -->
     <div class="animal-description-wrapper">
     <div class="animal-description" id = "description">
@@ -217,63 +135,8 @@ $PATH = "/ZooProject/ZooMap/";
     <!--<input type="text" class="animal-input" placeholder="Type your favorite animal here..."> -->
     </div>
     </div>
-
-<script>
-        function toggleResults()
-        {
-            const searchResults = document.getElementById('searchResults');
-            if(searchResults.style.display != 'block')
-            {
-                searchResults.style.display = 'block';
-            }
-            else
-            {
-                searchResults.style.display = 'none';
-            }
-        }
-        // Display all options initially
-        function displayOptions(list) {
-            const searchResults = document.getElementById('searchResults');
-            searchResults.innerHTML = ''; // Clear previous results
-
-            if (list.length > 0) {
-                list.forEach(option => {
-                    const div = document.createElement('div');
-                    div.textContent = option.title;
-                    div.classList.add('search-item');
-                    div.addEventListener('click', () => {
-                        map.setZoom(2);
-                        setTimeout(() =>{
-                            map.panTo([option.coordinateh, option.coordinatew], {animate:true});
-                        }, 300);
-                        document.getElementById('searchInput').value = "";
-                        searchResults.style.display = 'none'; // Hide after selection
-                    });
-                    searchResults.appendChild(div);
-                });
-                searchResults.style.display = 'block'; // Show the filtered list
-            } else {
-                searchResults.style.display = 'none'; // Hide if no results
-            }
-        }
-
-        // Filter the list based on user input
-        function filterOptions() {
-            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-            let filteredOptions = iconArray.filter(animal => 
-            animal.title == searchTerm || animal.name == searchTerm
-            )
-            if(filteredOptions.length == 0) {
-                filteredOptions = iconArray.filter(animal =>
-                animal.title.toLowerCase().includes(searchTerm) || animal.name.toLowerCase().includes(searchTerm)
-                );
-            }
-            
-
-            displayOptions(filteredOptions);
-        }
-    
-    </script>    
+    </main>
+    </div> 
 
 <script>
     

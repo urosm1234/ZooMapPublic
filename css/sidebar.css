@@ -1,34 +1,33 @@
 
 
 
-
-
-
 .sidebar {
     position: absolute;
     top: 0;
-    right: 0;
+    right: -75px;
     height: 100vh;
-    width: 35px;
+    width: 125px;
     display: flex;
     flex-direction: row;
     align-items: center;
-    transition: width 1s ease;
+    transition: right 1s ease;
     overflow: hidden;
     z-index:3;
-    
+    user-select: none; 
 }
 
 .sidebar.expanded {
-    width: 200px;
+    width: 125px;
+    right:0;
 }
 
 .menu-button {
     background-color: transparent;
     border: none;
     cursor: pointer;
-    width: 100%;
-    height: 100%;
+    width: 50px;
+    max-width: 50px;
+    height: 50px;
     font-size: 16px;
     text-align: left;
     display: flex;
@@ -37,16 +36,26 @@
 
 }
 
+.menu-button-wrapper{
+    background-color: transparent;
+    width: 50px;
+    max-width: 50px;
+    height: 100vw;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .sidebar-icons-wrapper
 {
-    width:50%;
-    height: 100%;
+    width:100%;
+    height: 100vh;
     justify-content:space-around;
     display: flex;
     align-items: center;
     flex-direction: column;
     background-color: burlywood;
-    right:-10;
 
 }
 
@@ -56,8 +65,8 @@
 }
 
 .menu-button > img{
-    height:30px;
-    width:30px;
+    height:50px;
+    width:50px;
 }
 .menu-button.fadeOut > img{
     opacity: 0;
@@ -97,7 +106,6 @@
 }
 
 .sidebar.expanded + .sidebar-content{
-    margin-left: 200px;
     width: calc(100% - 200px);
 }
 

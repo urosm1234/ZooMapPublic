@@ -1,31 +1,62 @@
 
 
-function updateCoords(e, database_id)
+function updateCoords(e, name)
 {
-    const apiUrl = "/api/Updates/1"
-    const data = {
-        id: database_id,
-        coordinatesH: Math.round(e.latlng.lat * 10)/10,
-        coordinatesW: Math.round(e.latlng.lng * 10)/10,
-        title: '',
-        desc1:'',
-        desc2:'',
-        desc3:'',
-        paragraph:''
+
+    let upadteName = "name="+name;
+
+    let upadteCoordinatesH = "coordinatesh="+Math.round(e.latlng.lat * 10)/10;
+    let upadtecoordinatesW = "coordinatesw="+Math.round(e.latlng.lng * 10)/10;
+
+    let apiUri = "/ZooProject/ZooMap/Home/updateRequest.php";
+    const xhr = new XMLHttpRequest();
+
+    // Configure it: POST-request for the URL /path/to/your-script.php
+    xhr.open("POST", apiUri, true);
+    
+    // Set the request header
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    
+    // Define what to do when the response comes back
+    xhr.onload = function () {
+        if (xhr.status === 200) {
+            // Successfully received response
+            console.log("Response:", xhr.responseText);
+             // Display the response in an alert box
+        } else {
+            console.error("Error:", xhr.statusText);
+        }
     };
+    
+    // Define the data to send
+    const data = upadteName+"&"+upadteCoordinatesH+"&"+upadtecoordinatesW;
+    
+    // Send the request
+    xhr.send(data);
+    /*const apiUrl = "/ZooProject/ZooMap/Home/updateRequest.php"
+    const data = {
+        name: name,
+        coordinatesh: Math.round(e.latlng.lat * 10)/10,
+        coordinatesw: Math.round(e.latlng.lng * 10)/10,
+    };
+    console.log(JSON.stringify(data));
     const requestOptions = {
-        method: 'PUT',
+        method: 'POST',
         headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
         },
-    body: JSON.stringify(data),
+    body: upadteName+"&"+upadteCoordinatesH+"&"+upadtecoordinatesW,
     };
 
     fetch(apiUrl, requestOptions)
         .then(response => {
             if (!response.ok) {
             throw new Error('Network response was not ok');
+            }
+            else
+            {
+                console.log("Success POST");
             }
             return response.json();
         })
@@ -34,7 +65,7 @@ function updateCoords(e, database_id)
         })
         .catch(error => {
             console.log(error);});
-    console.log(e.latlng);
+    console.log(e.latlng);*/
 }
 
 
@@ -84,6 +115,7 @@ function formatTitleAndParagraph(description)
     let descMain = description.substring(index,description.length);
     return "<strong><b>" +descTittle+ "</b></strong><br>" + descMain;
 }
+
 function changeView(animal_id, iconArray) {
      // Replace with custom filepath
         animal_id = animal_id-1;

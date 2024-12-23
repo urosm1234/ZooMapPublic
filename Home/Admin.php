@@ -1,13 +1,31 @@
-@model ZooMapProject.Contracts.AnimalsGetResponse
-@{
-    // Access the JSON-encoded string from ViewBag
-    var animalDataJson = ViewBag.AnimalDataJson;
+<?php 
+require 'getAnimals.php';
+
+
+session_start();
+
+if(!isset($_SESSION['user']))
+{
+    header('Location: Login.php');
+    
+    exit();
 }
+
+// Destroy the session
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href = "Admin.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <!-- Include Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src = "<?php echo $PATH?>js/shared.js"></script>
+    <script src = "<?php echo $PATH?>js/admin.js"></script>
+    <script src = "<?php echo $PATH?>js/sidebar.js"></script>
     <title>Text Input Form</title>
     <style>
         .form-wrapper{
@@ -77,13 +95,27 @@
         }
     </style>
     <script>
-    var current_id = -1;
+        
+        const PATH ="/ZooProject/ZooMap/";
     function fetchAnimalsFromApi() { //Fetches data from the database and 
-            const response = @Html.Raw(animalDataJson);
+            const response = <?php echo json_encode($result) ?>;
             console.log(response)
-            let iconArray = response;
-            return iconArray;  
+            
+            return response;  
         }
+    var iconArray;
+    async function addIconsToMap(map)
+    {
+        iconArray = await fetchAnimalsFromApi();
+        iconArray.forEach( (icon) => {
+                var icont = new AnimalIcon({iconUrl: PATH +'images/icons/'+icon.name+'.png'});
+                var marker = L.marker([icon.coordinateh, icon.coordinatew], { icon: icont, draggable:true }).addTo(map)
+                .on('click',()=> fillInputsWithAnimalInfo(icon.id-1,icon.id-1,iconArray ) )
+                .on('mouseup', (event)=> updateCoords(event, icon.name));
+            });
+    }
+    var current_id = -1;
+
 
     function fillInputsWithAnimalInfo(database_id, animal_id, iconArray)
     {
@@ -116,16 +148,6 @@
         return 0;
     }
 
-    function addIconsToMap(iconArray = [], map)
-    {
-    iconArray.forEach( (icon) => {
-            
-            var icont = new AnimalIcon({iconUrl: '/images/icons/'+icon.name+'.png'});
-            var marker = L.marker([icon.coordinatesH, icon.coordinatesW], { icon: icont, draggable:true }).addTo(map)
-            .on('click',()=> fillInputsWithAnimalInfo(icon.database_id,icon.array_id, iconArray))
-            .on('mouseup', (event)=> updateCoords(event, icon.database_id, iconArray));
-        });
-    }
     async function formSubmitted()
     {
         
@@ -186,10 +208,7 @@
 
 
 <script>
-    var iconArray = fetchAnimalsFromApi();
 
-           // Dimensions of your background image
-    // Initialize the Leaflet map, setting the initial view to cover the image area
     var map = L.map('map', {
         minZoom: -1,  //44.824739, 20.452049 zoo corner
         maxZoom: 2,   // Allows zooming in
@@ -207,13 +226,13 @@
             }
         });
 
-    addIconsToMap(iconArray, map);
+        addIconsToMap(map);
     
     const imageWidth =   1600;  // Adjust this to match your image width (in pixels)
     const imageHeight = 1200;  // Adjust this to match your image height (in pixels)
     var imageBounds = [[0, 0], [imageHeight, imageWidth]];
 
-    var imageUrl = '/images/map.png';  // Replace with your actual image URL
+    var imageUrl = PATH+'images/map_new1.jpg';  // Replace with your actual image URL
     L.imageOverlay(imageUrl, imageBounds,{
     opacity: 0.7,
     className: 'mainMapImage'}).addTo(map);
