@@ -111,6 +111,7 @@ body{
     overflow: hidden;
     position: absolute;
     bottom:10px;
+    min-width:100%;
 }
 /* Scrollable description area */
 .animal-description {

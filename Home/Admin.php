@@ -110,8 +110,10 @@ if(!isset($_SESSION['user']))
         iconArray.forEach( (icon) => {
                 var icont = new AnimalIcon({iconUrl: PATH +'images/icons/'+icon.name+'.png'});
                 var marker = L.marker([icon.coordinateh, icon.coordinatew], { icon: icont, draggable:true }).addTo(map)
-                .on('click',()=> fillInputsWithAnimalInfo(icon.id-1,icon.id-1,iconArray ) )
+                .on('click',()=> fillInputsWithAnimalInfo(icon.id, icon.id-1,iconArray ) )
                 .on('mouseup', (event)=> updateCoords(event, icon.name));
+                console.log(icon.name)
+                console.log(icon.id-1);
             });
     }
     var current_id = -1;
@@ -201,6 +203,7 @@ if(!isset($_SESSION['user']))
         <textarea id="largeInput" name="largeInput" class="large"></textarea>
 
         <button type="button" onclick = "formSubmitted()">Submit</button>
+        <dspan id ="responseText"></span>
     </form>
     </div>
 

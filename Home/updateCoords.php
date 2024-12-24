@@ -14,8 +14,8 @@ if($method == 'POST')
     $sql = "UPDATE icons SET coordinatew = :coordw, coordinateh = :coordh WHERE name = :user";
     $stmt = $pdo->prepare($sql);
     $stmt->bindParam(":user", $user, PDO::PARAM_STR);
-    $stmt->bindParam(":coordw", $coordinateW, PDO::PARAM_INT);
-    $stmt->bindParam(":coordh", $coordinateH, PDO::PARAM_INT);
+    $stmt->bindParam(":coordw", $coordinateW);
+    $stmt->bindParam(":coordh", $coordinateH);
     $result = $stmt->execute();
     echo $result;
     //echo json_encode($result);

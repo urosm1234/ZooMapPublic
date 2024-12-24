@@ -4,24 +4,28 @@ function toggleSidebar() {
     const menuArrowImg = document.getElementById('menu-arrow-img');
     //menuButton.onclick= "";
     console.log(menuArrowImg.src);
-    menuButton.classList.add('fadeOut');
-    sidebar.classList.toggle('expanded');
     console.log("Started");
-    setTimeout(function(){
-        if(menuArrowImg.src.includes(PATH+"images/arrow-left.png"))
-        {
-            menuArrowImg.src = PATH + "images/arrow-right.png";
-        }
-        else
-        {
-            menuArrowImg.src = PATH + "images/arrow-left.png";
-        }
-        console.log("Finished")
-        menuButton.classList.add('fadeIn');
-        menuButton.classList.remove('fadeOut');
+
+    if(!menuButton.classList.contains('fadeOut'))
+    {
+        menuButton.classList.add('fadeOut');
+        sidebar.classList.toggle('expanded');
         setTimeout(function(){
-            menuButton.classList.remove('fadeIn');
-            //menuButton.onclick = toggleSidebar();
-        },1000);
-    },1000);
+            if(menuArrowImg.src.includes(PATH+"images/arrow-left.png"))
+            {
+                menuArrowImg.src = PATH + "images/arrow-right.png";
+            }
+            else
+            {
+                menuArrowImg.src = PATH + "images/arrow-left.png";
+            }
+            console.log("Finished");
+            menuButton.classList.remove('fadeOut');
+            menuButton.classList.add('fadeIn');
+            setTimeout(function(){
+                menuButton.classList.remove('fadeIn');
+            },250);
+        },250);
+    }
+
 }

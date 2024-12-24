@@ -10,7 +10,7 @@ require 'getAnimals.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="height=device-height, initial-scale=1.0">
     <!-- Include Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <link rel = "stylesheet" href = "index.css">
@@ -49,7 +49,7 @@ require 'getAnimals.php';
             
             return response;  
         }
-    var iconArray;
+    var iconArray = [];
     async function addIconsToMap(map)
     {
         iconArray = await fetchAnimalsFromApi();
@@ -87,8 +87,8 @@ require 'getAnimals.php';
         </button>
         </div>
         <div id ="sidebar-icons-wrapper" class="sidebar-icons-wrapper">
-                <img style="cursor:pointer"src ="<?php echo $PATH?>images/arrow-right.png" ></img>
-                <img style="cursor:pointer"src ="<?php echo $PATH?>images/arrow-right.png" ></img>
+                <img style="cursor:pointer"src ="" ></img>
+                <img style="cursor:pointer"src ="" ></img>
         </div>
     </div> 
     <!-- #region >-->
@@ -139,7 +139,7 @@ require 'getAnimals.php';
     </div> 
 
 <script>
-    
+    var position;
 
            // Dimensions of your background image
     // Initialize the Leaflet map, setting the initial view to cover the image area
@@ -159,6 +159,21 @@ require 'getAnimals.php';
 
             }
         });
+
+    var positionMarker = null;
+    if (navigator.geolocation) {
+    navigator.geolocation.watchPosition(setPosition,null, {enableHighAccuracy: false,timeout: 5000});
+    }
+    function setPosition(newPosition)
+    {
+        position = newPosition.coords;
+        console.log(position);
+        if(positionMarker)
+        positionMarker.setLatLng([(position.latitude - 42), (position.longitude - 20)* 1600]);
+        else
+        positionMarker =  L.marker([position.latitude - 42, (position.longitude - 20)* 1600]).addTo(map);
+
+    }
 
     addIconsToMap(map);
     

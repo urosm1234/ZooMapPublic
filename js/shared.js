@@ -8,7 +8,7 @@ function updateCoords(e, name)
     let upadteCoordinatesH = "coordinatesh="+Math.round(e.latlng.lat * 10)/10;
     let upadtecoordinatesW = "coordinatesw="+Math.round(e.latlng.lng * 10)/10;
 
-    let apiUri = "/ZooProject/ZooMap/Home/updateRequest.php";
+    let apiUri = "/ZooProject/ZooMap/Home/updateCoords.php";
     const xhr = new XMLHttpRequest();
 
     // Configure it: POST-request for the URL /path/to/your-script.php
@@ -24,86 +24,47 @@ function updateCoords(e, name)
             console.log("Response:", xhr.responseText);
              // Display the response in an alert box
         } else {
-            console.error("Error:", xhr.statusText);
+            console.log("Error:", xhr.statusText);
         }
     };
-    
-    // Define the data to send
     const data = upadteName+"&"+upadteCoordinatesH+"&"+upadtecoordinatesW;
-    
-    // Send the request
     xhr.send(data);
-    /*const apiUrl = "/ZooProject/ZooMap/Home/updateRequest.php"
-    const data = {
-        name: name,
-        coordinatesh: Math.round(e.latlng.lat * 10)/10,
-        coordinatesw: Math.round(e.latlng.lng * 10)/10,
-    };
-    console.log(JSON.stringify(data));
-    const requestOptions = {
-        method: 'POST',
-        headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-        },
-    body: upadteName+"&"+upadteCoordinatesH+"&"+upadtecoordinatesW,
-    };
-
-    fetch(apiUrl, requestOptions)
-        .then(response => {
-            if (!response.ok) {
-            throw new Error('Network response was not ok');
-            }
-            else
-            {
-                console.log("Success POST");
-            }
-            return response.json();
-        })
-        .then(data => {
-            outputElement.textContent = JSON.stringify(data, null, 2);
-        })
-        .catch(error => {
-            console.log(error);});
-    console.log(e.latlng);*/
 }
 
 
 function updateAnimal(database_id, titlei, desc1i, desc2i, desc3i, paragraphi){
-    console.log(titlei);
-    const apiUrl = "/api/Updates/2";
-    const data = {
-        id: database_id,
-        coordinatesH: 0,
-        coordinatesW: 0,
-        title:titlei,
-        desc1: desc1i,
-        desc2: desc2i,
-        desc3: desc3i,
-        paragraph:paragraphi
-    };
+    let upadteTitle = "title="+ titlei;
 
-    const requestOptions = {
-        method: 'PUT',
-        headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-        },
-    body: JSON.stringify(data),
+    let upadteDesc1= "desc1="+desc1i;
+    let upadteDesc2 ="desc2="+desc2i;
+    let updateDesc3 ="desc3="+desc3i;
+    let updateParagraph = "paragraph="+paragraphi;
+    let updateId = "id="+database_id;
+    let apiUri = "/ZooProject/ZooMap/Home/updateText.php";
+    const xhr = new XMLHttpRequest();
+
+    // Configure it: POST-request for the URL /path/to/your-script.php
+    xhr.open("POST", apiUri, true);
+    
+    // Set the request header
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    
+    // Define what to do when the response comes back
+    xhr.onload = function () {
+        if (xhr.status === 200) {
+            // Successfully received response
+            document.getElementById("responseText").innerText = xhr.responseText;
+            if(xhr.responseText == "Success")
+                document.getElementById("responseText").style.color = "green";
+            else
+                document.getElementById("responseText").style.color  = "red";
+             // Display the response in an alert box
+        } else {
+            console.log("Error:", xhr.statusText);
+        }
     };
-    console.log(requestOptions.body);
-    fetch(apiUrl, requestOptions)
-        .then(response => {
-            if (!response.ok) {
-            throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
-        .then(data => {
-            outputElement.textContent = JSON.stringify(data);
-        })
-        .catch(error => {
-            console.log(error);});
+    const data = updateId+"&"+upadteTitle+"&"+upadteDesc1+"&"+upadteDesc2 + "&" + updateDesc3 +"&" + updateParagraph;
+    xhr.send(data);
 }
 
 
