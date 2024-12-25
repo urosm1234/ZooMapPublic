@@ -2,9 +2,11 @@
 
 require 'db.php';
 
+session_start();
+
 $method = $_SERVER['REQUEST_METHOD'];
 
-if($method == 'POST')
+if($method == 'POST' && isset($_SESSION['user']))
 {
     $user = $_POST['name'];
     $coordinateW = $_POST['coordinatesw'];
@@ -20,4 +22,6 @@ if($method == 'POST')
     echo $result;
     //echo json_encode($result);
 }
+else
+echo "Error";
 ?>

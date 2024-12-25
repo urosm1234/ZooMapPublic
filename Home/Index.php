@@ -1,6 +1,13 @@
 ﻿<?php
 //header("Content-Type: application/json");
-require 'getAnimals.php';
+try{
+    require 'Requests/getAnimals.php';
+
+}
+catch(\Throwable $e){
+    die("Error");
+}
+
 ?>
 
 

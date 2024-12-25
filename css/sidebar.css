@@ -53,7 +53,8 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    background-color: burlywood;
+    background-color: #f4f0e6;
+    border-left: 2px solid #8b7a63;
 
 }
 

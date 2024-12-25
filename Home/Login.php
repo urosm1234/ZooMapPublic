@@ -1,5 +1,5 @@
 <?php
-    require 'db.php';
+    require 'Requests/db.php';
     $message = "";
     if($_SERVER['REQUEST_METHOD'] == "POST")
     {

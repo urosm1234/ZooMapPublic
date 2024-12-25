@@ -4,7 +4,7 @@ require 'db.php';
 
 $method = $_SERVER['REQUEST_METHOD'];
 
-if($method == 'POST')
+if($method == 'POST' && isset($_SESSION['user']))
 {
     $id = $_POST['id'];
     $sql = "SELECT animal_id FROM icons where id=:id";

@@ -1,5 +1,5 @@
 <?php 
-require 'getAnimals.php';
+require 'Requests/getAnimals.php';
 
 
 session_start();
@@ -93,6 +93,26 @@ if(!isset($_SESSION['user']))
         border-color:black;
         transform: translate('-50%','-50%');
         }
+
+        #logout-button
+        {
+            position:absolute;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            top:10px;
+            left:10px;
+            padding:5px;
+            width:100px;
+            height:50px;
+            font-size:20px;
+            color:white;
+            z-index: 4;
+            font-weight:bold;
+            background-color: #28a745;
+            border-radius:15px;
+            text-decoration: none;
+        }
     </style>
     <script>
         
@@ -180,6 +200,9 @@ if(!isset($_SESSION['user']))
     </script>
 </head>
 <body>
+    <form>
+    <a id="logout-button" href = "./Requests/logout.php" type = "submit">Logout</a>
+    </form>
     <div id ="map"></div>
     <h1>Input Form</h1>
     <div class = "form-wrapper">

@@ -8,7 +8,7 @@ function updateCoords(e, name)
     let upadteCoordinatesH = "coordinatesh="+Math.round(e.latlng.lat * 10)/10;
     let upadtecoordinatesW = "coordinatesw="+Math.round(e.latlng.lng * 10)/10;
 
-    let apiUri = "/ZooProject/ZooMap/Home/updateCoords.php";
+    let apiUri = "./Requests/updateCoords.php";
     const xhr = new XMLHttpRequest();
 
     // Configure it: POST-request for the URL /path/to/your-script.php
