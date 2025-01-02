@@ -44,7 +44,7 @@ function toggleResults()
             )
             if(filteredOptions.length == 0) {
                 filteredOptions = iconArray.filter(animal =>
-                animal.title.toLowerCase().includes(searchTerm) || animal.name.toLowerCase().includes(searchTerm)
+                animal.title && (animal.title.toLowerCase().includes(searchTerm) || animal.name.toLowerCase().includes(searchTerm))
                 );
             }
             

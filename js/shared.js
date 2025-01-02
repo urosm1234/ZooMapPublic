@@ -40,7 +40,7 @@ function updateAnimal(database_id, titlei, desc1i, desc2i, desc3i, paragraphi){
     let updateDesc3 ="desc3="+desc3i;
     let updateParagraph = "paragraph="+paragraphi;
     let updateId = "id="+database_id;
-    let apiUri = "/ZooProject/ZooMap/Home/updateText.php";
+    let apiUri = "./Requests/updateText.php";
     const xhr = new XMLHttpRequest();
 
     // Configure it: POST-request for the URL /path/to/your-script.php
@@ -65,6 +65,7 @@ function updateAnimal(database_id, titlei, desc1i, desc2i, desc3i, paragraphi){
     };
     const data = updateId+"&"+upadteTitle+"&"+upadteDesc1+"&"+upadteDesc2 + "&" + updateDesc3 +"&" + updateParagraph;
     xhr.send(data);
+    console.log(1);
 }
 
 
@@ -116,7 +117,6 @@ function changeView(animal_id, iconArray) {
 
 function togglePoppup(animal, iconArray)
 {
-    console.log(animal);
     var popup = document.getElementById("animal-window");
     if (popup.style.display == 'block')
     popup.style.display = 'none';
@@ -130,35 +130,46 @@ function togglePoppup(animal, iconArray)
     }
     
 
-     /*if (popup.classList.contains('show')) {
-            // If the map is shown, apply the hide animation
-            popup.classList.remove('show');
-            popup.classList.add('hide');
-
-            // After the fade animation completes, set display to none
-            setTimeout(function() {
-                popup.classList.add('hide-complete');
-                popup.classList.remove('hide');
-            }, 250); // Match with the fadeOut animation duration
-        } else {
-            // If the map is hidden, remove hide-complete and apply the show animation
-            console.log("great");
-            result = await changeView(animal);
-            console.log(result);
-
-            popup.classList.remove('hide-complete');
-            popup.classList.add('show');
-        }*/
 }
 
+var matrix = [];
+var counter = 0, first = -1;
 function getCoord(e)
 {
     var coord = e.latlng;
     var lat = coord.lat;
     var lng = coord.lng;
     console.log(lat + "," + lng);
-}    
     
+    let index = curr;
+    nodeMatrix.push([[lat, lng]]);
+    L.marker([lat, lng], 'red').on('click', ()=>connectNodes(index)).addTo(map);
+    curr++;
+    console.log(nodeMatrix);
+}    
+
+function connectNodes(index)
+{
+    if(first == -1)
+    {
+        first = index;
+        console.log(first);
+        return;
+    }
+
+    if(index!=first)
+    {
+        nodeMatrix[first].push(index);
+        nodeMatrix[index].push(first);
+        L.polyline([nodeMatrix[first][0], nodeMatrix[index][0]], {
+            color: 'red',
+            weight: 10,
+            dashArray: '2, 15', // Pattern for the dashes: 5px dash, 10px gap
+            }).addTo(map);
+    }
+    
+    first = -1;
+}
 
     
     

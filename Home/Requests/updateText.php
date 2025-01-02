@@ -2,6 +2,8 @@
 
 require 'db.php';
 
+session_start();
+
 $method = $_SERVER['REQUEST_METHOD'];
 
 if($method == 'POST' && isset($_SESSION['user']))
@@ -40,4 +42,5 @@ if($method == 'POST' && isset($_SESSION['user']))
 
     //echo json_encode($result);
 }
+
 ?>

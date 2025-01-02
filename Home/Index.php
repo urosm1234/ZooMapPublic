@@ -1,5 +1,5 @@
 ﻿<?php
-//header("Content-Type: application/json");
+
 try{
     require 'Requests/getAnimals.php';
 
@@ -29,6 +29,8 @@ catch(\Throwable $e){
     <script src = "<?php echo $PATH?>js/shared.js"></script>
     <script src = "<?php echo $PATH?>js/search.js"></script>
     <script src = "<?php echo $PATH?>js/sidebar.js"></script>
+    <script src = "<?php echo $PATH?>js/nodeMatrix.js"></script>
+    <script src = "<?php echo $PATH?>js/findPath.js"></script>
     <style>
         body{
             overflow:hidden;
@@ -62,19 +64,27 @@ catch(\Throwable $e){
         iconArray = await fetchAnimalsFromApi();
         iconArray.forEach( (icon) => {
                 var icont = new AnimalIcon({iconUrl: PATH +'images/icons/'+icon.name+'.png'});
-                var marker = L.marker([icon.coordinateh, icon.coordinatew], { icon: icont, draggable:false }).addTo(map)
-                .on('click',()=> togglePoppup(icon.id, iconArray) )
+                var marker = L.marker([icon.coordinateh, icon.coordinatew], { icon: icont, draggable:false }).addTo(map);
+                if(icon.title)
+                marker.on('click',()=> togglePoppup(icon.id, iconArray) );
             });
-            const toiletIcon = iconArray.filter(animal => animal.title == "Lav");
-            console.log(toiletIcon[0].name);
-            console.log(document.getElementById("sidebar-icons-wrapper").childNodes[0]);
-
+            const toiletIcon = iconArray.filter(animal => animal.name == "wc" ||  animal.name == "ulaz");
+            console.log(toiletIcon[0].coordinateh);
+            console.log(toiletIcon[1].coordinatew);
             document.getElementById("sidebar-icons-wrapper").children[0].src =PATH +"images/icons/" +toiletIcon[0].name+'.png';
+            document.getElementById("sidebar-icons-wrapper").children[1].src =PATH +"images/icons/" +toiletIcon[1].name+'.png';
             //document.getElementById("sidebar-icons-wrapper").children[0].addEventListener('click', () => togglePoppup(toiletIcon[0].id, iconArray));
-            document.getElementById("sidebar-icons-wrapper").children[0].addEventListener('click', () => {
+            panToCoords(document.getElementById("sidebar-icons-wrapper").children[0], 0, toiletIcon);
+            panToCoords(document.getElementById("sidebar-icons-wrapper").children[1], 1, toiletIcon);
+
+    }
+
+    function panToCoords(node, counter, toiletIcon)
+    {
+        node.addEventListener('click', () => {
                         map.setZoom(2);
                         setTimeout(() =>{
-                            map.panTo([toiletIcon[0].coordinateh, toiletIcon[0].coordinatew], {animate:true});
+                            map.panTo([toiletIcon[counter].coordinateh, toiletIcon[counter].coordinatew], {animate:true});
                         }, 300);
                         document.getElementById('searchInput').value = "";
                         searchResults.style.display = 'none'; // Hide after selection
@@ -90,7 +100,7 @@ catch(\Throwable $e){
     <div class="sidebar" id="sidebar">
         <div class="menu-button-wrapper">
         <button id="menu-button" class="menu-button" onclick="toggleSidebar()">
-            <img id ="menu-arrow-img"  src="<?php echo $PATH?>images/arrow-left.png"></img>
+            <img id ="menu-arrow-img"  src="<?php echo $PATH?>images/left-arrow.png"></img>
         </button>
         </div>
         <div id ="sidebar-icons-wrapper" class="sidebar-icons-wrapper">
@@ -146,9 +156,7 @@ catch(\Throwable $e){
     </div> 
 
 <script>
-    var position;
-
-           // Dimensions of your background image
+    // Dimensions of your background image
     // Initialize the Leaflet map, setting the initial view to cover the image area
     var map = L.map('map', {
         minZoom: -1,  //44.824739, 20.452049 zoo corner
@@ -167,28 +175,49 @@ catch(\Throwable $e){
             }
         });
 
+
+    var position;
     var positionMarker = null;
+        
+    const pointB = [200, 200];
+    var dottedPath = null;
+    L.marker(pointB).addTo(map).bindPopup('Point B');
+
     if (navigator.geolocation) {
-    navigator.geolocation.watchPosition(setPosition,null, {enableHighAccuracy: false,timeout: 5000});
+        navigator.geolocation.watchPosition(setPosition,null, {enableHighAccuracy: false,timeout: 5000});
     }
     function setPosition(newPosition)
     {
         position = newPosition.coords;
         console.log(position);
         if(positionMarker)
-        positionMarker.setLatLng([(position.latitude - 42), (position.longitude - 20)* 1600]);
+            positionMarker.setLatLng([(position.latitude - 42), (position.longitude - 20)* 1600]);
         else
-        positionMarker =  L.marker([position.latitude - 42, (position.longitude - 20)* 1600]).addTo(map);
+        {
+            let pointCurr = [position.latitude - 42, (position.longitude - 20)* 1600];
+            positionMarker =  L.marker(pointCurr).addTo(map);
+            
+            if(dottedPath)
+            return;
+
+            dottedPath = L.polyline([pointCurr,[100,100], pointB], {
+            color: 'blue',
+            weight: 10,
+            dashArray: '2, 15', // Pattern for the dashes: 5px dash, 10px gap
+            }).addTo(map);
+        }
 
     }
 
+
     addIconsToMap(map);
+
     
     const imageWidth =   1600;  // Adjust this to match your image width (in pixels)
     const imageHeight = 1200;  // Adjust this to match your image height (in pixels)
     var imageBounds = [[0, 0], [imageHeight, imageWidth]];
 
-    var imageUrl = PATH + '/images/map_new1.jpg';  // Replace with your actual image URL
+    var imageUrl = PATH + '/images/map_new2.jpg';  // Replace with your actual image URL
     L.imageOverlay(imageUrl, imageBounds,{
     attribution: '© OpenStreetMap',
     opacity: 0.7,
@@ -209,7 +238,23 @@ catch(\Throwable $e){
     });
 
     map.on('click', getCoord); 
-
+    var curr = 0;
+    nodeMatrix.forEach(node => {
+        let index = curr;
+        L.marker(node[0], 'red').on('click', ()=>connectNodes(index)).addTo(map);
+        node.forEach(dot=>{
+            if(dot != node[0])
+            L.polyline([node[0], nodeMatrix[dot][0]], {
+            color: 'red',
+            weight: 10,
+            dashArray: '2, 15', // Pattern for the dashes: 5px dash, 10px gap
+            }).addTo(map);
+        });
+        curr++;
+    });
+    let nodes11 = findShortestRoute([288.5,404], [365.75,814]);
+    drawPath([288.5,404], [365.75,814]);
+    console.log(nodes11);
 </script>
 </body>
 </html>

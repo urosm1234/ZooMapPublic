@@ -11,13 +11,13 @@ function toggleSidebar() {
         menuButton.classList.add('fadeOut');
         sidebar.classList.toggle('expanded');
         setTimeout(function(){
-            if(menuArrowImg.src.includes(PATH+"images/arrow-left.png"))
+            if(menuArrowImg.src.includes(PATH+"images/left-arrow.png"))
             {
                 menuArrowImg.src = PATH + "images/arrow-right.png";
             }
             else
             {
-                menuArrowImg.src = PATH + "images/arrow-left.png";
+                menuArrowImg.src = PATH + "images/left-arrow.png";
             }
             console.log("Finished");
             menuButton.classList.remove('fadeOut');
