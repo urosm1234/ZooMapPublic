@@ -1,4 +1,6 @@
-function toggleResults()
+var drawnPath = null, returnMarker = null;
+        
+        function toggleResults()
         {
             const searchResults = document.getElementById('searchResults');
             if(searchResults.style.display != 'block')
@@ -10,6 +12,7 @@ function toggleResults()
                 searchResults.style.display = 'none';
             }
         }
+
         // Display all options initially
         function displayOptions(list) {
             const searchResults = document.getElementById('searchResults');
@@ -20,14 +23,7 @@ function toggleResults()
                     const div = document.createElement('div');
                     div.textContent = option.title;
                     div.classList.add('search-item');
-                    div.addEventListener('click', () => {
-                        map.setZoom(2);
-                        setTimeout(() =>{
-                            map.panTo([option.coordinateh, option.coordinatew], {animate:true});
-                        }, 300);
-                        document.getElementById('searchInput').value = "";
-                        searchResults.style.display = 'none'; // Hide after selection
-                    });
+                    div.addEventListener('click', () => optionSelected(option));
                     searchResults.appendChild(div);
                 });
                 searchResults.style.display = 'block'; // Show the filtered list
@@ -50,4 +46,29 @@ function toggleResults()
             
 
             displayOptions(filteredOptions);
+        }
+
+        function optionSelected(option)
+        {
+            const searchResults = document.getElementById('searchResults');
+            map.setZoom(2);
+            setTimeout(() =>{
+                map.panTo([option.coordinateh, option.coordinatew], {animate:true});
+            }, 300);
+            document.getElementById('searchInput').value = "";
+            if(navigator.geolocation)
+            {
+                if(drawnPath)
+                map.removeLayer(drawnPath);
+
+                if(returnMarker)
+                map.removeLayer(returnMarker);
+
+                let pathAtrr = drawPath([ userPosition.latitude + 350,  userPosition.longitude + 1100], [option.coordinateh, option.coordinatew]);
+                drawnPath = pathAtrr[0];
+                returnMarker = pathAtrr[1];
+            }
+            else
+            console.log('navigator not set')
+            searchResults.style.display = 'none'; // Hide after selection
         }

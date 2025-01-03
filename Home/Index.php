@@ -81,14 +81,7 @@ catch(\Throwable $e){
 
     function panToCoords(node, counter, toiletIcon)
     {
-        node.addEventListener('click', () => {
-                        map.setZoom(2);
-                        setTimeout(() =>{
-                            map.panTo([toiletIcon[counter].coordinateh, toiletIcon[counter].coordinatew], {animate:true});
-                        }, 300);
-                        document.getElementById('searchInput').value = "";
-                        searchResults.style.display = 'none'; // Hide after selection
-                    });
+        node.addEventListener('click', () => optionSelected(toiletIcon[counter]));
     }
 
     </script>
@@ -176,7 +169,7 @@ catch(\Throwable $e){
         });
 
 
-    var position;
+    var userPosition;
     var positionMarker = null;
         
     const pointB = [200, 200];
@@ -188,23 +181,15 @@ catch(\Throwable $e){
     }
     function setPosition(newPosition)
     {
-        position = newPosition.coords;
-        console.log(position);
+        userPosition = newPosition.coords;
+        console.log(userPosition);
         if(positionMarker)
-            positionMarker.setLatLng([(position.latitude - 42), (position.longitude - 20)* 1600]);
+            positionMarker.setLatLng([ userPosition.latitude + 350,  userPosition.longitude + 1100]);
         else
         {
-            let pointCurr = [position.latitude - 42, (position.longitude - 20)* 1600];
+            let pointCurr = [ userPosition.latitude + 350,  userPosition.longitude + 1100];
             positionMarker =  L.marker(pointCurr).addTo(map);
             
-            if(dottedPath)
-            return;
-
-            dottedPath = L.polyline([pointCurr,[100,100], pointB], {
-            color: 'blue',
-            weight: 10,
-            dashArray: '2, 15', // Pattern for the dashes: 5px dash, 10px gap
-            }).addTo(map);
         }
 
     }
@@ -252,9 +237,7 @@ catch(\Throwable $e){
         });
         curr++;
     });
-    let nodes11 = findShortestRoute([288.5,404], [365.75,814]);
-    drawPath([288.5,404], [365.75,814]);
-    console.log(nodes11);
+    
 </script>
 </body>
 </html>

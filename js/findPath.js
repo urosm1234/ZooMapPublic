@@ -26,41 +26,79 @@ function findClosestNode(coords)
 
 function findClosestPath(coords)
 {
-    let minDist = 300000, returnIndex1 = -1, returnIndex2=-1, index = 0;
-    let k=0.0, n=0.0;
+    let minDist = 3000000, returnIndex1 = -1, returnIndex2=-1, index = 0, newDot;
+    let k=0.0,k1 =0.0, n=0.0, n1 =0.0;
     nodeMatrix.forEach(node =>{
         let coords1 =  node[0];
         for(let i =1;i<node.length;i++)
         {
             let coords2 = nodeMatrix[node[i]][0];
             k = (coords1[0] - coords2[0]) / (coords1[1] - coords2[1]);
-            n = coords[0]+k*coords[1];
-            let x = (n-(coords1[0] -k*coords1[1]))/(2*k);
-            let y = coords1[0] -k*coords1[1]+k*x;
-            if(x<Math.max(coords1[1],coords2[1]) && x>Math.min(coords1[1],coords2[1]) && y<Math.max(coords1[0],coords2[0]) && y>Math.min(coords1[0],coords2[0]))
+            if(k!=0.0)
+            k1 = -1/k;
+            else
+            k1 = 9999999;
+            n = coords1[0]-k*coords1[1];
+            let x = (n-(coords[0] -k1*coords[1]))/(k1 - k);
+            let y = k*x + n;
+
+            if(index == 59 && node[i] == 57)
             {
+                console.log([y, x]);
+                console.log(k, n);
+                console.log(k1, (coords[0] -k1*coords[1]));
+            }
+            if(x<=Math.max(coords1[1],coords2[1]) && x>=Math.min(coords1[1],coords2[1]) && y<=Math.max(coords1[0],coords2[0]) && y>=Math.min(coords1[0],coords2[0]))
+            {
+                
                 let dist = findNodeDist(coords, [y, x]);
+                console.log(dist);
                 if(dist< minDist)
                 {
                     minDist = dist;
                     returnIndex1 = index;
                     returnIndex2 = i;
+                    newDot = [y, x];
                 }
-                if(dist<10)
-                    return[returnIndex1, returnIndex2];
             }
+        }
+        if(findNodeDist(coords1, coords) < minDist)
+        {
+            minDist = findNodeDist(coords1, coords);
+            returnIndex1 = index;
+            returnIndex2 = -1;
+            
         }
         index++;
     });
-    return[returnIndex1, nodeMatrix[returnIndex1][returnIndex2]];
+    if(returnIndex2 > 0)
+    return[[returnIndex1, nodeMatrix[returnIndex1][returnIndex2]], newDot];
+    else
+    return[[returnIndex1, returnIndex1]];
 }
+
+
+
 
 function findShortestRoute(coordsStart, coordsEnd)
 {
-    let endNode = findClosestNode(coordsEnd);
-    console.log(endNode)
-    let startNodes = findClosestPath(coordsStart);
-    console.log(startNodes);
+    let goalNode = findClosestPath(coordsEnd);
+    console.log(goalNode);
+ 
+    if(goalNode.length == 2)
+    {
+        nodeMatrix.push([goalNode[1], goalNode[0][0], goalNode[0][1]]);
+        nodeMatrix[goalNode[0][0]].push(nodeMatrix.length - 1);
+        nodeMatrix[goalNode[0][1]].push(nodeMatrix.length - 1);
+
+        
+        endNode = nodeMatrix.length - 1;
+    }
+    else
+    endNode = goalNode[0][0];
+
+    let startNodes = findClosestPath(coordsStart)[0];
+
 
     const visited = Array(nodeMatrix.length).fill(0);
     const t = Array(nodeMatrix.length).fill(-1);
@@ -117,14 +155,29 @@ function findShortestRoute(coordsStart, coordsEnd)
 
     out.push(nodeMatrix[pom][0]);
     out.push(coordsStart);
-    return out;
+
+    let returnMarker;
+    if(goalNode.length == 2)
+    {
+        nodeMatrix[goalNode[0][0]].pop();
+        nodeMatrix[goalNode[0][1]].pop();
+        nodeMatrix.pop();
+        returnMarker = goalNode[1];
+    }
+    else
+        returnMarker = nodeMatrix[goalNode[0][0]][0];
+
+    return [out , returnMarker];
 }
 
 function drawPath(coordsStart, coordsEnd)
 {
-            L.polyline(findShortestRoute(coordsStart, coordsEnd), {
-                color: 'green',
+            let drawingMaterial = findShortestRoute(coordsStart, coordsEnd)
+            let path = L.polyline(drawingMaterial[0], {
+                color: 'crimson',
                 weight: 10,
                 dashArray: '2, 15', // Pattern for the dashes: 5px dash, 10px gap
                 }).addTo(map);
+            let returnMarker = L.marker(drawingMaterial[1]).addTo(map);
+            return [path, returnMarker];
 }
