@@ -6,7 +6,7 @@
     top: 0;
     right: -75px;
     height: 100vh;
-    width: 125px;
+    width: 140px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -25,9 +25,9 @@
     background-color: transparent;
     border: none;
     cursor: pointer;
-    width: 50px;
-    max-width: 50px;
-    height: 50px;
+    width: 65px;
+    max-width: 65px;
+    height: 60px;
     font-size: 16px;
     text-align: left;
     display: flex;
@@ -38,8 +38,8 @@
 
 .menu-button-wrapper{
     background-color: transparent;
-    width: 50px;
-    max-width: 50px;
+    width: 65px;
+    max-width: 65px;
     height: 100vw;
     text-align: center;
     display: flex;
@@ -67,8 +67,8 @@
 }
 
 .menu-button > img{
-    height:50px;
-    width:50px;
+    height:65px;
+    width:65px;
 }
 .menu-button.fadeOut > img{
     opacity: 0;
