@@ -1,10 +1,8 @@
 
 function findNodeDist(coords1, coords2)
 {
-    /*console.log(coords1);
-    console.log(coords2);*/
     let returnValue = 0.0;
-    returnValue +=Math.abs((coords1[0] - coords2[0])**2 + (coords1[1] - coords2[1])**2);
+    returnValue +=Math.sqrt((coords1[0] - coords2[0])**2 + (coords1[1] - coords2[1])**2);
     return returnValue;
 }
 
@@ -98,7 +96,6 @@ function findShortestRoute(coordsStart, coordsEnd)
     endNode = goalNode[0][0];
 
     let startNodes = findClosestPath(coordsStart)[0];
-
 
     const visited = Array(nodeMatrix.length).fill(0);
     const t = Array(nodeMatrix.length).fill(-1);

@@ -108,7 +108,7 @@ catch(\Throwable $e){
         <div class="search-container">
         <!-- Search input field -->
         <div class = "search-box">
-            <input autocomplete="off" type="text" id="searchInput" class="search-input" placeholder="Pretraga..." onkeyup="filterOptions()" >
+            <input autocomplete="off" type="text" id="searchInput" class="search-input" placeholder="Pretraga..." onclick = "searchSelected()" onkeyup="filterOptions()" >
             <img class= "magnifying-img" src = "<?php echo $PATH?>images/magnifying_glass.png" onclick = "toggleResults()"></img>
         </div>
         <!-- Scrollable results list -->
@@ -174,7 +174,6 @@ catch(\Throwable $e){
         
     const pointB = [200, 200];
     var dottedPath = null;
-    L.marker(pointB).addTo(map).bindPopup('Point B');
 
     if (navigator.geolocation) {
         navigator.geolocation.watchPosition(setPosition,null, {enableHighAccuracy: false,timeout: 5000});
@@ -223,6 +222,7 @@ catch(\Throwable $e){
     });
 
     map.on('click', getCoord); 
+    map.on('click', closeSearchList)
     var curr = 0;
    /* nodeMatrix.forEach(node => {
         let index = curr;

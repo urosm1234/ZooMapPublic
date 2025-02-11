@@ -1,9 +1,9 @@
-var drawnPath = null, returnMarker = null;
+var drawnPath = null, returnMarker = null, filteredOptions = null;
         
         function toggleResults()
         {
             const searchResults = document.getElementById('searchResults');
-            if(searchResults.style.display != 'block')
+            if(searchResults.style.display != 'block' && filteredOptions != null && filteredOptions.length > 0)
             {
                 searchResults.style.display = 'block';
             }
@@ -35,7 +35,7 @@ var drawnPath = null, returnMarker = null;
         // Filter the list based on user input
         function filterOptions() {
             const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-            let filteredOptions = iconArray.filter(animal => 
+            filteredOptions = iconArray.filter(animal => 
             animal.title == searchTerm || animal.name == searchTerm
             )
             if(filteredOptions.length == 0) {
@@ -71,4 +71,18 @@ var drawnPath = null, returnMarker = null;
             else
             console.log('navigator not set')
             searchResults.style.display = 'none'; // Hide after selection
+        }
+
+        function closeSearchList()
+        {
+            const searchResults = document.getElementById('searchResults');
+            searchResults.style.display = 'none';
+        }
+
+        function searchSelected()
+        {
+            if(filteredOptions != null && filteredOptions.length > 0)
+            {
+                searchResults.style.display = 'block';
+            }
         }
