@@ -224,7 +224,7 @@ catch(\Throwable $e){
 
     map.on('click', getCoord); 
     var curr = 0;
-    nodeMatrix.forEach(node => {
+   /* nodeMatrix.forEach(node => {
         let index = curr;
         L.marker(node[0], 'red').on('click', ()=>connectNodes(index)).addTo(map);
         node.forEach(dot=>{
@@ -236,7 +236,7 @@ catch(\Throwable $e){
             }).addTo(map);
         });
         curr++;
-    });
+    });*/
     
 </script>
 </body>

@@ -143,9 +143,9 @@ function getCoord(e)
     
     let index = curr;
     nodeMatrix.push([[lat, lng]]);
-    L.marker([lat, lng], 'red').on('click', ()=>connectNodes(index)).addTo(map);
+    //L.marker([lat, lng], 'red').on('click', ()=>connectNodes(index)).addTo(map);
     curr++;
-    console.log(nodeMatrix);
+    //console.log(nodeMatrix);
 }    
 
 function connectNodes(index)
