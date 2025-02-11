@@ -27,8 +27,9 @@
     border-radius: 0 0 4px 4px;
     background-color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 22px;
     display: none; /* Hidden by default */
-    width: 90%;
+    width: 80%;
 }
         /* Individual option style */
 .search-item {

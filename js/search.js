@@ -35,6 +35,11 @@ var drawnPath = null, returnMarker = null, filteredOptions = null;
         // Filter the list based on user input
         function filterOptions() {
             const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            if(searchTerm == "")
+                    {
+                        filteredOptions = null;
+                        return;
+                    }
             filteredOptions = iconArray.filter(animal => 
             animal.title == searchTerm || animal.name == searchTerm
             )
