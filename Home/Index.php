@@ -120,7 +120,7 @@ catch(\Throwable $e){
         <h style="font-weight: bolder">Lion</h>
         <!-- Close button -->
         <span class="close-btn" onclick="togglePoppup()">&times</span>
-        </div>
+    </div>
     <div class = "position-content-wrapper">
     <!-- Animal image -->
      <!-- <div> -->
