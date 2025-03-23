@@ -136,14 +136,13 @@ catch(\Throwable $e){
         <p ></p>
     </div>
     </div>
-    <!-- Input element -->
-    <!--<input type="text" class="animal-input" placeholder="Type your favorite animal here..."> -->
     </div>
     </div>
     </main>
     </div> 
 
 <script>
+    //CREATING THE MAP
     // Dimensions of your background image
     // Initialize the Leaflet map, setting the initial view to cover the image area
     var map = L.map('map', {
@@ -170,6 +169,8 @@ catch(\Throwable $e){
     const pointB = [200, 200];
     var dottedPath = null;
 
+    //GEOLOCATION PART
+
     if (navigator.geolocation) {
         navigator.geolocation.watchPosition(setPosition,null, {enableHighAccuracy: false,timeout: 5000});
     }
@@ -177,11 +178,18 @@ catch(\Throwable $e){
     function setPosition(newPosition)
     {
         userPosition = newPosition.coords;
-        if(positionMarker)
+        /*if(positionMarker)
             positionMarker.setLatLng([ userPosition.latitude + 350,  userPosition.longitude + 1100]);
-        else
+        else*/
         {
-            let pointCurr = [ userPosition.latitude + 350,  userPosition.longitude + 1100];
+            userPosition = [44.826161,20.453308]
+            let y = findDistFromLine(userPosition, [44.824685,20.452171], [44.824890,20.455744]);
+            let x = Math.sqrt(findNodeDist(userPosition, [44.824685,20.452171])**2  - y**2);
+            console.log(y);
+            x = x*1545.75/findNodeDist([44.824685,20.452171],[44.824890,20.455744]);
+            y = y*1037.75/findNodeDist([44.826846,20.451506], [44.824685,20.452171]);
+            //let pointCurr = [ userPosition.latitude + 350,  userPosition.longitude + 1100];
+            let pointCurr = [y,x];
             positionMarker =  L.marker(pointCurr).addTo(map);
             
         }
@@ -189,6 +197,7 @@ catch(\Throwable $e){
     }
 
 
+    // ADDING ICONS AND OTHER CONTENT TO THE MAP
     addIconsToMap(map);
 
     
@@ -196,7 +205,7 @@ catch(\Throwable $e){
     const imageHeight = 1200;  // Adjust this to match your image height (in pixels)
     var imageBounds = [[0, 0], [imageHeight, imageWidth]];
 
-    var imageUrl = PATH + '/images/map_new2.jpg';  // Replace with your actual image URL
+    var imageUrl = PATH + '/images/map_new2.jpg';  
     L.imageOverlay(imageUrl, imageBounds,{
     attribution: '© OpenStreetMap',
     opacity: 0.7,

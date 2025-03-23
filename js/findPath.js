@@ -6,6 +6,21 @@ function findNodeDist(coords1, coords2)
     return returnValue;
 }
 
+function findDistFromLine(coords, coords1, coords2)
+{
+    k = (coords1[1] - coords2[1]) / (coords1[0] - coords2[0]);
+    if(k!=0.0)
+    k1 = -1/k;
+    else
+    k1 = 9999999;
+    n = coords1[1]-k*coords1[0];
+    let x = (n-(coords[1] -k1*coords[0]))/(k1 - k);
+    let y = k*x + n;
+
+    console.log(`x:${x},y:${y}`);
+
+    return findNodeDist(coords, [x, y]);
+}
 
 function findClosestNode(coords)
 {
