@@ -1,7 +1,7 @@
 ﻿<?php
 
 try{
-    require 'Requests/getAnimals.php';
+    require 'Requests/getAnimals1.php';
 
 }
 catch(\Throwable $e){
@@ -119,7 +119,7 @@ catch(\Throwable $e){
         <div class="animal-title" id = "animal-title">
         <h style="font-weight: bolder">Lion</h>
         <!-- Close button -->
-        <span class="close-btn" onclick="togglePoppup()">&times</span>
+        <span class="close-btn" onclick="togglePoppup(1, [])">&times</span>
     </div>
     <div class = "position-content-wrapper">
     <!-- Animal image -->
@@ -133,12 +133,7 @@ catch(\Throwable $e){
         <p ></p>
         <p ></p>
         <p ></p>
-        <p >
-            The lion (Panthera leo) is a large cat of the genus Panthera native to Africa and India. It is one of the most
-            recognizable animals due to its muscular, deep-chested body, short, rounded head, round ears, and a hairy tuft
-            at the end of its tail. Lions are social animals that live in groups called prides. They are apex predators, and
-            their primary prey are ungulates such as antelopes and zebras.            
-        </p>
+        <p ></p>
     </div>
     </div>
     <!-- Input element -->
@@ -178,10 +173,10 @@ catch(\Throwable $e){
     if (navigator.geolocation) {
         navigator.geolocation.watchPosition(setPosition,null, {enableHighAccuracy: false,timeout: 5000});
     }
+    
     function setPosition(newPosition)
     {
         userPosition = newPosition.coords;
-        console.log(userPosition);
         if(positionMarker)
             positionMarker.setLatLng([ userPosition.latitude + 350,  userPosition.longitude + 1100]);
         else

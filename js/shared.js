@@ -83,8 +83,8 @@ function changeView(animal_id, iconArray) {
         animal_id = animal_id-1;
         if(animal_id>=0 && animal_id<iconArray.length)
         {
-            //Sets information of the selected animal
-            document.getElementById("animal-title").children[0].innerHTML = iconArray[animal_id].title;
+            //Sets information of the selected animal REDACTED
+            /*document.getElementById("animal-title").children[0].innerHTML = iconArray[animal_id].title;
             if(iconArray[animal_id].desc1 != null && iconArray[animal_id].desc1 != "")
             document.getElementById("description").children[0].innerHTML = formatTitleAndParagraph(iconArray[animal_id].desc1);
             else
@@ -106,8 +106,26 @@ function changeView(animal_id, iconArray) {
             else
             document.getElementById("description").children[3].innerHTML = "";
 
-            document.getElementById("animal-pane").src = PATH+'images/panes/' + iconArray[animal_id].name+"-pane.jpg";
+            return 1;*/
+            document.getElementById("animal-title").children[0].innerHTML = iconArray[animal_id].title + "\n<i>" + iconArray[animal_id].latin_title +"</i>";
+            
+            let targetParagraph = document.getElementById("description").children[0];
+            let content = "";
+            targetParagraph.innerHTML = "";
+            if(iconArray[animal_id].staniste != null && iconArray[animal_id].staniste != "")
+                content+=formatTitleAndParagraph("Stanište:\n"+iconArray[animal_id].staniste) + "<br>";
+            if(iconArray[animal_id].zivotni_vek != null && iconArray[animal_id].zivotni_vek != "")
+                content+="\n"+formatTitleAndParagraph("Životni vek:\n"+iconArray[animal_id].zivotni_vek)+ "<br>";
+            if(iconArray[animal_id].rasprostranjenost != null && iconArray[animal_id].rasprostranjenost != "")
+                content+="\n"+formatTitleAndParagraph("Rasprostranjenost:\n"+iconArray[animal_id].rasprostranjenost)+ "<br>";
+            if(iconArray[animal_id].tekst != null && iconArray[animal_id].tekst != "")
+                content+="\n"+formatTitleAndParagraph("\n"+iconArray[animal_id].tekst)+ "<br>";
+            let shift = iconArray[animal_id].id;
+            console.log(shift);
+            document.getElementById("animal-pane").src = PATH+'new_images/' + "animal"+shift +".jpg";
             document.getElementById("animal-window").style.display = 'block';
+
+            targetParagraph.innerHTML = content;
             return 1;
         }
         else
@@ -122,7 +140,6 @@ function togglePoppup(animal, iconArray)
     popup.style.display = 'none';
     else
     {
-        
         if(animal!="none")
         {
             changeView(animal, iconArray);

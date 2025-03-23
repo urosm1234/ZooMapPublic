@@ -34,18 +34,15 @@ body{
     overflow: hidden;
     font-family: Arial, sans-serif;
     position: absolute;
-    top: 15vh;
-    left: calc(50vw - 250px);
     display: none;
     user-select: none;
     background: #f4f0e6;
-    max-width: 500px;
-    max-height: 700px;
     padding: 15px;
     border-radius: 15px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    height:70vh;
+    height:100%;
     border: 2px solid #8b7a63;
+    z-index: 5;
 }
 .position-content-wrapper
 {
@@ -87,7 +84,7 @@ body{
 
 /* Image styling */
 .animal-image {
-    width: 90%;
+    width: auto;
     height: auto;
     margin-left:5%;
     border-radius: 10px;
@@ -166,12 +163,6 @@ body{
 
 @media (max-width: 520px)
 {
-    #animal-window{
-        left:10px;
-        top:13%;
-        width:calc(90% - 20px);
-        height:85vh;
-    }
     .animal-description{
         max-height: calc(55vh - 30vw);
     }
