@@ -165,6 +165,7 @@ catch(\Throwable $e){
 
     var userPosition;
     var positionMarker = null;
+    var pointCurr = null;
         
     const pointB = [200, 200];
     var dottedPath = null;
@@ -178,18 +179,28 @@ catch(\Throwable $e){
     function setPosition(newPosition)
     {
         userPosition = newPosition.coords;
-        /*if(positionMarker)
-            positionMarker.setLatLng([ userPosition.latitude + 350,  userPosition.longitude + 1100]);
-        else*/
+        if(positionMarker)
         {
-            userPosition = [44.826161,20.453308]
+            userPosition = [44.824890,20.454204]
             let y = findDistFromLine(userPosition, [44.824685,20.452171], [44.824890,20.455744]);
             let x = Math.sqrt(findNodeDist(userPosition, [44.824685,20.452171])**2  - y**2);
             console.log(y);
-            x = x*1545.75/findNodeDist([44.824685,20.452171],[44.824890,20.455744]);
-            y = y*1037.75/findNodeDist([44.826846,20.451506], [44.824685,20.452171]);
+            x = x*1432/findNodeDist([44.824715,20.452155],[44.824947,20.455744]);
+            y = y*978/findNodeDist([44.826869,20.451801], [44.824715,20.452155]);
             //let pointCurr = [ userPosition.latitude + 350,  userPosition.longitude + 1100];
-            let pointCurr = [y,x];
+            pointCurr = [y,x];
+            positionMarker.setLatLng(pointCurr);
+        }
+        else
+        {
+            userPosition = [44.824890,20.454204]
+            let y = findDistFromLine(userPosition, [44.824685,20.452171], [44.824890,20.455744]);
+            let x = Math.sqrt(findNodeDist(userPosition, [44.824685,20.452171])**2  - y**2);
+            console.log(y);
+            x = x*1432/findNodeDist([44.824715,20.452155],[44.824947,20.455744]);
+            y = y*978/findNodeDist([44.826869,20.451801], [44.824715,20.452155]);
+            //let pointCurr = [ userPosition.latitude + 350,  userPosition.longitude + 1100];
+            pointCurr = [y,x];
             positionMarker =  L.marker(pointCurr).addTo(map);
             
         }

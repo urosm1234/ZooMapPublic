@@ -69,7 +69,7 @@ var drawnPath = null, returnMarker = null, filteredOptions = null;
                 if(returnMarker)
                 map.removeLayer(returnMarker);
 
-                let pathAtrr = drawPath([ userPosition.latitude + 350,  userPosition.longitude + 1100], [option.coordinateh, option.coordinatew]);
+                let pathAtrr = drawPath(pointCurr, [option.coordinateh, option.coordinatew]);
                 drawnPath = pathAtrr[0];
                 returnMarker = pathAtrr[1];
             }
