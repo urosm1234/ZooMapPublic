@@ -1,6 +1,6 @@
 <?php
 
-require 'db.php';
+require 'db1.php';
 
 session_start();
 

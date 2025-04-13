@@ -1,5 +1,5 @@
 <?php 
-require 'Requests/getAnimals.php';
+require 'Requests/getAnimals1.php';
 
 
 session_start();
@@ -144,25 +144,50 @@ if(!isset($_SESSION['user']))
         if(animal_id < iconArray.length && animal_id >= 0)
         {
             current_id = database_id;
-            document.getElementById("smallInput").value = iconArray[animal_id].title;
-            if(iconArray[animal_id].desc1 != null)
-            document.getElementById("mediumInput1").value = iconArray[animal_id].desc1;
+            document.getElementById("smallInput1").value = iconArray[animal_id].title;
+
+            if(iconArray[animal_id].latin_title!= null)
+            document.getElementById("smallInput2").value = iconArray[animal_id].latin_title;
+            else
+            document.getElementById("smallInput2").value = ""
+
+            if(iconArray[animal_id].red!= null)
+            document.getElementById("smallInput3").value = iconArray[animal_id].red;
+            else
+            document.getElementById("smallInput3").value = ""
+
+            if(iconArray[animal_id].porodica!= null)
+            document.getElementById("smallInput4").value = iconArray[animal_id].porodica;
+            else
+            document.getElementById("smallInput4").value = ""
+
+            if(iconArray[animal_id].staniste != null)
+            document.getElementById("mediumInput1").value = iconArray[animal_id].staniste;
             else
             document.getElementById("mediumInput1").value = "";
 
-
-            if(iconArray[animal_id].desc2 != null)
-            document.getElementById("mediumInput2").value = iconArray[animal_id].desc2;
+            if(iconArray[animal_id].zivotni_vek != null)
+            document.getElementById("mediumInput2").value = iconArray[animal_id].zivotni_vek;
             else
             document.getElementById("mediumInput2").value = "";
 
-            if(iconArray[animal_id].desc3 != null)
-            document.getElementById("mediumInput3").value = iconArray[animal_id].desc3;
+            if(iconArray[animal_id].rasprostranjenost != null)
+            document.getElementById("mediumInput3").value = iconArray[animal_id].rasprostranjenost;
             else
             document.getElementById("mediumInput3").value = "";
 
-            if(iconArray[animal_id].paragraph != null)
-            document.getElementById("largeInput").value = iconArray[animal_id].paragraph;
+            if(iconArray[animal_id].klasa != null)
+            document.getElementById("smallInput5").value = iconArray[animal_id].klasa;
+            else
+            document.getElementById("smallInput5").value = ""
+
+            if(iconArray[animal_id].endangered_level != null)
+            document.getElementById("smallInput6").value = iconArray[animal_id].endangered_level;
+            else
+            document.getElementById("smallInput6").value = ""
+
+            if(iconArray[animal_id].tekst != null)
+            document.getElementById("largeInput").value = iconArray[animal_id].tekst;
             else
             document.getElementById("largeInput").value = "";
             return 1;
@@ -176,25 +201,31 @@ if(!isset($_SESSION['user']))
         if(current_id <= 0)
             return 0;
         
-        let title = document.getElementById("smallInput").value;
-        let desc1 = document.getElementById("mediumInput1").value;
-        let desc2 = document.getElementById("mediumInput2").value;
-        let desc3 = document.getElementById("mediumInput3").value;
-        let paragraph = document.getElementById("largeInput").value;
+        let title = document.getElementById("smallInput1").value;
+        let latin_title = document.getElementById("smallInput2").value;
+        let red = document.getElementById("smallInput3").value;
+        let porodica = document.getElementById("smallInput4").value;
+        let staniste = document.getElementById("mediumInput1").value;
+        let zivotni_vek = document.getElementById("mediumInput2").value;
+        let rasprostranjenost = document.getElementById("mediumInput3").value;
+        let klasa = document.getElementById("smallInput5").value;
+        let endangered_level = document.getElementById("smallInput6").value;
+        let tekst = document.getElementById("largeInput").value;
         if(title == "")
         {
-            document.getElementById("smallInput").style.border = "red";
+            document.getElementById("smallInput1").style.border = "red";
             return 0;
         }
-        else document.getElementById("smallInput").style.border = "black";
-        if(paragraph == "")
+        else document.getElementById("smallInput1").style.border = "black";
+        if(tekst == "")
         {
             document.getElementById("largeInput").style.border = "red";
             return 0;
         }
         else document.getElementById("largeInput").style.border = "black";
-
-        updateAnimal(current_id , title, desc1, desc2, desc3, paragraph)
+        //if(title && latin_title && red &&  porodica && staniste&&  zivotni_vek &&  rasprostranjenost &&  klasa && endangered_level && tekst)
+        updateAnimal(current_id , title, latin_title, red, porodica,staniste, zivotni_vek, rasprostranjenost, klasa, endangered_level, tekst)
+        //else console.log(title + latin_title + red + porodica + staniste + zivotni_vek + rasprostranjenost + klasa + endangered_level + tekst)
         return 1;
     }
     </script>
@@ -210,17 +241,32 @@ if(!isset($_SESSION['user']))
         <label for="Id">Animal Id:</label>
         <input id="Id" type="number" name="id" class="small" style="background-color:#ccc" readonly/>
 
-        <label for="smallInput">Animal Name:</label>
-        <input id="smallInput" type="text" name="title" class="medium" />
+        <label for="smallInput1">Naziv životnije:</label>
+        <input id="smallInput1" type="text" name="title" class="medium" />
 
-        <label for="mediumInput1">Karakteristika1:</label>
-        <textarea id="mediumInput1" type="text" name="mediumInput1" class="medium" ></textarea>
+        <label for="smallInput2">Naziv na latinskom:</label>
+        <input id="smallInput2" type="text" name="latin_title" class="medium" />
 
-        <label for="mediumInput2">Karakteristika2:</label>
-        <textarea id="mediumInput2" type="text" name="mediumInput2" class="medium" ></textarea>
+        <label for="smallInput3">Red:</label>
+        <input id="smallInput3" type="text" name="red" class="medium" />
 
-        <label for="mediumInput3">Karakteristika3:</label>
-        <textarea id="mediumInput3" type="text" name="mediumInput3" class="medium" ></textarea>
+        <label for="smallInput4">Porodica:</label>
+        <input id="smallInput4" type="text" name="porodica" class="medium" />
+
+        <label for="mediumInput1">Stanište:</label>
+        <textarea id="mediumInput1" type="text" name="staniste" class="medium" ></textarea>
+
+        <label for="mediumInput2">Životni vek:</label>
+        <textarea id="mediumInput2" type="text" name="zivotni_vek" class="medium" ></textarea>
+
+        <label for="mediumInput3">Rasprostranjenost:</label>
+        <textarea id="mediumInput3" type="text" name="rasprostranjenost" class="medium" ></textarea>
+
+        <label for="smallInput5">Klasa:</label>
+        <input id="smallInput5" type="text" name="klasa" class="medium" />
+
+        <label for="smallInput6">ENDANGERED LEVEL:</label>
+        <input id="smallInput6" type="text" name="endangered_level" class="medium" />
 
         <label for="largeInput">Tekst:</label>
         <textarea id="largeInput" name="largeInput" class="large"></textarea>

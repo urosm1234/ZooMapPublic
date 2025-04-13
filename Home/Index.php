@@ -32,8 +32,12 @@ catch(\Throwable $e){
     <script src = "<?php echo $PATH?>js/nodeMatrix.js"></script>
     <script src = "<?php echo $PATH?>js/findPath.js"></script>
     <style>
+            :root {
+        color-scheme: only light;
+        }
         body{
             overflow:hidden;
+            
         }
         .mainMapImage
         {
@@ -105,19 +109,20 @@ catch(\Throwable $e){
 
 
 <div id="map"></div>
-        <div class="search-container">
+
         <!-- Search input field -->
-        <div class = "search-box">
-            <input autocomplete="off" type="text" id="searchInput" class="search-input" placeholder="Pretraga..." onclick = "searchSelected()" onkeyup="filterOptions()" >
-            <img class= "magnifying-img" src = "<?php echo $PATH?>images/magnifying_glass.png" onclick = "toggleResults()"></img>
-        </div>
+        <div class="search-container">
+    <i class="fas fa-search search-icon"></i>
+    <input autocomplete="off" type="text" class="search-input" id="searchInput" placeholder="Pretraga..." onclick = "searchSelected()" onkeyup="filterOptions()"  >
+
         <!-- Scrollable results list -->
             <div id="searchResults" class="search-results"></div>
-        </div>
+  </div>
     <div id="animal-window">
 
         <div class="animal-title" id = "animal-title">
-        <h style="font-weight: bolder">Lion</h>
+        <h style="font-weight: bolder">Lion</h><br>
+        <h style="font-weight: italic; font-size: 16px;">Liones</h>
         <!-- Close button -->
         <span class="close-btn" onclick="togglePoppup(1, [])">&times</span>
     </div>
@@ -145,7 +150,9 @@ catch(\Throwable $e){
     //CREATING THE MAP
     // Dimensions of your background image
     // Initialize the Leaflet map, setting the initial view to cover the image area
+
     var map = L.map('map', {
+        zoomControl: false,
         minZoom: -1,  //44.824739, 20.452049 zoo corner
         maxZoom: 2,   // Allows zooming in
         center: [0, 0],  // Center of the image
@@ -216,10 +223,10 @@ catch(\Throwable $e){
     const imageHeight = 1200;  // Adjust this to match your image height (in pixels)
     var imageBounds = [[0, 0], [imageHeight, imageWidth]];
 
-    var imageUrl = PATH + '/images/map_new2.jpg';  
+    var imageUrl = PATH + '/images/map_new3.jpg';  
     L.imageOverlay(imageUrl, imageBounds,{
     attribution: '© OpenStreetMap',
-    opacity: 0.7,
+    opacity: 1,
     className: 'mainMapImage'}).addTo(map);
     map.fitBounds(imageBounds);
 

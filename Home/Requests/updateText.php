@@ -1,6 +1,6 @@
 <?php
 
-require 'db.php';
+require 'db1.php';
 
 session_start();
 
@@ -18,19 +18,30 @@ if($method == 'POST' && isset($_SESSION['user']))
     if($animal_id != null)
     {
         $title = $_POST['title'];
-        $desc1 = $_POST['desc1'];
-        $desc2 = $_POST['desc2'];
-        $desc3 = $_POST['desc3'];
-        $paragraph = $_POST['paragraph'];
+        $latin_title = $_POST['latin_title'];
+        $red = $_POST['red'];
+        $porodica = $_POST['porodica'];
+        $staniste = $_POST['staniste'];
+        $zivotni_vek = $_POST['zivotni_vek'];
+        $rasprostranjenost = $_POST['rasprostranjenost'];
+        $klasa = $_POST['rasprostranjenost'];
+        $endangered_level = $_POST['endangered_level'];
+        $tekst = $_POST['tekst'];
         
-        $sql = "UPDATE animal_info SET title = :title, desc1 = :desc1, desc2 = :desc2, desc3 = :desc3, paragraph = :paragraph WHERE id = :animal_id";
+        $sql = "UPDATE animal_info SET title = :title,latin_title = :latin_title, red = :red, porodica = :porodica,  porodica = :porodica, staniste =:staniste, zivotni_vek = :zivotni_vek, rasprostranjenost = :rasprostranjenost, endangered_level = :endangered_level, tekst = :tekst WHERE id = :animal_id";
         $stmt = $pdo->prepare($sql);
         $stmt->bindParam(":animal_id", $animal_id, PDO::PARAM_INT);
+
         $stmt->bindParam(":title", $title, PDO::PARAM_STR);
-        $stmt->bindParam(":desc1", $desc1, PDO::PARAM_STR);
-        $stmt->bindParam(":desc2", $desc2, PDO::PARAM_STR);
-        $stmt->bindParam(":desc3", $desc3, PDO::PARAM_STR);
-        $stmt->bindParam(":paragraph", $paragraph, PDO::PARAM_STR);
+        $stmt->bindParam(":latin_title", $latin_title, PDO::PARAM_STR);
+        $stmt->bindParam(":red", $red, PDO::PARAM_STR);
+        $stmt->bindParam(":porodica", $porodica, PDO::PARAM_STR);
+        $stmt->bindParam(":staniste", $staniste, PDO::PARAM_STR);
+        $stmt->bindParam(":zivotni_vek", $zivotni_vek, PDO::PARAM_STR);
+        $stmt->bindParam(":rasprostranjenost", $rasprostranjenost, PDO::PARAM_STR);
+        $stmt->bindParam(":klasa", $klasa, PDO::PARAM_STR);
+        $stmt->bindParam(":endangered_level", $endangered_level, PDO::PARAM_STR);
+        $stmt->bindParam(":tekst", $tekst, PDO::PARAM_STR);
         $result = $stmt->execute();
         if($result == 1)
         echo "Success";

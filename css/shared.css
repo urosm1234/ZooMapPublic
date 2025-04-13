@@ -11,6 +11,12 @@ a {
   color: #0077cc;
 }
 
+a.leaflet-control-zoom-out,
+a.leaflet-control-zoom-in
+{
+  display: none;
+}
+
 .btn-primary {
   color: #fff;
   background-color: #1b6ec2;

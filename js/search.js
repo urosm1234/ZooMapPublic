@@ -3,9 +3,9 @@ var drawnPath = null, returnMarker = null, filteredOptions = null;
         function toggleResults()
         {
             const searchResults = document.getElementById('searchResults');
-            if(searchResults.style.display != 'block' && filteredOptions != null && filteredOptions.length > 0)
+            if(searchResults.style.display != 'flex' && filteredOptions != null && filteredOptions.length > 0)
             {
-                searchResults.style.display = 'block';
+                searchResults.style.display = 'flex';
             }
             else
             {
@@ -26,7 +26,7 @@ var drawnPath = null, returnMarker = null, filteredOptions = null;
                     div.addEventListener('click', () => optionSelected(option));
                     searchResults.appendChild(div);
                 });
-                searchResults.style.display = 'block'; // Show the filtered list
+                searchResults.style.display = 'flex'; // Show the filtered list
             } else {
                 searchResults.style.display = 'none'; // Hide if no results
             }
@@ -86,8 +86,14 @@ var drawnPath = null, returnMarker = null, filteredOptions = null;
 
         function searchSelected()
         {
+            const searchResults = document.getElementById('searchResults');
+            if(searchResults.style.display == 'flex')
+            {
+                searchResults.style.display = 'none';
+                return;
+            }
             if(filteredOptions != null && filteredOptions.length > 0)
             {
-                searchResults.style.display = 'block';
+                searchResults.style.display = 'flex';
             }
         }

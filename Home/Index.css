@@ -10,7 +10,7 @@ body{
     left:0;
     z-index: 0;
     background-color: #f0f8ff;
-    
+    background: url("testBG.jpg");
 }
 .leaflet-control {
     border-radius: 5px;
@@ -40,9 +40,12 @@ body{
     padding: 15px;
     border-radius: 15px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    height:100%;
+    height: auto;
+    min-height:100%;
     border: 2px solid #8b7a63;
     z-index: 5;
+    max-width: 500px;
+    max-height: 800px;
 }
 .position-content-wrapper
 {
@@ -87,7 +90,7 @@ body{
     width: auto;
     height: auto;
     max-height:60vh;
-    margin-left:5%;
+    /*margin-left:5%;*/
     border-radius: 10px;
     margin-top: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
@@ -99,14 +102,13 @@ body{
     padding-top:10px;
     padding-bottom: 10px;
     overflow: hidden;
-    position: absolute;
-    bottom:10px;
+
 }
 /* Scrollable description area */
 .animal-description {
     font-family: sans-serif;
     border-top: 2px dashed #8b7a63;
-    max-height: 25vh;
+    /*max-height: 25vh;*/
 
     overflow-y: scroll;
     margin-top: 15px;
@@ -216,6 +218,4 @@ body{
         font-size: 20px;
     }
 }
-
-
 

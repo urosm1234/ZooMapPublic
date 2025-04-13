@@ -32,13 +32,18 @@ function updateCoords(e, name)
 }
 
 
-function updateAnimal(database_id, titlei, desc1i, desc2i, desc3i, paragraphi){
-    let upadteTitle = "title="+ titlei;
+function updateAnimal(database_id , title,latin_title, red, porodica,staniste, zivotni_vek, rasprostranjenost, klasa, endangered_level, tekst){
+    let upadteTitle = "title="+ title;
+    let upadteLatin_title = "latin_title="+ latin_title;
+    let upadteRed = "red="+ red;
+    let upadtePorodica = "porodica="+ porodica;
+    let upadteStaniste = "staniste="+ staniste;
+    let upadteZivotni_vek = "zivotni_vek="+ zivotni_vek;
+    let upadteRasprostranjenost = "rasprostranjenost="+ rasprostranjenost;
 
-    let upadteDesc1= "desc1="+desc1i;
-    let upadteDesc2 ="desc2="+desc2i;
-    let updateDesc3 ="desc3="+desc3i;
-    let updateParagraph = "paragraph="+paragraphi;
+    let upadteKlasa= "klasa="+klasa;
+    let upadteEndangered_level ="endangered_level="+endangered_level;
+    let updateTekst = "tekst="+tekst;
     let updateId = "id="+database_id;
     let apiUri = "./Requests/updateText.php";
     const xhr = new XMLHttpRequest();
@@ -63,7 +68,7 @@ function updateAnimal(database_id, titlei, desc1i, desc2i, desc3i, paragraphi){
             console.log("Error:", xhr.statusText);
         }
     };
-    const data = updateId+"&"+upadteTitle+"&"+upadteDesc1+"&"+upadteDesc2 + "&" + updateDesc3 +"&" + updateParagraph;
+    const data = updateId+"&"+upadteTitle+"&"+upadteLatin_title+"&"+upadteRed+"&"+upadtePorodica+"&"+upadteStaniste+"&"+upadteZivotni_vek+"&"+upadteRasprostranjenost+"&"+upadteKlasa+"&"+upadteEndangered_level+"&"+updateTekst;
     xhr.send(data);
     console.log(1);
 }
@@ -83,41 +88,18 @@ function changeView(animal_id, iconArray) {
         animal_id = animal_id-1;
         if(animal_id>=0 && animal_id<iconArray.length)
         {
-            //Sets information of the selected animal REDACTED
-            /*document.getElementById("animal-title").children[0].innerHTML = iconArray[animal_id].title;
-            if(iconArray[animal_id].desc1 != null && iconArray[animal_id].desc1 != "")
-            document.getElementById("description").children[0].innerHTML = formatTitleAndParagraph(iconArray[animal_id].desc1);
-            else
-            document.getElementById("description").children[0].innerHTML = "";
+            document.getElementById("animal-title").getElementsByTagName("h")[0].innerHTML = iconArray[animal_id].title;
+            document.getElementById("animal-title").getElementsByTagName("h")[1].innerHTML= iconArray[animal_id].latin_title;
 
-
-            if(iconArray[animal_id].desc2 != null && iconArray[animal_id].desc2 != "")
-            document.getElementById("description").children[1].innerHTML = formatTitleAndParagraph(iconArray[animal_id].desc2);
-            else
-            document.getElementById("description").children[1].innerHTML = "";
-
-            if(iconArray[animal_id].desc3 != null && iconArray[animal_id].desc3 != "")
-            document.getElementById("description").children[2].innerHTML = formatTitleAndParagraph(iconArray[animal_id].desc3);
-            else
-            document.getElementById("description").children[2].innerHTML = "";
-
-            if(iconArray[animal_id].paragraph != null)
-            document.getElementById("description").children[3].innerHTML = formatTitleAndParagraph(iconArray[animal_id].paragraph);
-            else
-            document.getElementById("description").children[3].innerHTML = "";
-
-            return 1;*/
-            document.getElementById("animal-title").children[0].innerHTML = iconArray[animal_id].title + "\n<i>" + iconArray[animal_id].latin_title +"</i>";
-            
             let targetParagraph = document.getElementById("description").children[0];
             let content = "";
             targetParagraph.innerHTML = "";
             if(iconArray[animal_id].staniste != null && iconArray[animal_id].staniste != "")
-                content+=formatTitleAndParagraph("Stanište:\n"+iconArray[animal_id].staniste) + "<br>";
+                content+=formatTitleAndParagraph("Stanište:\n"+iconArray[animal_id].staniste) + "<br><br>";
             if(iconArray[animal_id].zivotni_vek != null && iconArray[animal_id].zivotni_vek != "")
-                content+="\n"+formatTitleAndParagraph("Životni vek:\n"+iconArray[animal_id].zivotni_vek)+ "<br>";
+                content+="\n"+formatTitleAndParagraph("Životni vek:\n"+iconArray[animal_id].zivotni_vek)+ "<br><br>";
             if(iconArray[animal_id].rasprostranjenost != null && iconArray[animal_id].rasprostranjenost != "")
-                content+="\n"+formatTitleAndParagraph("Rasprostranjenost:\n"+iconArray[animal_id].rasprostranjenost)+ "<br>";
+                content+="\n"+formatTitleAndParagraph("Rasprostranjenost:\n"+iconArray[animal_id].rasprostranjenost)+ "<br><br>";
             if(iconArray[animal_id].tekst != null && iconArray[animal_id].tekst != "")
                 content+="\n"+formatTitleAndParagraph("\n"+iconArray[animal_id].tekst)+ "<br>";
             let shift = iconArray[animal_id].id;
