@@ -127,21 +127,25 @@ catch(\Throwable $e){
             });
 
             
-            const toiletIcon = iconArray.filter(animal => animal.name == "wc" ||  animal.name == "ulaz");
-            console.log(toiletIcon[0].coordinateh);
-            console.log(toiletIcon[1].coordinatew);
-            document.getElementById("sidebar-icons-wrapper").children[0].src =PATH +"images/icons/" +toiletIcon[0].name+'.png';
-            document.getElementById("sidebar-icons-wrapper").children[1].src =PATH +"images/icons/" +toiletIcon[1].name+'.png';
-            //document.getElementById("sidebar-icons-wrapper").children[0].addEventListener('click', () => togglePoppup(toiletIcon[0].id, iconArray));
-            panToCoords(document.getElementById("sidebar-icons-wrapper").children[0], 0, toiletIcon);
-            panToCoords(document.getElementById("sidebar-icons-wrapper").children[1], 1, toiletIcon);
+            const sidebarIcons = iconArray.filter(animal => animal.name == "wc" ||  animal.name == "ulaz" || animal.name=="restoran" || animal.name == "caffe");
+            const positions = {'wc':0, 'caffe':1, 'restoran':2, "ulaz":3};
+            for(let i =0; i< sidebarIcons.length; i+=1)
+            {   
+                let elem = document.getElementById("sidebar-icons-wrapper").children[positions[sidebarIcons[i].name]];
+                //Check if there is already a duplicate of this element, so that we don't clear when drawing paths
+                if(elem.src == "")
+                    panToCoords(elem, sidebarIcons[i], true);
+                else
+                    panToCoords(elem, sidebarIcons[i], false);
+                elem.src =PATH +"images/new_icons/" +sidebarIcons[i].name+'.png';
+            }
             markers.addTo(map);
 
     }
 
-    function panToCoords(node, counter, toiletIcon)
+    function panToCoords(node, icon, clear = true)
     {
-        node.addEventListener('click', () => optionSelected(toiletIcon[counter]));
+        node.addEventListener('click', () => optionSelected(icon, clear));
     }
 
     </script>
@@ -157,8 +161,10 @@ catch(\Throwable $e){
         </button>
         </div>
         <div id ="sidebar-icons-wrapper" class="sidebar-icons-wrapper">
-                <img style="cursor:pointer"src ="" ></img>
-                <img style="cursor:pointer"src ="" ></img>
+                <img style="cursor:pointer"></img>
+                <img style="cursor:pointer"></img>
+                <img style="cursor:pointer"></img>
+                <img style="cursor:pointer"></img>
         </div>
     </div> 
 

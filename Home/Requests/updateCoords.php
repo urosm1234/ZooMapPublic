@@ -8,14 +8,14 @@ $method = $_SERVER['REQUEST_METHOD'];
 
 if($method == 'POST' && isset($_SESSION['user']))
 {
-    $user = $_POST['name'];
+    $id = $_POST['id'];
     $coordinateW = $_POST['coordinatesw'];
     $coordinateH = $_POST['coordinatesh'];
     echo $coordinateH;
     echo " ";
-    $sql = "UPDATE icons SET coordinatew = :coordw, coordinateh = :coordh WHERE name = :user";
+    $sql = "UPDATE icons SET coordinatew = :coordw, coordinateh = :coordh WHERE id = :id";
     $stmt = $pdo->prepare($sql);
-    $stmt->bindParam(":user", $user, PDO::PARAM_STR);
+    $stmt->bindParam(":id", $id);
     $stmt->bindParam(":coordw", $coordinateW);
     $stmt->bindParam(":coordh", $coordinateH);
     $result = $stmt->execute();

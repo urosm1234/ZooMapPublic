@@ -1,4 +1,4 @@
-var drawnPath = null, returnMarker = null, filteredOptions = null;
+var drawnPaths = [], returnMarkers = [], filteredOptions = null;
         
         function toggleResults()
         {
@@ -53,7 +53,7 @@ var drawnPath = null, returnMarker = null, filteredOptions = null;
             displayOptions(filteredOptions);
         }
 
-        function optionSelected(option)
+        function optionSelected(option, clear=true)
         {
             const searchResults = document.getElementById('searchResults');
             map.setZoom(2);
@@ -63,15 +63,25 @@ var drawnPath = null, returnMarker = null, filteredOptions = null;
             document.getElementById('searchInput').value = "";
             if(navigator.geolocation)
             {
-                if(drawnPath)
-                map.removeLayer(drawnPath);
+                if(returnMarkers.length && clear)
+                {
+                    drawnPaths.forEach((path) =>{
+                        map.removeLayer(path);
+                    });
+                    drawnPaths = [];
+                }
 
-                if(returnMarker)
-                map.removeLayer(returnMarker);
+                if(returnMarkers.length && clear)
+                {
+                    returnMarkers.forEach((returnMarker) =>{
+                        map.removeLayer(returnMarker);
+                    });
+                    returnMarkers = [];
+                }
 
                 let pathAtrr = drawPath(pointCurr, [option.coordinateh, option.coordinatew]);
-                drawnPath = pathAtrr[0];
-                returnMarker = pathAtrr[1];
+                drawnPaths.push(pathAtrr[0]);
+                returnMarkers.push(pathAtrr[1]);
             }
             else
             console.log('navigator not set')

@@ -1,9 +1,9 @@
 
 
-function updateCoords(e, name)
+function updateCoords(e, id)
 {
 
-    let upadteName = "name="+name;
+    let updateId = "id="+id;
 
     let upadteCoordinatesH = "coordinatesh="+Math.round(e.latlng.lat * 10)/10;
     let upadtecoordinatesW = "coordinatesw="+Math.round(e.latlng.lng * 10)/10;
@@ -27,7 +27,7 @@ function updateCoords(e, name)
             console.log("Error:", xhr.statusText);
         }
     };
-    const data = upadteName+"&"+upadteCoordinatesH+"&"+upadtecoordinatesW;
+    const data = updateId +"&"+upadteCoordinatesH+"&"+upadtecoordinatesW;
     xhr.send(data);
 }
 

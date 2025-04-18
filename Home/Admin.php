@@ -131,7 +131,7 @@ if(!isset($_SESSION['user']))
                 var icont = new AnimalIcon({iconUrl: PATH +'images/new_icons/'+icon.name+'.png'});
                 var marker = L.marker([icon.coordinateh, icon.coordinatew], { icon: icont, draggable:true }).addTo(map)
                 .on('click',()=> fillInputsWithAnimalInfo(icon.id, icon.id-1,iconArray ) )
-                .on('mouseup', (event)=> updateCoords(event, icon.name));
+                .on('mouseup', (event)=> updateCoords(event, icon.id));
                 console.log(icon.name)
                 console.log(icon.id-1);
             });
