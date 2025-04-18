@@ -18,17 +18,19 @@ catch(\Throwable $e){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="viewport" content="height=device-height, initial-scale=1.0">
-    <!-- Include Leaflet CSS -->
+
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <link rel = "stylesheet" href = "index.css">
-    <!-- Include Leaflet JS -->
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.Default.css" />
     <script src="https://unpkg.com/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
+
     <link rel="stylesheet" href="<?php echo $PATH?>css/sidebar.css"></link>
     <link rel="stylesheet" href="<?php echo $PATH?>css/shared.css"></link>
     <link rel="stylesheet" href="<?php echo $PATH?>css/search.css"></link>
+
     <script src = "<?php echo $PATH?>js/shared.js"></script>
     <script src = "<?php echo $PATH?>js/search.js"></script>
     <script src = "<?php echo $PATH?>js/sidebar.js"></script>
@@ -114,8 +116,14 @@ catch(\Throwable $e){
                 var icont = new AnimalIcon({iconUrl: PATH +'images/new_icons/'+icon.name+'.png'});
                 let marker = L.marker([icon.coordinateh, icon.coordinatew], { icon: icont, draggable:false });//.addTo(map);
 
-                marker.on('click',()=> togglePoppup(icon.id, iconArray) );
-                markers.addLayer(marker)
+                if(icon.title)
+                {
+                    marker.on('click',()=> togglePoppup(icon.id, iconArray) );
+                    markers.addLayer(marker);
+                }
+                else
+                    marker.addTo(map);
+
             });
 
             
@@ -431,7 +439,7 @@ catch(\Throwable $e){
         });
         curr++;
     });*/
-    var testCoord = [44.82526382416544, 20.454859130406003];
+    var testCoord = [44.8252326294156, 20.45535206794739];
     var res = aproximateLocation(testCoord);
 
     if(res.length > 1)
@@ -439,9 +447,7 @@ catch(\Throwable $e){
         console.log(findNodeDist(nodeMatrix[res[0][0]][0], nodeMatrix[res[0][1]][0]) / res[1]);
         var rad = findNodeDist(nodeMatrix[res[0][0]][0], nodeMatrix[res[0][1]][0])/res[1];
         const coordsFinal = res[0];
-        //console.log(res[1]);
-        //L.circle(nodeMatrix[res[0][0]][0], {radius:rad/10}).addTo(map);
-        //L.circle(nodeMatrix[res[0][1]][0], {radius:rad/10}).addTo(map);
+
         let coords1 = nodeMatrix[res[0][0]][0];
         let coords2 = nodeMatrix[res[0][1]][0];
         if(coords1[1] > coords2[1])
