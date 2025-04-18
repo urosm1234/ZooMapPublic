@@ -1,3 +1,4 @@
+const PathColors = "#123458";
 
 function findNodeDist(coords1, coords2)
 {
@@ -186,9 +187,11 @@ function drawPath(coordsStart, coordsEnd)
 {
             let drawingMaterial = findShortestRoute(coordsStart, coordsEnd)
             let path = L.polyline(drawingMaterial[0], {
-                color: 'crimson',
+                smoothFactor:5.0,
+                noClip:true,
+                color: PathColors,
                 weight: 10,
-                dashArray: '2, 15', // Pattern for the dashes: 5px dash, 10px gap
+                dashArray: '5, 15' // Pattern for the dashes: 5px dash, 10px gap
                 }).addTo(map);
             let returnMarker = L.marker(drawingMaterial[1]).addTo(map);
             return [path, returnMarker];

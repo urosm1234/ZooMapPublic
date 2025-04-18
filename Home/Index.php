@@ -139,6 +139,10 @@ catch(\Throwable $e){
                     panToCoords(elem, sidebarIcons[i], false);
                 elem.src =PATH +"images/new_icons/" +sidebarIcons[i].name+'.png';
             }
+            for(let i =0; i< document.getElementById("sidebar-icons-wrapper").children.length; i+=1)
+            {
+                document.getElementById("sidebar-icons-wrapper").children[i].addEventListener('click',()=>toggleSidebar());
+            }
             markers.addTo(map);
 
     }
@@ -177,6 +181,11 @@ catch(\Throwable $e){
         <!--<i class="fas fa-search search-icon" ><svg xmlns="http://www.w3.org/2000/svg"  height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/></svg></i> -->
         
         <input autocomplete="off" type="text" class="search-input" id="searchInput" placeholder="Pretraga..." onclick = "searchSelected()" onkeyup="filterOptions()"  >
+        <i class="search-x-icon" id="search-x-icon" onclick = clearPath()>
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#d31a15" height="24px" width="24px" version="1.1" id="Capa_1" viewBox="0 0 460.775 460.775" xml:space="preserve">
+                <path d="M285.08,230.397L456.218,59.27c6.076-6.077,6.076-15.911,0-21.986L423.511,4.565c-2.913-2.911-6.866-4.55-10.992-4.55  c-4.127,0-8.08,1.639-10.993,4.55l-171.138,171.14L59.25,4.565c-2.913-2.911-6.866-4.55-10.993-4.55  c-4.126,0-8.08,1.639-10.992,4.55L4.558,37.284c-6.077,6.075-6.077,15.909,0,21.986l171.138,171.128L4.575,401.505  c-6.074,6.077-6.074,15.911,0,21.986l32.709,32.719c2.911,2.911,6.865,4.55,10.992,4.55c4.127,0,8.08-1.639,10.994-4.55  l171.117-171.12l171.118,171.12c2.913,2.911,6.866,4.55,10.993,4.55c4.128,0,8.081-1.639,10.992-4.55l32.709-32.719  c6.074-6.075,6.074-15.909,0-21.986L285.08,230.397z"/>
+            </svg>
+        </i>
 
     <!-- Scrollable results list -->
         <div id="searchResults" class="search-results"></div>

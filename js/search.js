@@ -63,29 +63,33 @@ var drawnPaths = [], returnMarkers = [], filteredOptions = null;
             document.getElementById('searchInput').value = "";
             if(navigator.geolocation)
             {
-                if(returnMarkers.length && clear)
+                if(drawnPaths.length && returnMarkers.length && clear)
                 {
-                    drawnPaths.forEach((path) =>{
-                        map.removeLayer(path);
-                    });
-                    drawnPaths = [];
-                }
-
-                if(returnMarkers.length && clear)
-                {
-                    returnMarkers.forEach((returnMarker) =>{
-                        map.removeLayer(returnMarker);
-                    });
-                    returnMarkers = [];
+                    clearPath();
                 }
 
                 let pathAtrr = drawPath(pointCurr, [option.coordinateh, option.coordinatew]);
                 drawnPaths.push(pathAtrr[0]);
                 returnMarkers.push(pathAtrr[1]);
+                document.getElementById("search-x-icon").style.display='block';
             }
             else
             console.log('navigator not set')
             searchResults.style.display = 'none'; // Hide after selection
+        }
+
+        function clearPath()
+        {
+            drawnPaths.forEach((path) =>{
+                map.removeLayer(path);
+            });
+            drawnPaths = [];
+
+            returnMarkers.forEach((returnMarker) =>{
+                map.removeLayer(returnMarker);
+            });
+            returnMarkers = [];
+            document.getElementById("search-x-icon").style.display='none';
         }
 
         function closeSearchList()

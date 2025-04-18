@@ -104,3 +104,10 @@
     flex-direction: row;
 }
 
+.search-x-icon
+{
+  display: none;
+  position:absolute;
+  right:1.25vw;
+  top:2.25vh;
+}
