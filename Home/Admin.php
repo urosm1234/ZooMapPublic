@@ -128,7 +128,7 @@ if(!isset($_SESSION['user']))
     {
         iconArray = await fetchAnimalsFromApi();
         iconArray.forEach( (icon) => {
-                var icont = new AnimalIcon({iconUrl: PATH +'images/icons/'+icon.name+'.png'});
+                var icont = new AnimalIcon({iconUrl: PATH +'images/new_icons/'+icon.name+'.png'});
                 var marker = L.marker([icon.coordinateh, icon.coordinatew], { icon: icont, draggable:true }).addTo(map)
                 .on('click',()=> fillInputsWithAnimalInfo(icon.id, icon.id-1,iconArray ) )
                 .on('mouseup', (event)=> updateCoords(event, icon.name));

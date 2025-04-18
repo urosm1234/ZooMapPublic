@@ -13,8 +13,9 @@
 
         if($db_pass != null)
         {
-            if($pass == $db_pass)
+            if(password_verify($pass, $db_pass))
             {
+                session_regenerate_id();
                 $message = "Login successful";
                 $toastClass = "bg-success";
                 session_start();
@@ -23,11 +24,11 @@
                 exit();
             }
             else {
-                $message = "Incorrect password";
+                $message = "Wrong username or password";
                 $toastClass = "bg-danger";
             }
         }else {
-            $message = "Username not found";
+            $message = "Wrong username or password";
             $toastClass = "bg-warning";
         }
     

@@ -90,6 +90,7 @@ var drawnPath = null, returnMarker = null, filteredOptions = null;
             if(searchResults.style.display == 'flex')
             {
                 searchResults.style.display = 'none';
+                document.activeElement.blur();
                 return;
             }
             if(filteredOptions != null && filteredOptions.length > 0)

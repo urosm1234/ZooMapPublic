@@ -28,12 +28,19 @@ body{
     background-color: #f0f8ff;
 }
 
-
+#animal-window-wrapper{
+    width: 100vw;
+    height: 100vh;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    z-index:-1;
+}
 #animal-window {
     width:calc(100% - 30px);
     overflow: hidden;
     font-family: Arial, sans-serif;
-    position: absolute;
+
     display: none;
     user-select: none;
     background: #f4f0e6;
@@ -56,7 +63,7 @@ body{
 
 /* Title styling (animal name) */
 .animal-title {
-
+    position:relative;
     font-size: 28px;
     font-weight: bold;
     color: #4b3f2f;
@@ -68,11 +75,13 @@ body{
 /* Close button styling */
 .close-btn {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 1px;
+    right: 1px;
     /*font-size: 18px;*/
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
     background: #d9534f;
     color: #fff;
     border: none;
@@ -118,6 +127,8 @@ body{
     border-radius: 5px;
     backface-visibility: hidden;
     line-height: 1.6;
+    max-height:40vh;
+    
 }
     /* Custom scrollbar styling */
     .animal-description::-webkit-scrollbar {
@@ -167,7 +178,7 @@ body{
 @media (max-width: 520px)
 {
     .animal-description{
-        max-height: calc(55vh - 30vw);
+        max-height: 40vh
     }
 
 }
@@ -178,7 +189,6 @@ body{
         #animal-window{
             left:5%;
             max-width: 100%;
-            width:calc(90% - 30px);
         }
         .position-content-wrapper
         {
