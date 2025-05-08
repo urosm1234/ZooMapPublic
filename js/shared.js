@@ -96,15 +96,15 @@ function changeView(animal_id, iconArray) {
 
             animal_title_h_tags[0].innerHTML = iconArray[animal_id].title;
             animal_title_h_tags[1].innerHTML= iconArray[animal_id].latin_title;
-            if(iconArray[animal_id].endangered_level != null)
-            {
+            try{
                 console.log(iconArray[animal_id].endangered_level)
                 let endangered_levels = {"CR":["Critically endangered", "red"], "EN":["Endangered","orange"], "LC":["Least concern","green"],"VU":["Vulnerable", "#FFBF00"], "NT":["Near threatened", "#8A9A5B"]}
                 animal_title_h_tags[2].style.color = endangered_levels[ iconArray[animal_id].endangered_level ][1];
                 animal_title_h_tags[2].innerHTML = " "+iconArray[animal_id].endangered_level + " - "+ endangered_levels[ iconArray[animal_id].endangered_level ][0];
             }
-            else 
+            catch{
             document.getElementById("animal-title").getElementsByTagName("h")[2].innerHTML = ""
+            }
 
             let targetParagraph = document.getElementById("description").children[0];
             let content = "";

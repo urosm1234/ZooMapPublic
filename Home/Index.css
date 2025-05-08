@@ -60,7 +60,7 @@ body{
 /* Title styling (animal name) */
 .animal-title {
     position:relative;
-    font-size: 28px;
+    font-size: 25px;
     font-weight: bold;
     color: #4b3f2f;
     margin-bottom: 15px;
