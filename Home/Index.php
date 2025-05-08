@@ -200,7 +200,8 @@ catch(\Throwable $e){
             <div id="animal-window">
                 <div class="animal-title" id = "animal-title">
                     <h style="font-weight: bolder">Lion</h><br>
-                    <h style="font-weight: italic; font-size: 16px;">Liones</h>
+                    <h style="font-style: italic; font-size: 16px;">Liones</h><br>
+                    <h style="font-size: 16px;color:red">   Endangered</h>
                     <span class="close-btn" onclick="togglePoppup(1, [])">&times</span>
                 </div>
                 <div class = "position-content-wrapper">
@@ -229,7 +230,7 @@ catch(\Throwable $e){
 
     var map = L.map('map', {
         zoomControl: false,
-        minZoom: -1,  
+        minZoom: -2,  
         maxZoom: 2,   
         center: [0, 0],  
         zoom: 1,   
