@@ -161,3 +161,10 @@
         opacity:1;
     };
 }
+
+@media(orientation : landscape)
+{
+    .beozoovrt-img{
+        height: 15vh;
+    }
+}

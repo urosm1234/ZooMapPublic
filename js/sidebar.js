@@ -11,7 +11,7 @@ function toggleSidebar() {
         menuButton.classList.add('fadeOut');
         sidebar.classList.toggle('expanded');
         setTimeout(function(){
-            if(menuArrowImg.src.includes(PATH+"images/left-arrow.png"))
+            if(menuArrowImg.src.includes("left-arrow.png"))
             {
                 menuArrowImg.src = PATH + "images/right-arrow.png";
             }

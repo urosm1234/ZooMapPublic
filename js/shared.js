@@ -79,7 +79,11 @@ function formatTitleAndParagraph(description)
 {
     let index = description.indexOf("\n");
     let descTittle = description.substring(0, index);
+
     let descMain = description.substring(index,description.length);
+
+    descMain = descMain[1].toUpperCase() + descMain.slice(2);
+    
     return "<strong><b>" +descTittle+ "</b></strong><br>" + descMain;
 }
 
@@ -94,17 +98,22 @@ function changeView(animal_id, iconArray) {
             let targetParagraph = document.getElementById("description").children[0];
             let content = "";
             targetParagraph.innerHTML = "";
+
             if(iconArray[animal_id].staniste != null && iconArray[animal_id].staniste != "")
                 content+=formatTitleAndParagraph("Stanište:\n"+iconArray[animal_id].staniste) + "<br><br>";
+
             if(iconArray[animal_id].zivotni_vek != null && iconArray[animal_id].zivotni_vek != "")
                 content+="\n"+formatTitleAndParagraph("Životni vek:\n"+iconArray[animal_id].zivotni_vek)+ "<br><br>";
+
             if(iconArray[animal_id].rasprostranjenost != null && iconArray[animal_id].rasprostranjenost != "")
                 content+="\n"+formatTitleAndParagraph("Rasprostranjenost:\n"+iconArray[animal_id].rasprostranjenost)+ "<br><br>";
+
             if(iconArray[animal_id].tekst != null && iconArray[animal_id].tekst != "")
-                content+="\n"+formatTitleAndParagraph("\n"+iconArray[animal_id].tekst)+ "<br>";
-            let shift = iconArray[animal_id].id;
-            console.log(shift);
-            document.getElementById("animal-pane").src = PATH+'new_images/' + "animal"+shift +".jpg";
+                content+="\n"+formatTitleAndParagraph("\n"+iconArray[animal_id].tekst.replace("0S","°C"))+ "<br>";
+
+            //let shift = iconArray[animal_id].id;
+
+            document.getElementById("animal-pane").src = PATH+'new_images/' + "animal"+iconArray[animal_id].id +".jpg";
             document.getElementById("animal-window").style.display = 'block';
 
             targetParagraph.innerHTML = content;

@@ -13,6 +13,6 @@ if($method == 'GET')
     //echo json_encode($result);
 }
 //random comment
-$PATH = "/ZooProject/ZooMap/";
+$PATH = "../";
 
 ?>

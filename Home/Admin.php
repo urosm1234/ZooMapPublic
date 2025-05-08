@@ -17,6 +17,8 @@ if(!isset($_SESSION['user']))
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>Admin Mapa - Beo Zoo Vrt</title>
+    <link rel="icon" type="image/x-icon" href="https://www.beozoovrt.rs/wp-content/uploads/2019/10/cropped-favicon-beo-zoo-32x32.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel = "stylesheet" href = "Admin.css">
@@ -28,6 +30,9 @@ if(!isset($_SESSION['user']))
     <script src = "<?php echo $PATH?>js/sidebar.js"></script>
     <title>Text Input Form</title>
     <style>
+                    :root {
+        color-scheme: only light;
+        }
         .form-wrapper{
             display:flex;
             justify-content: center;
