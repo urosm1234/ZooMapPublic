@@ -10,7 +10,7 @@ body{
     left:0;
     z-index: 0;
     background-color: #f0f8ff;
-    background: url("testBG.jpg");
+    background: url("/ZooProject/ZooMap/images/testBG1.jpg");
 }
 .leaflet-control {
     border-radius: 5px;
@@ -113,6 +113,7 @@ body{
 .animal-description {
     font-family: sans-serif;
     border-top: 2px dashed #8b7a63;
+    font-size: 18px;
     /*max-height: 25vh;*/
 
     overflow-y: scroll;
@@ -162,14 +163,30 @@ body{
     border-color: #3e8e41;
 }
 
-
-@media (max-width: 480px) {
-
-    .animal-title {
-      font-size: 19px;
+.custom-cluster-icon {
+    position: relative;
+    width: 60px;
+    height: 60px;
     }
 
-  }
+    .custom-cluster-icon img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%; /* optional: circle shape */
+    }
+
+    .cluster-count {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color:rgb(232, 241, 255);
+    font-size: 30px;
+    font-weight: bolder;
+    font-family: Arial, sans-serif;
+    pointer-events: none;
+    }
+
 
 @media (max-width: 520px)
 {

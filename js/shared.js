@@ -135,6 +135,7 @@ var matrix = [];
 var counter = 0, first = -1;
 function getCoord(e)
 {
+    try{
     var coord = e.latlng;
     var lat = coord.lat;
     var lng = coord.lng;
@@ -145,6 +146,11 @@ function getCoord(e)
     //L.marker([lat, lng], 'red').on('click', ()=>connectNodes(index)).addTo(map);
     curr++;
     //console.log(nodeMatrix);
+    }
+    catch
+    {
+        return;
+    }
 }    
 
 function connectNodes(index)

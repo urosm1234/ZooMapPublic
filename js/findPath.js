@@ -193,6 +193,7 @@ function drawPath(coordsStart, coordsEnd)
                 weight: 10,
                 dashArray: '5, 15' // Pattern for the dashes: 5px dash, 10px gap
                 }).addTo(map);
-            let returnMarker = L.marker(drawingMaterial[1]).addTo(map);
+            let endIcon = L.icon({iconUrl:PATH+"images/end_flag.png", iconSize:[38, 50], iconAnchor:[10, 50]});
+            let returnMarker = L.marker(drawingMaterial[1], {icon:endIcon}).addTo(map);
             return [path, returnMarker];
 }

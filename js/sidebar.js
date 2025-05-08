@@ -13,7 +13,7 @@ function toggleSidebar() {
         setTimeout(function(){
             if(menuArrowImg.src.includes(PATH+"images/left-arrow.png"))
             {
-                menuArrowImg.src = PATH + "images/arrow-right.png";
+                menuArrowImg.src = PATH + "images/right-arrow.png";
             }
             else
             {

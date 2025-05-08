@@ -30,13 +30,17 @@ catch(\Throwable $e){
     <link rel="stylesheet" href="<?php echo $PATH?>css/sidebar.css"></link>
     <link rel="stylesheet" href="<?php echo $PATH?>css/shared.css"></link>
     <link rel="stylesheet" href="<?php echo $PATH?>css/search.css"></link>
-
+    <link rel="stylesheet" href="<?php echo $PATH?>css/loading_screen.css"></link>
+    <script>
+        const PATH ="/ZooProject/ZooMap/";
+    </script>
     <script src = "<?php echo $PATH?>js/shared.js"></script>
     <script src = "<?php echo $PATH?>js/search.js"></script>
     <script src = "<?php echo $PATH?>js/sidebar.js"></script>
     <script src = "<?php echo $PATH?>js/nodeMatrix.js"></script>
     <script src = "<?php echo $PATH?>js/trueNodeMatrix.js"></script>
     <script src = "<?php echo $PATH?>js/findPath.js"></script>
+    <script src = "<?php echo $PATH?>js/geolocation.js"></script>
     
     <style>
             :root {
@@ -58,33 +62,19 @@ catch(\Throwable $e){
         border-color:black;
         transform: translate('-50%','-50%');
         }
- 
-        .custom-cluster-icon {
-        position: relative;
-        width: 60px;
-        height: 60px;
-        }
 
-        .custom-cluster-icon img {
-        width: 100%;
-        height: 100%;
-        border-radius: 50%; /* optional: circle shape */
-        }
 
-        .cluster-count {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color:rgb(232, 241, 255);
-        font-size: 30px;
-        font-weight: bolder;
-        font-family: Arial, sans-serif;
-        pointer-events: none;
-        }
+    .custom-popup .leaflet-popup-content-wrapper {
+            position:absolute;
+            background: #f4f0e6;
+            color: #4b3f2f;
+    }
+    .custom-popup .leaflet-popup-tip {
+    display: none; /* hide the default triangle tip */
+  }
+
     </style>
     <script>
-        const PATH ="/ZooProject/ZooMap/";
     function fetchAnimalsFromApi() { //Fetches data from the database and 
             const response = <?php echo json_encode($result) ?>;
             console.log(response)
@@ -155,65 +145,78 @@ catch(\Throwable $e){
     </script>
 </head>
 <body>
-    <body >
     <div class="container">
-        <main role="main" class="pb-3">
-    <div class="sidebar" id="sidebar">
-        <div class="menu-button-wrapper">
-        <button id="menu-button" class="menu-button" onclick="toggleSidebar()">
-            <img id ="menu-arrow-img"  src="<?php echo $PATH?>images/left-arrow.png"></img>
-        </button>
+    <main role="main" class="pb-3">
+
+        <div id="loading-screen">
+            <div class="spinner"></div>
+            <div>Loading map...</div>
         </div>
-        <div id ="sidebar-icons-wrapper" class="sidebar-icons-wrapper">
-                <img style="cursor:pointer"></img>
-                <img style="cursor:pointer"></img>
-                <img style="cursor:pointer"></img>
-                <img style="cursor:pointer"></img>
-        </div>
-    </div> 
 
-
-
-    <div id="map"></div>
-
-    <!-- Search input field -->
-    <div class="search-container">
-        <!--<i class="fas fa-search search-icon" ><svg xmlns="http://www.w3.org/2000/svg"  height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/></svg></i> -->
-        
-        <input autocomplete="off" type="text" class="search-input" id="searchInput" placeholder="Pretraga..." onclick = "searchSelected()" onkeyup="filterOptions()"  >
-        <i class="search-x-icon" id="search-x-icon" onclick = clearPath()>
-            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#d31a15" height="24px" width="24px" version="1.1" id="Capa_1" viewBox="0 0 460.775 460.775" xml:space="preserve">
-                <path d="M285.08,230.397L456.218,59.27c6.076-6.077,6.076-15.911,0-21.986L423.511,4.565c-2.913-2.911-6.866-4.55-10.992-4.55  c-4.127,0-8.08,1.639-10.993,4.55l-171.138,171.14L59.25,4.565c-2.913-2.911-6.866-4.55-10.993-4.55  c-4.126,0-8.08,1.639-10.992,4.55L4.558,37.284c-6.077,6.075-6.077,15.909,0,21.986l171.138,171.128L4.575,401.505  c-6.074,6.077-6.074,15.911,0,21.986l32.709,32.719c2.911,2.911,6.865,4.55,10.992,4.55c4.127,0,8.08-1.639,10.994-4.55  l171.117-171.12l171.118,171.12c2.913,2.911,6.866,4.55,10.993,4.55c4.128,0,8.081-1.639,10.992-4.55l32.709-32.719  c6.074-6.075,6.074-15.909,0-21.986L285.08,230.397z"/>
-            </svg>
-        </i>
-
-    <!-- Scrollable results list -->
-        <div id="searchResults" class="search-results"></div>
-    </div>
-    <div id="animal-window-wrapper">
-        <div id="animal-window">
-            <div class="animal-title" id = "animal-title">
-                <h style="font-weight: bolder">Lion</h><br>
-                <h style="font-weight: italic; font-size: 16px;">Liones</h>
-                <!-- Close button -->
-                <span class="close-btn" onclick="togglePoppup(1, [])">&times</span>
+        <!-- Sidebar -->
+        <div class="sidebar" id="sidebar">
+            <div class="menu-button-wrapper">
+            <button id="menu-button" class="menu-button" onclick="toggleSidebar()">
+                <img id ="menu-arrow-img"  src="<?php echo $PATH?>images/left-arrow.png"></img>
+            </button>
             </div>
-            <div class = "position-content-wrapper">
+            <div class = "sidebar-main">
 
-                <img src='' alt="Animal" class="animal-image" id="animal-pane" alt="animal-image">
+                <div class = "beozoovrt-img" href = "https://www.beozoovrt.rs/?lang=sr" role="button">
+                    <a href = "https://www.beozoovrt.rs/?lang=sr" target="_blank">
+                    <img src ="<?php echo $PATH?>images/globe.png"></img>
+                    </a>
+                    <!-- <span class="link-text">Website</span> -->
+                </div>
 
-                <div class="animal-description-wrapper">
+                <div id ="sidebar-icons-wrapper" class="sidebar-icons-wrapper">
+                        <img style="cursor:pointer"></img>
+                        <img style="cursor:pointer"></img>
+                        <img style="cursor:pointer"></img>
+                        <img style="cursor:pointer"></img>
+                </div>
+            </div>
+        </div> 
 
-                    <div class="animal-description" id = "description">
-                        <p ></p>
-                        <p ></p>
-                        <p ></p>
-                        <p ></p>
+        <!-- Main map div -->
+        <div id="map"></div>
+
+        <div class="search-container">
+            <!--<i class="fas fa-search search-icon" ><svg xmlns="http://www.w3.org/2000/svg"  height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/></svg></i> -->
+            
+            <input autocomplete="off" type="text" class="search-input" id="searchInput" placeholder="Pretraga..." onclick = "searchSelected()" onkeyup="filterOptions()"  >
+            <i class="search-x-icon" id="search-x-icon" onclick = clearPath()>
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#d31a15" height="24px" width="24px" version="1.1" id="Capa_1" viewBox="0 0 460.775 460.775" xml:space="preserve">
+                    <path d="M285.08,230.397L456.218,59.27c6.076-6.077,6.076-15.911,0-21.986L423.511,4.565c-2.913-2.911-6.866-4.55-10.992-4.55  c-4.127,0-8.08,1.639-10.993,4.55l-171.138,171.14L59.25,4.565c-2.913-2.911-6.866-4.55-10.993-4.55  c-4.126,0-8.08,1.639-10.992,4.55L4.558,37.284c-6.077,6.075-6.077,15.909,0,21.986l171.138,171.128L4.575,401.505  c-6.074,6.077-6.074,15.911,0,21.986l32.709,32.719c2.911,2.911,6.865,4.55,10.992,4.55c4.127,0,8.08-1.639,10.994-4.55  l171.117-171.12l171.118,171.12c2.913,2.911,6.866,4.55,10.993,4.55c4.128,0,8.081-1.639,10.992-4.55l32.709-32.719  c6.074-6.075,6.074-15.909,0-21.986L285.08,230.397z"/>
+                </svg>
+            </i>
+
+            <div id="searchResults" class="search-results"></div>
+        </div>
+    
+        <div id="animal-window-wrapper">
+            <div id="animal-window">
+                <div class="animal-title" id = "animal-title">
+                    <h style="font-weight: bolder">Lion</h><br>
+                    <h style="font-weight: italic; font-size: 16px;">Liones</h>
+                    <span class="close-btn" onclick="togglePoppup(1, [])">&times</span>
+                </div>
+                <div class = "position-content-wrapper">
+
+                    <img src='' alt="Animal" class="animal-image" id="animal-pane" alt="animal-image">
+
+                    <div class="animal-description-wrapper">
+
+                        <div class="animal-description" id = "description">
+                            <p ></p>
+                            <p ></p>
+                            <p ></p>
+                            <p ></p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
     </main>
     </div> 
 
@@ -224,11 +227,11 @@ catch(\Throwable $e){
 
     var map = L.map('map', {
         zoomControl: false,
-        minZoom: -1,  //44.824739, 20.452049 zoo corner
-        maxZoom: 2,   // Allows zooming in
-        center: [0, 0],  // Center of the image
-        zoom: 1,   // Initial zoom level
-        crs: L.CRS.Simple  // Use a simple coordinate reference system for flat images
+        minZoom: -1,  
+        maxZoom: 2,   
+        center: [0, 0],  
+        zoom: 1,   
+        crs: L.CRS.Simple  
     });
         var AnimalIcon = L.Icon.extend({
         options:{
@@ -240,53 +243,15 @@ catch(\Throwable $e){
             }
         });
 
-
-    var userPosition;
-    var positionMarker = null;
-    var pointCurr = null;
-        
-    const pointB = [200, 200];
-    var dottedPath = null;
+ 
 
     //GEOLOCATION PART
 
-    /*if (navigator.geolocation) {
+    if (navigator.geolocation) {
         navigator.geolocation.watchPosition(setPosition,null, {enableHighAccuracy: true ,timeout: 5000});
-    }*/
-    
-    function setPosition(newPosition)
-    {
-        console.log(newPosition.coords);
-        userPosition = newPosition.coords;
-        console.log(newPosition.coords);
-        if(positionMarker)
-        {
-            userPosition = [44.824890,20.454204]
-            let y = findDistFromLine(userPosition, [44.824685,20.452171], [44.824890,20.455744]);
-            let x = Math.sqrt(findNodeDist(userPosition, [44.824685,20.452171])**2  - y**2);
-            console.log(y);
-            x = x*1432/findNodeDist([44.824715,20.452155],[44.824947,20.455744]);
-            y = y*978/findNodeDist([44.826869,20.451801], [44.824715,20.452155]);
-            //let pointCurr = [ userPosition.latitude + 350,  userPosition.longitude + 1100];
-            pointCurr = [y,x];
-            positionMarker.setLatLng(pointCurr);
-        }
-        else
-        {
-            userPosition = [44.824890,20.454204]
-            let y = findDistFromLine(userPosition, [44.824685,20.452171], [44.824890,20.455744]);
-            let x = Math.sqrt(findNodeDist(userPosition, [44.824685,20.452171])**2  - y**2);
-            console.log(y);
-            x = x*1432/findNodeDist([44.824715,20.452155],[44.824947,20.455744]);
-            y = y*978/findNodeDist([44.826869,20.451801], [44.824715,20.452155]);
-            //let pointCurr = [ userPosition.latitude + 350,  userPosition.longitude + 1100];
-            pointCurr = [y,x];
-            positionMarker =  L.marker(pointCurr).addTo(map);
-            
-        }
-
     }
-    var curr = 0;
+    
+    //var curr = 0;
     /*var globalCounter = 0;
     function cycleMarkers()
     {
@@ -316,106 +281,17 @@ catch(\Throwable $e){
 
 
 
-    function findSomeCoords([lat, lng]) {
-        const R = 6371.0; // km
-        let x = R * Math.PI * lng / 180.0;
 
-        let y = R * Math.PI * lat / 180.0;
 
-        return [x, y];
-    }
-    function findAbsDist(coords1,coords2)
-    {
-        return Math.sqrt((coords1[0]-coords2[0])**2 + (coords1[1]-coords2[1])**2 + (coords1[2]-coords2[2])**2)
-    }
-
-    function aproximateLocation(coords)
-    { 
-        console.log(coords)
-        coords = findSomeCoords(coords)
-       
-        let minDist = 3000000, returnIndex1 = -1, returnIndex2=-1, index = 0, newDot;
-        let k=0.0,k1 =0.0, n=0.0, n1 =0.0;
-        let counter = 0;
-        nodeMatrix.forEach(node =>{
-            let coords1 =  findSomeCoords(trueNodeMatrix[index]);
-            for(let i =1;i<node.length;i++)
-            {
-                let coords2 = findSomeCoords(trueNodeMatrix[node[i]]);
-                k = (coords1[0] - coords2[0]) / (coords1[1] - coords2[1]);
-                if(k!=0.0)
-                k1 = -1/k;
-                else
-                k1 = 9999999;
-                n = coords1[0]-k*coords1[1];
-                let x = (n-(coords[0] -k1*coords[1]))/(k1 - k);
-                let y = k*x + n;
-
-                if(index == 59 && node[i] == 57)
-                {
-                    console.log([y, x]);
-                    console.log(k, n);
-                    console.log(k1, (coords[0] -k1*coords[1]));
-                }
-                if(x<=Math.max(coords1[1],coords2[1]) && x>=Math.min(coords1[1],coords2[1]) && y<=Math.max(coords1[0],coords2[0]) && y>=Math.min(coords1[0],coords2[0]))
-                {
-                    
-                    let dist = findNodeDist(coords, [y, x]);
-                    console.log(dist);
-                    if(dist< minDist)
-                    {
-                        minDist = dist;
-                        returnIndex1 = index;
-                        returnIndex2 = i;
-                        newDot = [y, x];
-                    }
-                }
-            }
-            if(findNodeDist(coords1, coords) < minDist)
-            {
-                minDist = findNodeDist(coords1, coords);
-                returnIndex1 = index;
-                returnIndex2 = -1;
-                
-            }
-            index++;
-        });
-        if(returnIndex2 > 0)
-        {
-            let coords1 = findSomeCoords(trueNodeMatrix[returnIndex1]);
-            let coords2 = findSomeCoords(trueNodeMatrix[returnIndex2]);
-            let proportions = findNodeDist(coords1, newDot) / findNodeDist(coords1, coords2);
-            console.log(proportions);
-            return[[returnIndex1, nodeMatrix[returnIndex1][returnIndex2]], proportions];
-        }
-        else
-        return[[returnIndex1, returnIndex1]];
-    }
-
-    /*function aproximateLocationBasic([bottomLeft, bottomRight, topLeft, target])
-    {
-        bottomLeft = findSomeCoords(bottomLeft);
-        bottomRight = findSomeCoords(bottomRight);
-        topLeft = findSomeCoords(topLeft);
-        const maxHeight = 990.7857953427424, maxWidth = 1310.5279039143743;
-        console.log(maxHeight);
-        console.log(maxWidth);
-        target = findSomeCoords(target);
-        let x = (target[0] - bottomLeft[0]) / (bottomRight[0] - bottomLeft[0]);
-        x *= maxWidth;
-        let y = (target[1] - bottomLeft[1])/ (topLeft[1] - bottomLeft[1]);
-        y*= maxHeight;
-        return [y, x];
-    }*/
     // ADDING ICONS AND OTHER CONTENT TO THE MAP
     addIconsToMap(map);
 
     
-    const imageWidth =   1600;  // Adjust this to match your image width (in pixels)
-    const imageHeight = 1200;  // Adjust this to match your image height (in pixels)
+    const imageWidth =   1600; 
+    const imageHeight = 1200;  
     var imageBounds = [[0, 0], [imageHeight, imageWidth]];
 
-    var imageUrl = PATH + '/images/map_new2.jpg';  
+    var imageUrl = PATH + '/images/map_new2.webp';  
     L.imageOverlay(imageUrl, imageBounds,{
     attribution: '© OpenStreetMap',
     opacity: 1,
@@ -454,41 +330,7 @@ catch(\Throwable $e){
         });
         curr++;
     });*/
-    var testCoord = [44.8252326294156, 20.45535206794739];
-    var res = aproximateLocation(testCoord);
 
-    if(res.length > 1)
-    {
-        console.log(findNodeDist(nodeMatrix[res[0][0]][0], nodeMatrix[res[0][1]][0]) / res[1]);
-        var rad = findNodeDist(nodeMatrix[res[0][0]][0], nodeMatrix[res[0][1]][0])/res[1];
-        const coordsFinal = res[0];
-
-        let coords1 = nodeMatrix[res[0][0]][0];
-        let coords2 = nodeMatrix[res[0][1]][0];
-        if(coords1[1] > coords2[1])
-        {
-            let temp = coords2;
-            coords2 = coords1;
-            coords1 = temp;
-        }
-        let ratio = res[1]*findNodeDist(coords1,coords2);
-        let k = (coords1[0] - coords2[0]) / (coords1[1] - coords2[1]);
-
-        const radians = Math.atan(k);
-        const degrees = radians * (180 / Math.PI);
-        //pointCurr = [coords1[0] + ratio*Math.sin(radians), coords1[1] + ratio*Math.cos(radians)];
-        
-        pointCurr = [ (nodeMatrix[res[0][0]][0][0] + nodeMatrix[res[0][1]][0][0])/2, (nodeMatrix[res[0][0]][0][1] + nodeMatrix[res[0][1]][0][1])/2];
-        positionMarker = L.marker(pointCurr).addTo(map);
-        console.log(coords1);
-        console.log(coords2);
-        console.log(res);
-    }
-    else
-    {
-        pointCurr = nodeMatrix[res[0][0]][0];
-        positionMarker = L.marker(pointCurr).addTo(map);
-    }
 
     /*map.on('zoomend', function () {
     const zoom = map.getZoom();
@@ -500,6 +342,9 @@ catch(\Throwable $e){
         markers.forEach((marker) => map.addLayer(marker));// show marker
     }
     });*/
+    document.querySelector('img.leaflet-image-layer.leaflet-zoom-animated.mainMapImage').addEventListener('load', () => {
+      document.getElementById("loading-screen").style.display = 'none';
+    });
 
 </script>
 </body>

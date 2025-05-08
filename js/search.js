@@ -42,10 +42,10 @@ var drawnPaths = [], returnMarkers = [], filteredOptions = null;
                     }
             filteredOptions = iconArray.filter(animal => 
             animal.title == searchTerm || animal.name == searchTerm
-            )
+            );
             if(filteredOptions.length == 0) {
                 filteredOptions = iconArray.filter(animal =>
-                animal.title && (animal.title.toLowerCase().includes(searchTerm) || animal.name.toLowerCase().includes(searchTerm))
+                animal.title && ( animal.title.toLowerCase().includes(searchTerm) || animal.name.toLowerCase().includes(searchTerm) || animal.tekst.substring(0,50).toLowerCase().includes(searchTerm))
                 );
             }
             
