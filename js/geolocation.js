@@ -86,9 +86,9 @@ function aproximateLocation(coords)
 
 function setPosition(Coords)
 {
-    console.log(Coords)
-    //let res = aproximateLocation(Coord);
-    let res = aproximateLocation(testCoord);
+    console.log(Coords.coords)
+    let res = aproximateLocation([Coords.coords.latitude, Coords.coords.longitude]);
+    //let res = aproximateLocation(testCoord);
     if(res.length > 1)
     {
         /*console.log(findNodeDist(nodeMatrix[res[0][0]][0], nodeMatrix[res[0][1]][0]) / res[1]);
