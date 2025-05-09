@@ -40,16 +40,30 @@ var drawnPaths = [], returnMarkers = [], filteredOptions = null;
                         filteredOptions = null;
                         return;
                     }
-            filteredOptions = iconArray.filter(animal => 
+            filteredOptions = iconArray.filter((animal) => 
             animal.title == searchTerm || animal.name == searchTerm
             );
+
             if(filteredOptions.length == 0) {
-                filteredOptions = iconArray.filter(animal =>
-                animal.title && ( animal.title.toLowerCase().includes(searchTerm) || animal.name.toLowerCase().includes(searchTerm) || animal.tekst.substring(0,50).toLowerCase().includes(searchTerm))
+                filteredOptions =  iconArray.filter((animal) => 
+                animal.title && ( animal.title.toLowerCase().includes(searchTerm) || animal.name.toLowerCase().includes(searchTerm))
                 );
             }
-            
 
+            if(filteredOptions.length == 0){
+              filteredOptions = iconArray.filter( (animal) =>
+               animal.title && animal.tekst.substring(0,200).toLowerCase().includes(searchTerm)
+              );
+            }
+            if (!filteredOptions.length) return;
+            filteredOptions.sort((a, b) => {
+            const titleA = a.title.toLowerCase();
+            const titleB = b.title.toLowerCase();
+            if (titleA < titleB) return -1;
+            if (titleA > titleB) return 1;
+            return 0;
+            }); 
+           
             displayOptions(filteredOptions);
         }
 
