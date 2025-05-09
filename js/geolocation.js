@@ -5,10 +5,6 @@ var pointCurr = null;
 
 
 const startIcon = L.icon({iconUrl:PATH+"images/start_flag.png", iconSize:[50, 50], iconAnchor:   [20, 50]});
-const customPopup = `  <div class="custom-popup">
-<h3>You are here</h3>
-</div>`;
-
 // specify popup options 
 const customOptions = {
     closeButton: false,
@@ -18,6 +14,12 @@ const customOptions = {
 }
 
 
+function createCustomPopup(text)
+{
+    return  `  <div class="custom-popup">
+    <h3>${text}</h3>
+    </div>`;
+}
 
 function findAproximatedCoords([lat, lng]) {
     const R = 6371.0; // km
@@ -116,7 +118,7 @@ function setPosition(Coords)
     {
         pointCurr = nodeMatrix[res[0][0]][0];
     }
-    positionMarker = L.marker(pointCurr,{icon:startIcon}).bindPopup(customPopup, customOptions).addTo(map);
+    positionMarker = L.marker(pointCurr,{icon:startIcon}).bindPopup(createCustomPopup("You are here!"), customOptions).addTo(map);
 }
 
 

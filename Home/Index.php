@@ -82,8 +82,10 @@ catch(\Throwable $e){
             console.log(response)
             
             return response;  
-        }
+    }
+
     var iconArray = [];
+
     var markers = new L.markerClusterGroup({
     iconCreateFunction: function (cluster) {
         var count = cluster.getChildCount();
@@ -107,10 +109,11 @@ catch(\Throwable $e){
         iconArray.forEach( (icon) => {
                 var icont = new AnimalIcon({iconUrl: PATH +'images/new_icons/'+icon.name+'.png'});
                 let marker = L.marker([icon.coordinateh, icon.coordinatew], { icon: icont, draggable:false });//.addTo(map);
-
+                //icon.marker = marker;
                 if(icon.title)
                 {
                     marker.on('click',()=> togglePoppup(icon.id, iconArray) );
+                    //marker.bindPopup(icon.title);
                     markers.addLayer(marker);
                 }
                 else

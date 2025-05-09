@@ -66,13 +66,21 @@ var drawnPaths = [], returnMarkers = [], filteredOptions = null;
            
             displayOptions(filteredOptions);
         }
+  
 
         function optionSelected(option, clear=true)
         {
+            option.marker.openPopup();
             const searchResults = document.getElementById('searchResults');
             map.setZoom(2);
+
             setTimeout(() =>{
                 map.panTo([option.coordinateh, option.coordinatew], {animate:true});
+                /*setTimeout(() =>  {
+
+    
+                  option.marker.openPopup();
+                }, 300);*/
             }, 300);
             document.getElementById('searchInput').value = "";
             if(navigator.geolocation)
@@ -83,6 +91,7 @@ var drawnPaths = [], returnMarkers = [], filteredOptions = null;
                 }
 
                 let pathAtrr = drawPath(pointCurr, [option.coordinateh, option.coordinatew]);
+                
                 drawnPaths.push(pathAtrr[0]);
                 returnMarkers.push(pathAtrr[1]);
                 document.getElementById("search-x-icon").style.display='block';
