@@ -118,6 +118,9 @@ function setPosition(Coords)
     {
         pointCurr = nodeMatrix[res[0][0]][0];
     }
+    if(positionMarker != null)
+    positionMarker.setLatLng(pointCurr);
+    else
     positionMarker = L.marker(pointCurr,{icon:startIcon}).bindPopup(createCustomPopup("You are here!"), customOptions).addTo(map);
 }
 

@@ -71,19 +71,21 @@
     
     a{
       text-decoration:none;
-      color:
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Uroš Marković</h1>
+    <h1>Made by Uroš Marković</h1>
     <p>
-      
+     Software engineer
     </p>
-
+    <h2 style="color:lightblue">
+     Used Icons:
+    </h2>
     <div class="link-grid">
       <div class="link-card"><a href="https://www.flaticon.com/free-icons/animals" title="animals icons">Animals icons created by Chattapat - Flaticon</a></div>
+      <div class="link-card"><a href="https://www.flaticon.com/free-icons/http" title="http icons">Http icons created by Freepik - Flaticon</a></div>
       <div class="link-card"><a href="https://www.flaticon.com/free-icons/lion" title="lion icons">Lion icons created by Culmbio - Flaticon</a></div>
       <div class="link-card"><a href="https://www.flaticon.com/free-icons/vulture" title="vulture icons">Vulture icons created by Freepik - Flaticon</a></div>
       <div class="link-card"><a href="https://www.flaticon.com/free-icons/tiger" title="tiger icons">Tiger icons created by Freepik - Flaticon</a></div>
@@ -185,7 +187,9 @@
       <div class="link-card"><a href="https://www.flaticon.com/free-icons/wild-life" title="wild life icons">Wild life icons created by Freepik - Flaticon</a></div>
       <div class="link-card"><a href="https://www.flaticon.com/free-icons/eagle" title="eagle icons">Eagle icons created by Culmbio - Flaticon</a></div>
       <div class="link-card"><a href="https://www.flaticon.com/free-icons/pigeon" title="pigeon icons">Pigeon icons created by Muhammad_Usman - Flaticon</a></div>
+      <div class="link-card"><a href="https://www.flaticon.com/free-icons/http" title="http icons">Http icons created by Freepik - Flaticon</a></div>
     </div>
+
   </div>
 </body>
 </html>
