@@ -1,5 +1,4 @@
 
-
 function updateCoords(e, id)
 {
 
@@ -30,7 +29,6 @@ function updateCoords(e, id)
     const data = updateId +"&"+upadteCoordinatesH+"&"+upadtecoordinatesW;
     xhr.send(data);
 }
-
 
 function updateAnimal(database_id , title,latin_title, red, porodica,staniste, zivotni_vek, rasprostranjenost, klasa, endangered_level, tekst){
     let upadteTitle = "title="+ title;
@@ -73,8 +71,6 @@ function updateAnimal(database_id , title,latin_title, red, porodica,staniste, z
     console.log(1);
 }
 
-
-
 function formatTitleAndParagraph(description)
 {
     let index = description.indexOf("\n");
@@ -88,7 +84,6 @@ function formatTitleAndParagraph(description)
 }
 
 function changeView(animal_id, iconArray) {
-     // Replace with custom filepath
         animal_id = animal_id-1;
         if(animal_id>=0 && animal_id<iconArray.length)
         {
@@ -122,8 +117,6 @@ function changeView(animal_id, iconArray) {
             if(iconArray[animal_id].tekst != null && iconArray[animal_id].tekst != "")
                 content+="\n"+formatTitleAndParagraph("\n"+iconArray[animal_id].tekst.replace("0S","°C"))+ "<br>";
 
-            //let shift = iconArray[animal_id].id;
-
             document.getElementById("animal-pane").src = PATH+'new_images/' + "animal"+iconArray[animal_id].id +".jpg";
             document.getElementById("animal-window").style.display = 'block';
 
@@ -151,8 +144,8 @@ function togglePoppup(animal, iconArray)
 
 }
 
-var matrix = [];
-var counter = 0, first = -1;
+//var matrix = [];
+//var counter = 0,*/ ;
 function getCoord(e)
 {
     try{
@@ -173,6 +166,8 @@ function getCoord(e)
     }
 }    
 
+//TESTING ONLY FUNCTION
+var first = -1;
 function connectNodes(index)
 {
     if(first == -1)
