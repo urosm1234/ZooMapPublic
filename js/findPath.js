@@ -1,4 +1,4 @@
-const PathColors = "#123458";
+const PathColors = "#005A9C";
 
 function findNodeDist(coords1, coords2)
 {
@@ -18,7 +18,6 @@ function findDistFromLine(coords, coords1, coords2)
     let x = (n-(coords[1] -k1*coords[0]))/(k1 - k);
     let y = k*x + n;
 
-    console.log(`x:${x},y:${y}`);
 
     return findNodeDist(coords, [x, y]);
 }
@@ -58,15 +57,15 @@ function findClosestPath(coords)
 
             if(index == 59 && node[i] == 57)
             {
-                console.log([y, x]);
+               /* console.log([y, x]);
                 console.log(k, n);
-                console.log(k1, (coords[0] -k1*coords[1]));
+                console.log(k1, (coords[0] -k1*coords[1]));*/
             }
             if(x<=Math.max(coords1[1],coords2[1]) && x>=Math.min(coords1[1],coords2[1]) && y<=Math.max(coords1[0],coords2[0]) && y>=Math.min(coords1[0],coords2[0]))
             {
                 
                 let dist = findNodeDist(coords, [y, x]);
-                console.log(dist);
+                //console.log(dist);
                 if(dist< minDist)
                 {
                     minDist = dist;
@@ -97,7 +96,7 @@ function findClosestPath(coords)
 function findShortestRoute(coordsStart, coordsEnd)
 {
     let goalNode = findClosestPath(coordsEnd);
-    console.log(goalNode);
+    //console.log(goalNode);
  
     if(goalNode.length == 2)
     {

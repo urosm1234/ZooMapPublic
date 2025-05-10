@@ -1,3 +1,4 @@
+<a href="https://www.flaticon.com/free-icons/animals" title="animals icons">Animals icons created by Chattapat - Flaticon</a>
 <a href="https://www.flaticon.com/free-icons/lion" title="lion icons">Lion icons created by Culmbio - Flaticon</a>
 <a href="https://www.flaticon.com/free-icons/vulture" title="vulture icons">Vulture icons created by Freepik - Flaticon</a>
 <a href="https://www.flaticon.com/free-icons/tiger" title="tiger icons">Tiger icons created by Freepik - Flaticon</a>
@@ -47,3 +48,55 @@
 <a href="https://www.flaticon.com/free-icons/marten" title="marten icons">Marten icons created by Freepik - Flaticon</a>
 <a href="https://www.flaticon.com/free-icons/antelope" title="antelope icons">Antelope icons created by Freepik - Flaticon</a>
 <a href="https://www.flaticon.com/free-icons/condor" title="condor icons">Condor icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/location" title="location icons">Location icons created by Pixel perfect - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/logout" title="logout icons">Logout icons created by alfanz - Flaticon</a>
+<a href="https://www.flaticon.es/iconos-gratis/cafe" title="café iconos">Café iconos creados por pocike - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/hippo" title="hippo icons">Hippo icons created by Triberion - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/crocodile" title="crocodile icons">Crocodile icons created by Flat Icons - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/turtle" title="turtle icons">Turtle icons created by Flat Icons - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/vulture" title="vulture icons">Vulture icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/red-crowned-crane" title="red crowned crane icons">Red crowned crane icons created by Smashicons - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/ostrich" title="ostrich icons">Ostrich icons created by monkik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/emu" title="Emu icons">Emu icons created by Flat Icons - Flaticon</a>
+<a href="https://www.flaticon.es/iconos-gratis/fauna" title="fauna iconos">Fauna iconos creados por Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/crocodile" title="crocodile icons">Crocodile icons created by Peerapak Takpho - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/turtle" title="turtle icons">Turtle icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/restaurant" title="restaurant icons">Restaurant icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/llama" title="llama icons">Llama icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/penguin" title="penguin icons">Penguin icons created by Mihimihi - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/eid-al-adha" title="eid al adha icons">Eid al adha icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/owl" title="owl icons">Owl icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/bald-eagle" title="bald eagle icons">Bald eagle icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/raven" title="raven icons">Raven icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/eagle" title="eagle icons">Eagle icons created by Mihimihi - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/heron" title="heron icons">Heron icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/lynx" title="lynx icons">Lynx icons created by Amethyst prime - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/bird" title="bird icons">Bird icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/hyena" title="hyena icons">Hyena icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/leopard" title="leopard icons">Leopard icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/ram" title="ram icons">Ram icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/orangutan" title="orangutan icons">Orangutan icons created by Flat Icons - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/marmoset" title="marmoset icons">Marmoset icons created by Slamlabs - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/chimpanzee" title="chimpanzee icons">Chimpanzee icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/raccoon" title="raccoon icons">Raccoon icons created by Culmbio - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/armadillo" title="armadillo icons">Armadillo icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/mouse" title="mouse icons">Mouse icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/exotic-animal" title="exotic animal icons">Exotic animal icons created by bsd - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/fauna" title="fauna icons">Fauna icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/goose" title="goose icons">Goose icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/bison" title="bison icons">Bison icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/monitor-lizard" title="monitor lizard icons">Monitor lizard icons created by Slamlabs - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/snake" title="snake icons">Snake icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-animated-icons/anaconda" title="anaconda animated icons">Anaconda animated icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/guinea-pig" title="guinea pig icons">Guinea pig icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/ornithology" title="ornithology icons">Ornithology icons created by Vectoricons - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/cockatoo" title="cockatoo icons">Cockatoo icons created by IconMarketPK - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/kookaburra-bird" title="kookaburra bird icons">Kookaburra bird icons created by Slamlabs - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/otter" title="otter icons">Otter icons created by iconixar - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/tapir" title="tapir icons">Tapir icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/mandarin-duck" title="mandarin duck icons">Mandarin duck icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/kangaroo" title="kangaroo icons">Kangaroo icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/spoonbill" title="spoonbill icons">Spoonbill icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/wild-life" title="wild life icons">Wild life icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/eagle" title="eagle icons">Eagle icons created by Culmbio - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/pigeon" title="pigeon icons">Pigeon icons created by Muhammad_Usman - Flaticon</a>

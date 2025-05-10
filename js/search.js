@@ -70,7 +70,6 @@ var drawnPaths = [], returnMarkers = [], filteredOptions = null;
 
         function optionSelected(option, clear=true)
         {
-            option.marker.openPopup();
             const searchResults = document.getElementById('searchResults');
             map.setZoom(2);
 
