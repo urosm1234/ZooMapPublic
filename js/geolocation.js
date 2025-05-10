@@ -5,6 +5,7 @@ var pointCurr = null;
 
 
 const startIcon = L.icon({iconUrl:PATH+"images/start_flag.png", iconSize:[50, 50], iconAnchor:   [20, 50]});
+
 // specify popup options 
 const customOptions = {
     closeButton: false,
