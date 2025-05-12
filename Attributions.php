@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <title>Attributions</title>
+  <link rel="icon" type="image/x-icon" href="https://www.beozoovrt.rs/wp-content/uploads/2019/10/cropped-favicon-beo-zoo-32x32.png">
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Attribution Page</title>
@@ -80,6 +83,17 @@
     <p>
      Software engineer
     </p>
+    
+    <div class="link-grid">
+      <a href="https://www.linkedin.com/in/uro%C5%A1-markovi%C4%87-41a57728a/" class="link-card" target="_blank">
+        <i class="fab fa-linkedin"></i>
+        <span class="link-label">Linkedin</span>
+      </a>
+      <a href="mailto:urosm888@gmail.com" class="link-card" target="_blank">
+        <i class="fas fa-envelope"></i>
+        <span class="link-label">Gmail</span>
+      </a>
+    </div>
     <h2 style="color:lightblue">
      Used Icons:
     </h2>

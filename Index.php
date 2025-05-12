@@ -16,7 +16,7 @@ catch(\Throwable $e){
     
 <head>
     <script>
-      PATH = "../"
+      PATH = "./"
     </script>  
     <title>Mapa - Beo Zoo Vrt</title>
     <link rel="icon" type="image/x-icon" href="https://www.beozoovrt.rs/wp-content/uploads/2019/10/cropped-favicon-beo-zoo-32x32.png">

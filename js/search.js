@@ -75,14 +75,10 @@ var drawnPaths = [], returnMarkers = [], filteredOptions = null;
 
             setTimeout(() =>{
                 map.panTo([option.coordinateh, option.coordinatew], {animate:true});
-                /*setTimeout(() =>  {
 
-    
-                  option.marker.openPopup();
-                }, 300);*/
             }, 300);
             document.getElementById('searchInput').value = "";
-            if(navigator.geolocation)
+            if(!navigator.geolocation.length && pointCurr)
             {
                 if(drawnPaths.length && returnMarkers.length && clear)
                 {

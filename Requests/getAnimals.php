@@ -12,7 +12,7 @@ if($method == 'GET')
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
     //echo json_encode($result);
 }
-//random comment
-$PATH = "../";
+
+$PATH = "./";
 
 ?>
