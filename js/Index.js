@@ -23,18 +23,21 @@
     async function addIconsToMap(map)
     {
         iconArray = await fetchAnimalsFromApi();
+        let currIndex = 0;
         iconArray.forEach( (icon) => {
                 var icont = new AnimalIcon({iconUrl: PATH +'images/new_icons/'+icon.name+'.png'});
                 let marker = L.marker([icon.coordinateh, icon.coordinatew], { icon: icont, draggable:false });//.addTo(map);
                 //icon.marker = marker;
                 if(icon.title)
                 {
-                    marker.on('click',()=> togglePoppup(icon.id, iconArray) );
+                    let index = currIndex;
+                    marker.on('click',()=> togglePoppup(index, iconArray) );
                     //marker.bindPopup(icon.title);
                     markers.addLayer(marker);
                 }
                 else
                     marker.addTo(map);
+                currIndex+=1;
 
             });
 

@@ -84,7 +84,6 @@ function formatTitleAndParagraph(description)
 }
 
 function changeView(animal_id, iconArray) {
-        animal_id = animal_id-1;
         if(animal_id>=0 && animal_id<iconArray.length)
         {
             let animal_title_h_tags = document.getElementById("animal-title").getElementsByTagName("h");
