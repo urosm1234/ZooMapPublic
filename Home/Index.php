@@ -16,8 +16,8 @@ catch(\Throwable $e){
     
 <head>
     <script>
-        const PATH ="../";
-    </script>   
+      PATH = "../"
+    </script>  
     <title>Mapa - Beo Zoo Vrt</title>
     <link rel="icon" type="image/x-icon" href="https://www.beozoovrt.rs/wp-content/uploads/2019/10/cropped-favicon-beo-zoo-32x32.png">
     <meta charset="UTF-8">
@@ -46,35 +46,43 @@ catch(\Throwable $e){
     <script src = "<?php echo $PATH?>js/Index.js"></script>
     
     <style>
-            :root {
-        color-scheme: only light;
+
+        :root {
+            color-scheme: only light;
         }
+
         body{
             overflow:hidden;
-            
         }
+
         .mainMapImage
         {
         /* !!! HAS TO BE ON THIS PAGE OR IT DOESN'T LOAD CORRECTLY */
 
-        box-shadow: 0 20px 20px rgba(0, 0, 0, 0.4); /* 3D shadow effect */
-        border-radius: 10px; /* Rounded corners */
-        border-style: dashed;
-        border-width:4px;
-        border-radius: 10px;
-        border-color:black;
-        transform: translate('-50%','-50%');
+            box-shadow: 0 20px 20px rgba(0, 0, 0, 0.4); /* 3D shadow effect */
+            border-radius: 10px; /* Rounded corners */
+            border-style: dashed;
+            border-width:4px;
+            border-radius: 10px;
+            border-color:black;
+            transform: translate('-50%','-50%');
         }
 
+        .leaflet-control-attribution.leaflet-control 
+        {
+           background:black;
+           opacity:0.7; 
+        }
 
-    .custom-popup .leaflet-popup-content-wrapper {
+        .custom-popup .leaflet-popup-content-wrapper {
             position:absolute;
             background: #f4f0e6;
             color: #4b3f2f;
-    }
-    .custom-popup .leaflet-popup-tip {
-    display: none; /* hide the default triangle tip */
-  }
+        }
+
+        .custom-popup .leaflet-popup-tip {
+            display: none; /* hide the default triangle tip */
+        }
 
     </style>
 
@@ -104,7 +112,7 @@ catch(\Throwable $e){
             </div>
             <div class = "sidebar-main">
 
-                <div class = "beozoovrt-img" href = "https://www.beozoovrt.rs/?lang=sr" role="button">
+                <div class = "beozoovrt-img" >
                     <a href = "https://www.beozoovrt.rs/?lang=sr" target="_blank">
                     <img src ="<?php echo $PATH?>images/globe.png"></img>
                     </a>
@@ -184,8 +192,50 @@ catch(\Throwable $e){
         }
     });
 
-    var attribution = L.control.attribution({prefix:false}).addAttribution(`<div style="opacity:0.6"><a style = "font-size:25px;color:light-blue;text-decoration:none" href = "Attributions.php">Attributions</a><span style="opacity:1;font-size:25px;color:red;cursor:pointer" onClick = 'attribution.remove()'> &times</span></div>`).addTo(map);
- 
+    //ADDING ICONS AND OTHER CONTENT TO THE MAP
+    addIconsToMap(map);
+
+
+    //DEFINE MAP IMG PROPORTIONS
+    const imageWidth =   1600; 
+    const imageHeight = 1200;  
+    var imageBounds = [[0, 0], [imageHeight, imageWidth]];
+
+    var imageUrl ='<?php echo $PATH ?>/images/map_new2.webp';  
+    L.imageOverlay(imageUrl, imageBounds,{
+    opacity: 1,
+    className: 'mainMapImage'}).addTo(map);
+    map.fitBounds(imageBounds);
+
+
+     // DEFINE THE BOUNDS (SOUTHWEST AND NORTHEAST CORNERS)
+    var southWest = L.latLng(-imageHeight/4, -400); 
+    var northEast = L.latLng(imageHeight*1.2, imageWidth*1.3);
+    var bounds = L.latLngBounds(southWest, northEast);
+
+    map.setMaxBounds(bounds);
+
+    map.on('drag', function() {
+        map.panInsideBounds(bounds, { animate: true });
+    });
+
+
+    //CLOSES THE SEARCH 
+    map.on('click', closeSearchList)
+
+
+    //ATTRIBUTIONS
+    var attribution = L.control.attribution({prefix:false}).addAttribution(
+      `<div style="padding-left:5px">
+          <a style = "font-size:20px;color:white;text-decoration:none" href = "Attributions.php">
+            Attributions
+          </a>
+          <span style="font-size:30px;color:red;cursor:pointer" onClick = 'attribution.remove()'>
+            &times
+          </span>
+       </div>`
+    ).addTo(map);
+
 
     //GEOLOCATION PART
 
@@ -222,36 +272,9 @@ catch(\Throwable $e){
         globalCounter+=1;
     }*/
 
-    //ADDING ICONS AND OTHER CONTENT TO THE MAP
-    addIconsToMap(map);
+    //TESTING HELPER FUNCTION
+    //map.on('click', getCoord);
 
-    //DEFINE MAP IMG PROPORTIONS
-    const imageWidth =   1600; 
-    const imageHeight = 1200;  
-    var imageBounds = [[0, 0], [imageHeight, imageWidth]];
-
-    var imageUrl = PATH + '/images/map_new2.webp';  
-    L.imageOverlay(imageUrl, imageBounds,{
-    opacity: 1,
-    className: 'mainMapImage'}).addTo(map);
-    map.fitBounds(imageBounds);
-
-     // DEFINE THE BOUNDS (SOUTHWEST AND NORTHEAST CORNERS)
-    var southWest = L.latLng(-imageHeight/4, -400); 
-    var northEast = L.latLng(imageHeight*1.2, imageWidth*1.3);
-    var bounds = L.latLngBounds(southWest, northEast);
-
-    map.setMaxBounds(bounds);
-
-    map.on('drag', function() {
-        map.panInsideBounds(bounds, { animate: true });
-    });
-    
-    //HELPER FUNCTION
-    map.on('click', getCoord);
-
-    //CLOSES THE SEARCH 
-    map.on('click', closeSearchList)
     //map.on('click', cycleMarkers);
     /*map.on('zoomend', function () {
     const zoom = map.getZoom();

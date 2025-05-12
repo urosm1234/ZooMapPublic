@@ -10,7 +10,7 @@ body{
     left:0;
     z-index: 0;
     background-color: #f0f8ff;
-    background: url("/ZooProject/ZooMap/images/testBG1.jpg");
+    background: url("/ZooProject/ZooMap/images/woodBg.jpg");
 }
 .leaflet-control {
     border-radius: 5px;
