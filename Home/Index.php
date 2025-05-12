@@ -1,11 +1,11 @@
 ﻿<?php
 
 try{
-    require 'Requests/getAnimals1.php';
+    @require 'Requests/getAnimals.php';
 
 }
 catch(\Throwable $e){
-    die("Error");
+    die("Error 500");
 }
 
 ?>

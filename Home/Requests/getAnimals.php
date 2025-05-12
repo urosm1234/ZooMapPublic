@@ -1,6 +1,6 @@
 <?php
 
-include 'db1.php';
+include 'db.php';
 
 $method = $_SERVER['REQUEST_METHOD'];
 $result;

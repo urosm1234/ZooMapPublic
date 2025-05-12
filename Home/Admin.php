@@ -1,6 +1,11 @@
-<?php 
-require 'Requests/getAnimals1.php';
-
+<?php
+try:{
+  require 'Requests/getAnimals.php';
+}
+  catch:
+{
+  echo "Eror 500";
+}
 
 session_start();
 

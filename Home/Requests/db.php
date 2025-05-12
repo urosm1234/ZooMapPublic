@@ -1,5 +1,5 @@
 <?php
-$host = 'localhost'; // or your host
+$host = 'localhost';
 $dbname = 'zooprojectfinal';
 $username = 'root';
 $password = '';
