@@ -1,10 +1,9 @@
 <?php
-try:{
-  require 'Requests/getAnimals.php';
+try{
+    @require 'Requests/getAnimals.php';
 }
-  catch:
-{
-  echo "Eror 500";
+catch(\Throwable $e){
+    die("Error 500");
 }
 
 session_start();
@@ -161,7 +160,7 @@ if(!isset($_SESSION['user']))
     </style>
     <script>
         
-        const PATH ="/ZooProject/ZooMap/";
+        const PATH ="./";
     function fetchAnimalsFromApi() { //Fetches data from the database and 
             const response = <?php echo json_encode($result) ?>;
             console.log(response)
@@ -372,7 +371,7 @@ if(!isset($_SESSION['user']))
     const imageHeight = 1200;  // Adjust this to match your image height (in pixels)
     var imageBounds = [[0, 0], [imageHeight, imageWidth]];
 
-    var imageUrl = PATH+'images/map_new1.jpg';  // Replace with your actual image URL
+    var imageUrl = PATH+'images/map_new2.webp';  // Replace with your actual image URL
     L.imageOverlay(imageUrl, imageBounds,{
     opacity: 0.7,
     className: 'mainMapImage'}).addTo(map);
