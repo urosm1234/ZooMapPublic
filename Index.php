@@ -1,13 +1,14 @@
 ﻿<?php
 
 try{
-    @require 'Requests/getAnimals.php';
+$iconArray = @require 'Requests/getAnimals.php';
+
 
 }
 catch(\Throwable $e){
     die("Error 500");
 }
-
+$PATH = "./"
 ?>
 
 
@@ -87,10 +88,18 @@ catch(\Throwable $e){
     </style>
 
     <script> // Converts request to JS to be able to interface with the leaflet API 
-    function fetchAnimalsFromApi() { //Fetches data from the database
-            const response = <?php echo json_encode($result) ?>;
+  function fetchAnimalsFromApi() { //Fetches data from the database
+            //console.log(<?php echo json_encode($iconArray) ?>)
+    const response = <?php echo ($iconArray) ?>;
+    console.log(response)
             //console.log(response)
-            return response;  
+            /*fetch('Requests/getAnimals.php')
+            .then(res => res.json())
+            .then(animals => {
+            console.log(animals)
+               return animals; 
+    });*/
+          return response;  
     }
     </script>
 </head>

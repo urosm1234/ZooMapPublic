@@ -10,7 +10,7 @@ if($method == 'GET')
     $stmt = $pdo->prepare($sql);
     $stmt->execute();
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    //echo json_encode($result);
+    return json_encode($result);
 }
 
 $PATH = "./";

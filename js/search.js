@@ -68,15 +68,18 @@ var drawnPaths = [], returnMarkers = [], filteredOptions = null;
         }
   
 
-        function optionSelected(option, clear=true)
+        function optionSelected(option, clear=true, panTo = true)
         {
             const searchResults = document.getElementById('searchResults');
-            map.setZoom(2);
 
+    
+            if(panTo){
+            map.setZoom(2);
             setTimeout(() =>{
                 map.panTo([option.coordinateh, option.coordinatew], {animate:true});
 
             }, 300);
+            }
             document.getElementById('searchInput').value = "";
             if(!navigator.geolocation.length && pointCurr)
             {

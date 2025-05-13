@@ -28,10 +28,11 @@
                 var icont = new AnimalIcon({iconUrl: PATH +'images/new_icons/'+icon.name+'.png'});
                 let marker = L.marker([icon.coordinateh, icon.coordinatew], { icon: icont, draggable:false });//.addTo(map);
                 //icon.marker = marker;
+                marker.on('click', () => optionSelected(icon, clear=true, panTo = false)); 
                 if(icon.title)
                 {
                     let index = currIndex;
-                    marker.on('click',()=> togglePoppup(index, iconArray) );
+                    marker.on('click',()=> {togglePoppup(index, iconArray)} );
                     //marker.bindPopup(icon.title);
                     markers.addLayer(marker);
                 }
