@@ -58,9 +58,15 @@ function updateAnimal(database_id , title,latin_title, red, porodica,staniste, z
             // Successfully received response
             document.getElementById("responseText").innerText = xhr.responseText;
             if(xhr.responseText == "Success")
+            {
                 document.getElementById("responseText").style.color = "green";
+                return 1;
+            }
             else
+            {
                 document.getElementById("responseText").style.color  = "red";
+                return 0;
+            }
              // Display the response in an alert box
         } else {
             console.log("Error:", xhr.statusText);
@@ -69,6 +75,101 @@ function updateAnimal(database_id , title,latin_title, red, porodica,staniste, z
     const data = updateId+"&"+upadteTitle+"&"+upadteLatin_title+"&"+upadteRed+"&"+upadtePorodica+"&"+upadteStaniste+"&"+upadteZivotni_vek+"&"+upadteRasprostranjenost+"&"+upadteKlasa+"&"+upadteEndangered_level+"&"+updateTekst;
     xhr.send(data);
     console.log(1);
+}
+
+function addImage(image, path, id, name = "", replace = false)
+{
+
+   let apiUri = "./Requests/uploadImage.php";
+
+   const formData = new FormData();
+   formData.append('image', image);
+   formData.append('path', path);
+   formData.append('id',id);
+    
+   if(name !== "")
+      formData.append('name', name);
+
+   const xhr = new XMLHttpRequest();
+  
+   xhr.open("POST", apiUri, true);
+   xhr.onload = function() {
+      if(name !== "")
+      {
+          //document.getElementById("responseTextImage1").style.color = (this.response == "The file has been uploaded.");
+          document.getElementById("responseTextImage1").innerHTML = this.response;
+      }
+      else
+      {  
+          //document.getElementById("responseTextImage2").style.color = (this.response == "The file has been uploaded.");
+          document.getElementById("responseTextImage2").innerHTML = this.response;
+      }
+   }
+
+   xhr.send(formData);
+}
+
+function insertRequest(name, request)
+{
+  let apiUri = `./Requests/insert${request}.php`;
+
+  const formData = new FormData();
+  formData.append("name",name);
+
+  if(name === "")
+  {
+    return null;
+  }
+
+return new Promise((resolve, reject) => {
+  const xhr = new XMLHttpRequest();
+  xhr.open("POST", apiUri, true);
+
+  xhr.onreadystatechange = function(){
+    if(xhr.readyState == 4 && xhr.status == 200 ){
+
+    let obj = JSON.parse(this.responseText);
+    console.log(obj.id);
+    resolve(obj);
+    if(!obj.id)
+      resolve(null);
+    else
+      resolve(obj.id);
+    }
+
+  }
+  xhr.send(formData);
+  });
+}
+
+function updateIconRequest(icon_id, pane_id)
+{
+  let apiUri = `./Requests/updateIcon.php`;
+
+  const formData = new FormData();
+  formData.append("icon_id",icon_id);
+  formData.append("pane_id",pane_id);
+
+    const xhr = new XMLHttpRequest();
+  return new Promise((resolve, reject) => {
+    xhr.open("POST", apiUri, true);
+
+    xhr.onreadystatechange = function(){
+      if(xhr.readyState == 4 && xhr.status == 200 ){
+      console.log(this.response);
+      resolve(this.response);
+      }
+    }
+    xhr.send(formData);
+    
+  });
+  
+}
+
+
+function deleteImage()
+{
+
 }
 
 function formatTitleAndParagraph(description)
@@ -114,9 +215,9 @@ function changeView(animal_id, iconArray) {
                 content+="\n"+formatTitleAndParagraph("Rasprostranjenost:\n"+iconArray[animal_id].rasprostranjenost)+ "<br><br>";
 
             if(iconArray[animal_id].tekst != null && iconArray[animal_id].tekst != "")
-                content+="\n"+formatTitleAndParagraph("\n"+iconArray[animal_id].tekst.replace("0S","°C"))+ "<br>";
+                content+="\n"+formatTitleAndParagraph("\n"+iconArray[animal_id].tekst.replace("0S","␏C"))+ "<br>";
 
-            document.getElementById("animal-pane").src = PATH+'new_images/' + "animal"+iconArray[animal_id].id +".jpg";
+            document.getElementById("animal-pane").src = PATH+'new_images/' + "animal"+iconArray[animal_id].pane_id +".jpg";
             document.getElementById("animal-window").style.display = 'block';
 
             targetParagraph.innerHTML = content;

@@ -2,13 +2,13 @@
 .sidebar {
     position: absolute;
     top: 0;
-    right: -75px;
+    left: -75px;
     height: 100vh;
     width: 140px;
     display: flex;
     flex-direction: row;
     align-items: center;
-    transition: right 0.5s ease;
+    transition: left 0.5s ease;
     overflow: hidden;
     z-index:3;
     user-select: none; 
@@ -16,7 +16,7 @@
 }
 
 .sidebar.expanded {
-    right:0;
+    left:0;
 }
 
 .menu-button {
@@ -60,7 +60,7 @@
 
 }
 
-.sidebar-icons-wrapper > img{
+.sidebar-icons-wrapper > img, a > img{
     height:45px;
     width:45px;
 }

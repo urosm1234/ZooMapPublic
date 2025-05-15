@@ -3,8 +3,6 @@ function toggleSidebar() {
     const menuButton = document.getElementById('menu-button');
     const menuArrowImg = document.getElementById('menu-arrow-img');
     //menuButton.onclick= "";
-    console.log(menuArrowImg.src);
-    console.log("Started");
 
     if(!menuButton.classList.contains('fadeOut'))
     {
@@ -19,7 +17,6 @@ function toggleSidebar() {
             {
                 menuArrowImg.src = PATH + "images/left-arrow.png";
             }
-            console.log("Finished");
             menuButton.classList.remove('fadeOut');
             menuButton.classList.add('fadeIn');
             setTimeout(function(){

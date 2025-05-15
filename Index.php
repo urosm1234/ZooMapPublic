@@ -1,16 +1,15 @@
-﻿<?php
+<?php
 
 try{
-$iconArray = @require 'Requests/getAnimals.php';
-
-
+   $result = require './Requests/getAnimals.php';
+   // $result = "";
 }
 catch(\Throwable $e){
     die("Error 500");
 }
-$PATH = "./"
-?>
+$PATH = "./";
 
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -45,7 +44,19 @@ $PATH = "./"
     <script src = "<?php echo $PATH?>js/findPath.js"></script>
     <script src = "<?php echo $PATH?>js/geolocation.js"></script>
     <script src = "<?php echo $PATH?>js/Index.js"></script>
-    
+    <script> // Converts request to JS to be able to interface with the leaflet API 
+    function fetchAnimalsFromApi() { //Fetches data from the database
+
+            const response = <?php echo ($result) ?>;
+           /* fetch('./Requests/getAnimals.php')
+              .then(res =>{console.log(res); res.json()})
+              .then(response => {
+                console.log(response)
+                return response*/
+            return response;  
+    }
+
+    </script>
     <style>
 
         :root {
@@ -86,22 +97,6 @@ $PATH = "./"
         }
 
     </style>
-
-    <script> // Converts request to JS to be able to interface with the leaflet API 
-  function fetchAnimalsFromApi() { //Fetches data from the database
-            //console.log(<?php echo json_encode($iconArray) ?>)
-    const response = <?php echo ($iconArray) ?>;
-    console.log(response)
-            //console.log(response)
-            /*fetch('Requests/getAnimals.php')
-            .then(res => res.json())
-            .then(animals => {
-            console.log(animals)
-               return animals; 
-    });*/
-          return response;  
-    }
-    </script>
 </head>
 <body>
     <div class="container">
@@ -114,11 +109,7 @@ $PATH = "./"
 
         <!-- Sidebar -->
         <div class="sidebar" id="sidebar">
-            <div class="menu-button-wrapper">
-            <button id="menu-button" class="menu-button" onclick="toggleSidebar()">
-                <img id ="menu-arrow-img"  src="<?php echo $PATH?>images/left-arrow.png"></img>
-            </button>
-            </div>
+            
             <div class = "sidebar-main">
 
                 <div class = "beozoovrt-img" >
@@ -133,7 +124,13 @@ $PATH = "./"
                         <img style="cursor:pointer"></img>
                         <img style="cursor:pointer"></img>
                         <img style="cursor:pointer"></img>
+                        <a href="https://www.beozoovrt.rs/Map/Attributions.php"><img src = "./images/CC.png" style = "cursor:pointer"></img></a>
                 </div>
+            </div>
+            <div class="menu-button-wrapper">
+            <button id="menu-button" class="menu-button" onclick="toggleSidebar()">
+                <img id ="menu-arrow-img"  src="<?php echo $PATH?>images/right-arrow.png"></img>
+            </button>
             </div>
         </div> 
 
@@ -194,7 +191,7 @@ $PATH = "./"
 
     var AnimalIcon = L.Icon.extend({
     options:{
-            iconSize: [50, 50], 
+            iconSize: [60, 60], 
             shadowSize: [50, 50],         
             iconAnchor: [25, 50],       
             popupAnchor: [0, -50],
@@ -234,7 +231,7 @@ $PATH = "./"
 
 
     //ATTRIBUTIONS
-    var attribution = L.control.attribution({prefix:false}).addAttribution(
+   /* var attribution = L.control.attribution({prefix:false}).addAttribution(
       `<div style="padding-left:5px">
           <a style = "font-size:20px;color:white;text-decoration:none" href = "Attributions.php">
             Attributions
@@ -243,13 +240,21 @@ $PATH = "./"
             &times
           </span>
        </div>`
-    ).addTo(map);
+    ).addTo(map);*/
 
 
     //GEOLOCATION PART
 
+    function geoErorCallback(error)
+    {
+      alert("Ukoliko želite da koristite sve funkcionalnosti uključite lokaciju i refrešujte stranicu \n\nTo access all features turn on location and refresh the page");
+    }
     if (navigator.geolocation) {
-        navigator.geolocation.watchPosition(setPosition,null, {enableHighAccuracy: true ,timeout: 5000});
+        navigator.geolocation.watchPosition(setPosition,geoErorCallback, {enableHighAccuracy: true ,timeout: 5000});
+    }
+    else{
+      alert("Ukoliko želite da koristite sve funkcionalnosti uključite lokaciju i refrešujte stranicu \n\nTo access all features turn on location and refresh the page");
+
     }
     
     //UNCOMMENT TO DISPLAY GRAPH 
