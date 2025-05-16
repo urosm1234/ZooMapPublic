@@ -199,6 +199,8 @@ $PATH = "./";
 
     function addOptionsToSelect() {
       selectElem = document.getElementById("selectedAnimalNew");
+      selectElem.options.length = 0;
+
       let optio = document.createElement('option');
       optio.value = "";
       optio.textContent = "New Animal"
@@ -370,23 +372,41 @@ $PATH = "./";
         let name = cleanUpString(newName);
         let response = await insertRequest(name,"Icon");
         if(!response || !response.id)
-           return;     
+          return;   
 
         let imgIcon = document.getElementById("newImage2");
         if(imgIcon.files[0])
-        await addImage(image = imgIcon.files[0], path = "..\\images\\new_icons\\", id = response.id, name = name);
+          await addImage(image = imgIcon.files[0], path = "..\\images\\new_icons\\", id = response.id, name = name);
+          
+        setTimeout(()=>{
+        iconArray.push({"coordinateh" : 0, "coordinatew" : 0,  "endangered_level" : "", "id" : response.id,"klasa" : "", "latin_title" : "", "name" :name, "pane_id" : -1, "porodica" : "" , "rasprostranjenost" : "", "red" : "", "staniste" : ""  , "tekst" : "", "title" : newName, "zivotni_vek" : "" });
+        let icont = new AnimalIcon({iconUrl: PATH +'images/new_icons/'+ name +'.png'});
+        let newMarker = L.marker([0, 0], { icon: icont, draggable:true }).addTo(map)
+                .on('click',()=> fillInputsWithAnimalInfo(response.id, iconArray.length - 1 , iconArray ) )
+                .on('click',()=> toggleSidebar(ifClosed = true) )
+                .on('mouseup', (event)=> updateCoords(event, response.id));
+        
+        let option = document.createElement('option');
+        option.value = iconArray.length - 1;
+        option.textContent = newName;
+        selectElem.appendChild(option); 
+        }, 1000);
+
         
         let iconId = response.id;
-        response = await insertRequest(newName, "Info");
-        if(!response || !response.id)
+        let response1 = await insertRequest(newName, "Info");
+        if(!response1 || !response1.id)
+        {
+          map.removeLayer(newMarker);
+          iconArray.pop();
           return;
-
+        }
         let imgPane = document.getElementById("newImage1");
 
         if(imgPane.files[0])
-          await addImage(image = imgPane.files[0], path = "..\\new_images\\", id = response.id);
+          await addImage(image = imgPane.files[0], path = "..\\new_images\\", id = response1.id);
 
-        await updateIconRequest(iconId,response.id);
+        await updateIconRequest(iconId,response1.id);
       }
       else
       {
