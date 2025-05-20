@@ -20,7 +20,7 @@ if($method == 'POST' && isset($_SESSION['user'])&& isset($_FILES['image']) && $_
   $extension = pathinfo($_FILES["image"]["name"], PATHINFO_EXTENSION);
   if($extension != "jpg" && $extension != "png")
   {
-    echo "Error - invalid File Type";
+    echo "Error - invalid File Type: ";
     echo $extension;
     return;
   }

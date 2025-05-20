@@ -1,10 +1,14 @@
 
-function updateCoords(e, id) {
+function updateCoords(e, id, icon) {
 
   let updateId = "id=" + id;
 
   let upadteCoordinatesH = "coordinatesh=" + Math.round(e.latlng.lat * 10) / 10;
   let upadtecoordinatesW = "coordinatesw=" + Math.round(e.latlng.lng * 10) / 10;
+
+  icon.coordinatew = Math.round(e.latlng.lng * 10) / 10;
+
+  icon.coordinateh = Math.round(e.latlng.lat * 10) / 10;
 
   let apiUri = "./Requests/updateCoords.php";
   const xhr = new XMLHttpRequest();
@@ -16,17 +20,19 @@ function updateCoords(e, id) {
   xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
   // Define what to do when the response comes back
-  xhr.onload = function() {
-    if (xhr.status === 200) {
-      // Successfully received response
-      console.log("Response:", xhr.responseText);
-      // Display the response in an alert box
-    } else {
-      console.log("Error:", xhr.statusText);
-    }
-  };
-  const data = updateId + "&" + upadteCoordinatesH + "&" + upadtecoordinatesW;
-  xhr.send(data);
+  return new Promise((resolve) => {
+    xhr.onload = function() {
+      if (xhr.status === 200) {
+        // Successfully received response
+        console.log("Response:", xhr.responseText);
+        resolve(1)
+      } else {
+        console.log("Error:", xhr.statusText);
+      }
+    };
+    const data = updateId + "&" + upadteCoordinatesH + "&" + upadtecoordinatesW;
+    xhr.send(data);
+  });
 }
 
 function updateAnimal(database_id, title, latin_title, red, porodica, staniste, zivotni_vek, rasprostranjenost, klasa, endangered_level, tekst) {
@@ -56,13 +62,10 @@ function updateAnimal(database_id, title, latin_title, red, porodica, staniste, 
     xhr.onload = function() {
       if (xhr.status === 200) {
         // Successfully received response
-        document.getElementById("responseText").innerText = xhr.responseText;
         if (xhr.responseText == "Success") {
-          document.getElementById("responseText").style.color = "green";
           resolve(1);
         }
         else {
-          document.getElementById("responseText").style.color = "red";
           resolve(0);
         }
         // Display the response in an alert box
@@ -88,21 +91,23 @@ function addImage(image, path, id, name = "") {
   if (name !== "")
     formData.append('name', name);
 
-  const xhr = new XMLHttpRequest();
+  return new Promise((resolve) => {
+    const xhr = new XMLHttpRequest();
 
-  xhr.open("POST", apiUri, true);
-  xhr.onload = function() {
-    if (name !== "") {
-      //document.getElementById("responseTextImage1").style.color = (this.response == "The file has been uploaded.");
-      document.getElementById("responseTextImage1").innerHTML = this.response;
+    xhr.open("POST", apiUri, true);
+    xhr.onload = function() {
+      if (name !== "") {
+        //document.getElementById("responseTextImage1").style.color = (this.response == "The file has been uploaded.");
+        resolve({ "res": (this.responseText === "The file has been uploaded."), message: this.responseText });
+      }
+      else {
+        //document.getElementById("responseTextImage2").style.color = (this.response == "The file has been uploaded.");
+        resolve({ "res": (this.responseText === "The file has been uploaded."), message: this.responseText });
+      }
     }
-    else {
-      //document.getElementById("responseTextImage2").style.color = (this.response == "The file has been uploaded.");
-      document.getElementById("responseTextImage2").innerHTML = this.response;
-    }
-  }
 
-  xhr.send(formData);
+    xhr.send(formData);
+  });
 }
 
 function insertRequest(name, request) {
@@ -123,8 +128,8 @@ function insertRequest(name, request) {
       if (xhr.readyState == 4 && xhr.status == 200) {
 
         let obj = JSON.parse(this.responseText);
-        console.log(obj.id);
-        resolve(obj);
+        resolve(obj)
+
         if (!obj.id)
           resolve(null);
         else
@@ -160,7 +165,66 @@ function updateIconRequest(icon_id, pane_id) {
 }
 
 
-function deleteImage() {
+function deleteIconRequest(id) {
+
+  let apiUri = `./Requests/deleteIcon.php?icon_id=${id}`;
+
+
+  const xhr = new XMLHttpRequest();
+  return new Promise((resolve) => {
+    xhr.open("DELETE", apiUri, true);
+
+    xhr.onload = function() {
+      resolve({ "res": (this.responseText === "Deleted Icon"), "message": this.responseText });
+    }
+    xhr.send();
+  });
+}
+
+function deleteInfoRequest(pane_id, name) {
+
+  let apiUri = `./Requests/deleteInfo.php?pane_id=${pane_id}&name=${name}`;
+
+
+  const xhr = new XMLHttpRequest();
+  return new Promise((resolve) => {
+    xhr.open("DELETE", apiUri, true);
+
+    xhr.onload = function() {
+      resolve({ "res": (this.responseText === "Deleted Info" || this.responseText === "More icons remaining"), "message": this.responseText });
+    }
+    xhr.send();
+  });
+}
+
+function updateAnimalVisibilityRequest(id, hidden) {
+
+  let apiUri = `./Requests/updateHiddenStatus.php`;
+
+
+  const xhr = new XMLHttpRequest();
+  const formData = new FormData();
+  formData.append("id", id);
+  formData.append("hidden", hidden);
+
+  return new Promise((resolve) => {
+    xhr.open("POST", apiUri, true);
+
+    xhr.onload = function() {
+      resolve(this.responseText)
+      if (this.responseText == 1) {
+        resolve(1);
+        return;
+      }
+      else {
+        console.log(this.responseText)
+        resolve(0);
+
+      }
+
+    }
+    xhr.send(formData);
+  });
 
 }
 
@@ -217,6 +281,7 @@ function changeView(animal_id, iconArray) {
     return 0;
 
 }
+
 
 function togglePoppup(animal, iconArray) {
   var popup = document.getElementById("animal-window");
